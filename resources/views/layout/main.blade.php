@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <title>Dashboard</title>
     @vite('resources/css/app.css')
 </head>
@@ -17,11 +18,11 @@
 <body>
     <div class="sidebar">
         <div class="logo_details">
-					<i class='bx bxs-leaf icon'></i>
+            <i class='bx bxs-leaf icon'></i>
             <div class="logo_name">Beri Arti</div>
             <i class="bx bx-menu" id="btn"></i>
         </div>
-				<hr>
+        <hr>
         <ul class="nav-list">
             <li>
                 <i class="bx bx-search"></i>
@@ -30,50 +31,50 @@
             </li>
             <li>
                 <a href="#">
-									<i class='bx bxs-calendar-event'></i>
+                    <i class='bx bxs-calendar-event'></i>
                     <span class="link_name">Program</span>
                 </a>
                 <span class="tooltip">Program</span>
             </li>
             <li>
                 <a href="#">
-									<i class='bx bx-archive-in'></i>
+                    <i class='bx bx-archive-in'></i>
                     <span class="link_name">Submission</span>
                 </a>
                 <span class="tooltip">Submission</span>
             </li>
             <li>
                 <a href="#">
-									<i class='bx bx-wallet'></i>
+                    <i class='bx bx-wallet'></i>
                     <span class="link_name">Transaksi</span>
                 </a>
                 <span class="tooltip">Transaksi</span>
             </li>
             <li>
                 <a href="#">
-									<i class='bx bxs-user'></i>
+                    <i class='bx bxs-user'></i>
                     <span class="link_name">Users</span>
                 </a>
                 <span class="tooltip">Users</span>
             </li>
-						<hr>
+            <hr>
             <li>
                 <a href="#">
-									<i class='bx bx-spreadsheet'></i>
+                    <i class='bx bx-spreadsheet'></i>
                     <span class="link_name">Posts</span>
                 </a>
                 <span class="tooltip">Posts</span>
             </li>
             <li>
                 <a href="#">
-									<i class='bx bx-list-ul'></i>	
+                    <i class='bx bx-list-ul'></i>
                     <span class="link_name">Categories</span>
                 </a>
                 <span class="tooltip">Categories</span>
             </li>
             <li>
                 <a href="#">
-									<i class='bx bx-user-pin' ></i>
+                    <i class='bx bx-user-pin'></i>
                     <span class="link_name">Authors</span>
                 </a>
                 <span class="tooltip">Authors</span>
@@ -90,9 +91,10 @@
             </li>
         </ul>
     </div>
-    <section class="home-section">
+		@yield('content')
+    {{-- <section class="home-section">
         <div class="text">Dashboard</div>
-    </section>
+    </section> --}}
     <!-- Scripts -->
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
