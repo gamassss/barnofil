@@ -4,12 +4,12 @@ module.exports = {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+				"./node_modules/flowbite/**/*.js"
     ],
     theme: {
         extend: {},
         fontFamily: {
-            poppins: ["Poppins", "ui-sans-serif"],
-            raleway: ["Raleway", "ui-sans-serif"],
+            rubik: ["Rubik", "ui-sans-serif"],
             "open-sans": ["Open Sans", "ui-sans-serif"],
         },
         // colors: {
@@ -20,5 +20,7 @@ module.exports = {
 					padding: '16px'
 				},
     },
-    plugins: [],
+    plugins: [
+			require('flowbite/plugin')
+		],
 };
