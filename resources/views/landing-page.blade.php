@@ -18,7 +18,7 @@
 
 <body class="bg-[#F7F7F7] font-rubik">
     <!-- Search Section Start -->
-    <section class="bg-[#00AEEF] h-16 py-3 fixed top-0 w-full">
+    <section class="bg-[#00AEEF] h-16 py-3 z-[100] fixed top-0 w-full">
         <div class="container h-full">
             <div class="flex gap-x-2 items-center h-full">
                 <!-- Logo -->
@@ -57,9 +57,9 @@
                 <!-- White button-->
                 <div
                     class="group w-full h-12 bg-white rounded-full py-2 flex items-center justify-center border border-[#00aeef] text-[#00aeef] hover:text-white hover:bg-[#00AEEF]">
-                    {{-- <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg" role="img" class="mr-2 inline w-[21px]"> --}}
-                        {{-- <path
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" role="img" class="mr-2 inline w-[21px]">
+                        <path
                             d="M5 13.286V7.028c-.197.028.183-.065 0 0a3.001 3.001 0 0 0-2 2.83v3.856c0 1.21.358 2.337.975 3.28.085.928-.096 1.814-.324 2.513-.23.704.223 1.489.942 1.309.764-.192 1.675-.596 2.433-1.434A5.99 5.99 0 0 0 9 19.714h2.857c1.36 0 2.56-.678 3.283-1.714.184-.264-.117.305 0 0H9.43C7.299 18 5 15.416 5 13.286Z"
                             class="fill-[#10A8E5] group-hover:fill-white"></path>
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -67,7 +67,7 @@
                             class="fill-[#10A8E5] group-hover:fill-white"></path>
                         <path
                             d="M13.875 5.5c-.517 0-.977.102-1.376.308-.397.205-.706.47-.921.793-.216.326-.328.66-.328.995 0 .223.096.425.271.594.176.17.398.258.649.258.402 0 .7-.221.854-.61l.033-.093c.09-.255.199-.446.317-.566.088-.088.25-.14.501-.14.208 0 .363.052.48.154.11.096.157.199.157.331 0 .059-.013.11-.043.16a.906.906 0 0 1-.16.199l-.097.088c-.058.05-.129.112-.214.182l-.089.074c-.227.188-.409.352-.547.492a1.88 1.88 0 0 0-.374.553 1.817 1.817 0 0 0-.145.749c0 .274.086.504.266.667a.886.886 0 0 0 .609.227c.424 0 .723-.223.83-.615l.078-.313a.548.548 0 0 1 .054-.138.65.65 0 0 1 .09-.117c.04-.043.09-.092.153-.148l.4-.341c.197-.17.344-.299.442-.39a2.27 2.27 0 0 0 .43-.545c.133-.232.198-.498.198-.792 0-.372-.111-.72-.33-1.033a2.163 2.163 0 0 0-.902-.727 3.075 3.075 0 0 0-1.286-.256ZM13.063 11.875a1.01 1.01 0 0 1 .704-.268.99.99 0 0 1 .698.27.915.915 0 0 1 .294.684c0 .29-.107.537-.317.714a1.028 1.028 0 0 1-.675.245c-.256 0-.488-.082-.682-.24a.892.892 0 0 1-.323-.719.91.91 0 0 1 .301-.686Z"
-                            class="fill-[#10A8E5] group-hover:fill-white"></path> --}}
+                            class="fill-[#10A8E5] group-hover:fill-white"></path>
                         <p class="font-bold text-base">Tanya Tentang Galang Dana</p>
                 </div>
             </div>
@@ -81,29 +81,29 @@
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out rounded-lg overflow-hidden h-[calc(100%-32px)]"
+                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
                     data-carousel-item="active">
                     <img src="{{ asset('img/car1-1.avif') }}"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover"
+                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="...">
                 </div>
                 <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out rounded-lg overflow-hidden h-[calc(100%-32px)]"
+                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
                     data-carousel-item>
                     <img src="{{ asset('img/car2.avif') }}"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out rounded-lg overflow-hidden h-[calc(100%-32px)]"
+                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
                     data-carousel-item>
                     <img src="{{ asset('img/car3.avif') }}"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out rounded-lg overflow-hidden h-[calc(100%-32px)]"
+                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
                     data-carousel-item>
                     <img src="{{ asset('img/car4.avif') }}"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
             <!-- Slider indicators -->
@@ -266,14 +266,14 @@
                     </a>
                     <div class="p-2 pb-2">
                         <div class="flex flex-col gap-y-2">
-                            <p class=" text-xs font-semibold">Bantu Anak-Anak Asmat yang Teranca...</p>
+                            <p class=" text-xs font-semibold">Bantu Anak-Anak Asmat yang...</p>
                             <div class="flex">
-                                <span class="font-normal text-[10px] mr-2">Wahana Visi Indone...</span>
+                                <span class="font-normal text-[10px] mr-2">Wahana Visi Indo...</span>
                                 <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
                                     class="w-[31px] h-3">
                             </div>
                             <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-4/5 h-full bg-blue-400"></div>
+                                <div class="w-3/5 h-full bg-blue-400"></div>
                             </div>
                             <div class="flex flex-col gap-y-1 mt-2">
                                 <span class="text-[10px] font-normal ">Terkumpul</span>
@@ -289,7 +289,7 @@
                     </a>
                     <div class="p-2 pb-2">
                         <div class="flex flex-col gap-y-2">
-                            <p class=" text-xs font-semibold">Alirkan Pahala Jariyah dengan Sedekah...</p>
+                            <p class=" text-xs font-semibold">Alirkan Pahala Jariyah dengan...</p>
                             <div class="flex">
                                 <span class="font-normal text-[10px] mr-2">Yayasan Galang...</span>
                                 <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
@@ -312,14 +312,14 @@
                     </a>
                     <div class="p-2 pb-2">
                         <div class="flex flex-col gap-y-2">
-                            <p class=" text-xs font-semibold">Gagal Jantung, Pendeta Muda Tak Bi...</p>
+                            <p class=" text-xs font-semibold">Gagal Jantung, Pendeta Muda Tak...</p>
                             <div class="flex">
                                 <span class="font-normal text-[10px] mr-2">Viktorius Wau</span>
                                 <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
                                     class="w-[31px] h-3">
                             </div>
                             <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-4/5 h-full bg-blue-400"></div>
+                                <div class="w-2/5 h-full bg-blue-400"></div>
                             </div>
                             <div class="flex flex-col gap-y-1 mt-2">
                                 <span class="text-[10px] font-normal ">Terkumpul</span>
@@ -337,7 +337,7 @@
                         <div class="flex flex-col gap-y-2">
                             <p class=" text-xs font-semibold">Sedekah Utama, Mushola Pertama...</p>
                             <div class="flex">
-                                <span class="font-normal text-[10px] mr-2">Baitul Maal Hidaya...</span>
+                                <span class="font-normal text-[10px] mr-2">Baitul Maal Hi...</span>
                                 <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
                                     class="w-[31px] h-3">
                             </div>
@@ -395,10 +395,6 @@
     <!-- Navbar End -->
 
     <script src="{{ asset('js/flowbite.min.js') }}"></script>
-		<script>
-			
-		</script>
-
 </body>
 
 </html>
