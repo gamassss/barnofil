@@ -51,7 +51,7 @@
             <div class="flex flex-wrap mt-6 flex-row gap-2">
                 <!-- Blue Button -->
                 <div
-                    class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#0291c6]">
+                    class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#007aff]">
                     <p class="font-bold text-base text-white">Galang Dana Sekarang</p>
                 </div>
                 <!-- White button-->
@@ -77,45 +77,44 @@
 
     <!-- Slider Banner Start -->
     <section class="bg-white my-2 px-4 py-4">
-        <div id="indicators-carousel" class="relative h-48" data-carousel="slide">
+        <div class="relative">
             <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div class="overflow-hidden relative h-44 md:h-64 xl:h-80 2xl:h-96">
                 <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
-                    data-carousel-item="active">
+                <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
                     <img src="{{ asset('img/car1-1.avif') }}"
-                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         alt="...">
                 </div>
                 <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
-                    data-carousel-item>
+                <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                     <img src="{{ asset('img/car2.avif') }}"
-                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="...">
                 </div>
                 <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
-                    data-carousel-item>
+                <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
                     <img src="{{ asset('img/car3.avif') }}"
-                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="...">
                 </div>
                 <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out border bg-red-300 rounded-lg overflow-hidden h-[calc(100%-32px)]"
-                    data-carousel-item>
+                <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
                     <img src="{{ asset('img/car4.avif') }}"
-                        class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="...">
                 </div>
             </div>
             <!-- Slider indicators -->
-            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-4 left-1/2">
-                <button id="carousel-item-1" type="button" class="w-3 h-3 rounded-full" aria-current="true"
-                    aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button id="carousel-item-2" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                    aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button id="carousel-item-3" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                    aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                <button id="carousel-item-4" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                    aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <div class="flex absolute bottom-4 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                    aria-label="Slide 2"></button>
+                <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                    aria-label="Slide 3"></button>
+                <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                    aria-label="Slide 4"></button>
             </div>
         </div>
     </section>
@@ -361,8 +360,8 @@
         <img src="{{ asset('img/sponsor.avif') }}" alt="">
     </section>
     <!-- Sponsor End -->
-    <div class="mb-96"></div>
 
+    <div class="mb-96"></div>
 
     <!-- Navbar Start -->
     <nav class="bg-white fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full">
@@ -395,6 +394,67 @@
     <!-- Navbar End -->
 
     <script src="{{ asset('js/flowbite.min.js') }}"></script>
+    <script>
+        const items = [{
+                position: 0,
+                el: document.getElementById('carousel-item-1')
+            },
+            {
+                position: 1,
+                el: document.getElementById('carousel-item-2')
+            },
+            {
+                position: 2,
+                el: document.getElementById('carousel-item-3')
+            },
+            {
+                position: 3,
+                el: document.getElementById('carousel-item-4')
+            },
+        ];
+
+        const options = {
+            activeItemPosition: 1,
+            interval: 3000,
+
+            indicators: {
+                activeClasses: 'bg-[#00AEEF] w-6 dark:bg-gray-800',
+                inactiveClasses: 'bg-white dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
+                items: [{
+                        position: 0,
+                        el: document.getElementById('carousel-indicator-1')
+                    },
+                    {
+                        position: 1,
+                        el: document.getElementById('carousel-indicator-2')
+                    },
+                    {
+                        position: 2,
+                        el: document.getElementById('carousel-indicator-3')
+                    },
+                    {
+                        position: 3,
+                        el: document.getElementById('carousel-indicator-4')
+                    },
+                ]
+            },
+
+            // callback functions
+            onNext: () => {
+                console.log('next slider item is shown');
+            },
+            onPrev: () => {
+                console.log('previous slider item is shown');
+            },
+            onChange: () => {
+                console.log('new slider item has been shown');
+            }
+        };
+
+        const carousel = new Carousel(items, options);
+
+        carousel.cycle();
+    </script>
 </body>
 
 </html>
