@@ -76,7 +76,7 @@
     <!-- Fast way End -->
 
     <!-- Slider Banner Start -->
-    <section class="bg-white my-2 px-4 py-4">
+    <section class="bg-white my-4 px-4 py-4">
         <div class="relative">
             <!-- Carousel wrapper -->
             <div class="overflow-hidden relative h-44 md:h-64 xl:h-80 2xl:h-96">
@@ -121,7 +121,7 @@
     <!-- Slider Banner End -->
 
     <!-- Jenis Donasi Start -->
-    <section class="bg-white my-2 pb-20 pt-4 px-5">
+    <section class="bg-white my-4 pb-20 pt-4 px-5">
         <div class="container flex h-full justify-around gap-x-8">
             <div class="w-20 h-20 rounded-full">
                 <img src="{{ asset('img/donasi-pic.avif') }}" alt="">
@@ -140,7 +140,7 @@
     <!-- Jenis Donasi End -->
 
     <!-- Program Spesial Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-4">
         <div class="container py-4">
             <h3 class=" text-[#4A4A4A] font-semibold text-base mb-4">Program Spesial Beriarti</h3>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
@@ -222,13 +222,13 @@
     <!-- Program Spesial End -->
 
     <!-- Section Zakat Start -->
-    <section class="my-2">
+    <section class="my-4">
         <img src="{{ asset('img/zakat.avif') }}" alt="">
     </section>
     <!-- Section Zakat End -->
 
     <!-- Pilihan Beriarti Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-4">
         <div class="container py-4">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-base font-semibold text-[#4A4A4A]">Pilihan Beriarti</p>
@@ -356,10 +356,234 @@
     <!-- Pilihan Beriarti End -->
 
     <!-- Sponsor Start -->
-    <section class="my-2">
+    <section class="my-4">
         <img src="{{ asset('img/sponsor.avif') }}" alt="">
     </section>
     <!-- Sponsor End -->
+
+    <!-- Doa-doa Section Start -->
+    <section class="bg-white my-4">
+        <div class="container pt-4">
+            <!-- Sub Title -->
+            <div class="flex justify-between items-center mb-4">
+                <p class="text-base font-semibold text-[#4A4A4A]">Doa-doa #OrangBaik</p>
+                <p class="text-sm text-[#00aeef]">Lihat Lainnya</p>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="flex overflow-x-auto gap-x-4">
+
+                <!-- Slider Card Start -->
+
+                <!-- Doa 1 -->
+                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+
+                    <!-- More button -->
+                    <div class="flex justify-end text-base">
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+
+                    <!-- Profile pic, name, timestamp -->
+                    <div class="flex w-full h-12 mb-4">
+                        <div class="pr-4 h-full">
+                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
+                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
+                                    Bengkak...</span><span
+                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
+                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between h-32 pb-6">
+                        <!-- Doa -->
+                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
+                            <span class="text-[#989898]">Lihat selengkapnya</span>
+                        </p>
+                        <!-- Like doa -->
+                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
+                    </div>
+                    <div class="flex justify-around py-4 border-t-2">
+                        <div class="flex items-center">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
+                                <path
+                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img">
+                                <path
+                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doa 2 -->
+                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+
+                    <!-- More button -->
+                    <div class="flex justify-end text-base">
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+
+                    <!-- Profile pic, name, timestamp -->
+                    <div class="flex w-full h-12 mb-4">
+                        <div class="pr-4 h-full">
+                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
+                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
+                                    Bengkak...</span><span
+                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
+                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between h-32 pb-6">
+                        <!-- Doa -->
+                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
+                            <span class="text-[#989898]">Lihat selengkapnya</span>
+                        </p>
+                        <!-- Like doa -->
+                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
+                    </div>
+                    <div class="flex justify-around py-4 border-t-2">
+                        <div class="flex items-center">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
+                                <path
+                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img">
+                                <path
+                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doa 3 -->
+                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+
+                    <!-- More button -->
+                    <div class="flex justify-end text-base">
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+
+                    <!-- Profile pic, name, timestamp -->
+                    <div class="flex w-full h-12 mb-4">
+                        <div class="pr-4 h-full">
+                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
+                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
+                                    Bengkak...</span><span
+                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
+                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between h-32 pb-6">
+                        <!-- Doa -->
+                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
+                            <span class="text-[#989898]">Lihat selengkapnya</span>
+                        </p>
+                        <!-- Like doa -->
+                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
+                    </div>
+                    <div class="flex justify-around py-4 border-t-2">
+                        <div class="flex items-center">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
+                                <path
+                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img">
+                                <path
+                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doa 4 -->
+                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+
+                    <!-- More button -->
+                    <div class="flex justify-end text-base">
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+
+                    <!-- Profile pic, name, timestamp -->
+                    <div class="flex w-full h-12 mb-4">
+                        <div class="pr-4 h-full">
+                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
+                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
+                                    Bengkak...</span><span
+                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
+                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between h-32 pb-6">
+                        <!-- Doa -->
+                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
+                            <span class="text-[#989898]">Lihat selengkapnya</span>
+                        </p>
+                        <!-- Like doa -->
+                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
+                    </div>
+                    <div class="flex justify-around py-4 border-t-2">
+                        <div class="flex items-center">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
+                                <path
+                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" role="img">
+                                <path
+                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
+                                    fill="#989898"></path>
+                            </svg>
+                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Doa-doa Section End -->
 
     <div class="mb-96"></div>
 
