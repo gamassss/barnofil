@@ -405,7 +405,9 @@
                             <span class="text-[#989898]">Lihat selengkapnya</span>
                         </p>
                         <!-- Like doa -->
-                        <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle">Kamu <span class="font-normal">dan </span></span><span class="font-bold">2 Orang</span> <span class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini</p>
+                        <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle">Kamu <span
+                                    class="font-normal">dan </span></span><span class="font-bold">2 Orang</span> <span
+                                class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini</p>
                     </div>
                     <div class="flex justify-around py-4 border-t-2">
                         <!-- Like -->
@@ -589,6 +591,151 @@
         </div>
     </section>
     <!-- Doa-doa Section End -->
+
+    <!-- Pilih Kategori Favorit Start -->
+    <section class="bg-white my-4">
+        <div class="container pt-4">
+            <p class="font-bold text-base text-[#4A4A4A] mb-4">Pilih Kategori Favoritmu</p>
+
+            <!-- PIlihan Kategori -->
+            <div class="flex w-full justify-evenly gap-x-3 mb-4">
+                <!-- Kategori 1 -->
+                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                        <img src="{{ asset('img/icon-bencana.png') }}" alt="" class="">
+                    </div>
+                    <p class="text-xs font-normal text-center">Bencana Alam</p>
+                </div>
+
+                <!-- Balita -->
+                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                        <img src="{{ asset('img/icon-balita.png') }}" alt="" class="">
+                    </div>
+                    <p class="text-xs font-normal text-center">Balita & Anak Sakit</p>
+                </div>
+
+                <!-- Medis -->
+                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                        <img src="{{ asset('img/icon-medis.png') }}" alt="" class="">
+                    </div>
+                    <p class="text-xs font-normal text-center">Bantuan Medis & Kesehatan</p>
+                </div>
+
+                <!-- Lainnya -->
+                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                        <img src="{{ asset('img/icon-list.png') }}" alt="" class="">
+                    </div>
+                    <p class="text-xs font-normal">Lainnya</p>
+                </div>
+
+
+            </div>
+
+            <!-- Item 1 -->
+            <a href="#" class="inline-block mb-4">
+                <div class="flex w-full">
+                    <div class="flex-1 mr-4 h-full">
+                        <img src="{{ asset('img/infaq.avif') }}" alt="" class="rounded-lg">
+                    </div>
+                    <div class="flex-1 max-w-[45%]">
+                        <div class="flex flex-col h-full justify-between">
+                            <p class="text-xs font-semibold">Infaq Yatim: Kebahagiaan untuk 500 anak-anak Yatim</p>
+                            <div class="flex">
+                                <span class="font-normal text-[10px] mr-2">Yuk Peduli</span>
+                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
+                                    class="w-[31px] h-3">
+                            </div>
+                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                <div class="w-4/5 h-full bg-blue-400"></div>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex flex-col">
+                                    <p class="font-normal text-[10px]">Terkumpul</p>
+                                    <p class="font-bold text-xs">Rp 1.132.034.156</p>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <p class="font-normal text-[10px]">Sisa hari</p>
+                                    <p class="font-bold text-xs">1006</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="w-full h-[1px] bg-slate-300 rounded"></div>
+
+            <!-- Item 2 -->
+            <a href="#" class="inline-block my-4">
+                <div class="flex w-full">
+                    <div class="flex-1 mr-4 h-full">
+                        <img src="{{ asset('img/masjid.avif') }}" alt="" class="rounded-lg">
+                    </div>
+                    <div class="flex-1 max-w-[45%]">
+                        <div class="flex flex-col h-full justify-between">
+                            <p class="text-xs font-semibold">Bantu selesaikan masjid pondok quran 2 yg...</p>
+                            <div class="flex">
+                                <span class="font-normal text-[10px] mr-2">Infaq Berkah Qurani</span>
+                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
+                                    class="w-[31px] h-3">
+                            </div>
+                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                <div class="w-4/5 h-full bg-blue-400"></div>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex flex-col">
+                                    <p class="font-normal text-[10px]">Terkumpul</p>
+                                    <p class="font-bold text-xs">Rp 1.139.982.411</p>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <p class="font-normal text-[10px]">Sisa hari</p>
+                                    <p class="font-bold text-xs">306</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="w-full h-[1px] bg-slate-300 rounded"></div>
+
+            <!-- Item 3 -->
+            <a href="#" class="inline-block my-4">
+                <div class="flex w-full">
+                    <div class="flex-1 mr-4 h-full">
+                        <img src="{{ asset('img/pahala.avif') }}" alt="" class="rounded-lg">
+                    </div>
+                    <div class="flex-1 max-w-[45%]">
+                        <div class="flex flex-col h-full justify-between">
+                            <p class="text-xs font-semibold">Pahala Mengalir Selamanya! Ayo Beramal...</p>
+                            <div class="flex">
+                                <span class="font-normal text-[10px] mr-2">Yayasan Masjid Al Fatih Al...</span>
+                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
+                                    class="w-[31px] h-3">
+                            </div>
+                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                <div class="w-4/5 h-full bg-blue-400"></div>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex flex-col">
+                                    <p class="font-normal text-[10px]">Terkumpul</p>
+                                    <p class="font-bold text-xs">Rp 471.934.022</p>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <p class="font-normal text-[10px]">Sisa hari</p>
+                                    <p class="font-bold text-xs">25</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- Pilih Kategori Favorit End -->
 
     <div class="mb-96"></div>
 
