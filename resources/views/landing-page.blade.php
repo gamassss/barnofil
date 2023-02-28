@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Landing Page</title>
     @vite('resources/css/app.css')
 </head>
@@ -376,7 +379,7 @@
                 <!-- Slider Card Start -->
 
                 <!-- Doa 1 -->
-                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
 
                     <!-- More button -->
                     <div class="flex justify-end text-base">
@@ -402,18 +405,20 @@
                             <span class="text-[#989898]">Lihat selengkapnya</span>
                         </p>
                         <!-- Like doa -->
-                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
+                        <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle">Kamu <span class="font-normal">dan </span></span><span class="font-bold">2 Orang</span> <span class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini</p>
                     </div>
                     <div class="flex justify-around py-4 border-t-2">
-                        <div class="flex items-center">
+                        <!-- Like -->
+                        <div class="flex items-center svg-like">
                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
                                 <path
                                     d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
-                                    fill="#989898"></path>
+                                    fill="#989898" class=""></path>
                             </svg>
                             <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
                         </div>
+                        <!-- Share -->
                         <div class="flex items-center">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" role="img">
@@ -427,7 +432,7 @@
                 </div>
 
                 <!-- Doa 2 -->
-                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
 
                     <!-- More button -->
                     <div class="flex justify-end text-base">
@@ -478,7 +483,7 @@
                 </div>
 
                 <!-- Doa 3 -->
-                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
 
                     <!-- More button -->
                     <div class="flex justify-end text-base">
@@ -529,7 +534,7 @@
                 </div>
 
                 <!-- Doa 4 -->
-                <div class="h-72 min-w-[85%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
+                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
 
                     <!-- More button -->
                     <div class="flex justify-end text-base">
@@ -665,13 +670,13 @@
 
             // callback functions
             onNext: () => {
-                console.log('next slider item is shown');
+                {{-- console.log('next slider item is shown'); --}}
             },
             onPrev: () => {
-                console.log('previous slider item is shown');
+                {{-- console.log('previous slider item is shown'); --}}
             },
             onChange: () => {
-                console.log('new slider item has been shown');
+                {{-- console.log('new slider item has been shown'); --}}
             }
         };
 
@@ -679,6 +684,7 @@
 
         carousel.cycle();
     </script>
+    <script src="{{ asset('js/doa-script.js') }}"></script>
 </body>
 
 </html>
