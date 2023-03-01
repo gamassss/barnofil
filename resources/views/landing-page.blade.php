@@ -79,7 +79,7 @@
     <!-- Fast way End -->
 
     <!-- Slider Banner Start -->
-    <section class="bg-white my-4 px-4 py-4">
+    <section class="bg-white my-2 px-4 py-4">
         <div class="relative">
             <!-- Carousel wrapper -->
             <div class="overflow-hidden relative h-44 md:h-64 xl:h-80 2xl:h-96">
@@ -124,7 +124,7 @@
     <!-- Slider Banner End -->
 
     <!-- Jenis Donasi Start -->
-    <section class="bg-white my-4 pb-20 pt-4 px-5">
+    <section class="bg-white my-2 pb-20 pt-4 px-5">
         <div class="container flex h-full justify-around gap-x-8">
             <div class="w-20 h-20 rounded-full">
                 <img src="{{ asset('img/donasi-pic.avif') }}" alt="">
@@ -143,7 +143,7 @@
     <!-- Jenis Donasi End -->
 
     <!-- Program Spesial Start -->
-    <section class="bg-white my-4">
+    <section class="bg-white my-2">
         <div class="container py-4">
             <h3 class=" text-[#4A4A4A] font-semibold text-base mb-4">Program Spesial Beriarti</h3>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
@@ -225,13 +225,13 @@
     <!-- Program Spesial End -->
 
     <!-- Section Zakat Start -->
-    <section class="my-4">
+    <section class="my-2">
         <img src="{{ asset('img/zakat.avif') }}" alt="">
     </section>
     <!-- Section Zakat End -->
 
     <!-- Pilihan Beriarti Start -->
-    <section class="bg-white my-4">
+    <section class="bg-white my-2">
         <div class="container py-4">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-base font-semibold text-[#4A4A4A]">Pilihan Beriarti</p>
@@ -359,13 +359,13 @@
     <!-- Pilihan Beriarti End -->
 
     <!-- Sponsor Start -->
-    <section class="my-4">
+    <section class="my-2">
         <img src="{{ asset('img/sponsor.avif') }}" alt="">
     </section>
     <!-- Sponsor End -->
 
     <!-- Doa-doa Section Start -->
-    <section class="bg-white my-4">
+    <section class="bg-white my-2">
         <div class="container pt-4">
             <!-- Sub Title -->
             <div class="flex justify-between items-center mb-4">
@@ -593,8 +593,8 @@
     <!-- Doa-doa Section End -->
 
     <!-- Pilih Kategori Favorit Start -->
-    <section class="bg-white my-4">
-        <div class="container pt-4">
+    <section class="bg-white my-2">
+        <div class="container pt-4 pb-[12px]">
             <p class="font-bold text-base text-[#4A4A4A] mb-4">Pilih Kategori Favoritmu</p>
 
             <!-- PIlihan Kategori -->
@@ -609,7 +609,7 @@
 
                 <!-- Balita -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
                         <img src="{{ asset('img/icon-balita.png') }}" alt="" class="">
                     </div>
                     <p class="text-xs font-normal text-center">Balita & Anak Sakit</p>
@@ -617,7 +617,7 @@
 
                 <!-- Medis -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
                         <img src="{{ asset('img/icon-medis.png') }}" alt="" class="">
                     </div>
                     <p class="text-xs font-normal text-center">Bantuan Medis & Kesehatan</p>
@@ -625,7 +625,7 @@
 
                 <!-- Lainnya -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
                         <img src="{{ asset('img/icon-list.png') }}" alt="" class="">
                     </div>
                     <p class="text-xs font-normal">Lainnya</p>
@@ -733,11 +733,54 @@
                     </div>
                 </div>
             </a>
+
+            <div class="w-full h-[1px] bg-slate-300 rounded mb-3 mt-4"></div>
+
+						<div class="w-full flex items-center justify-center">
+							<div class="w-40 p-[5px] bg bg-[#E7F5FF] rounded-full relative">
+								<p class="text-center text-xs text-[#10A8E5]">Lihat Semua</p>
+								<span class="absolute top-1/2 -translate-y-1/2 right-[15px]">
+									<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" class="w-3"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z" fill="#10A8E5"></path></svg>
+								</span>
+							</div>
+						</div>
         </div>
     </section>
     <!-- Pilih Kategori Favorit End -->
 
-    <div class="mb-96"></div>
+		<!-- Footer Start -->
+		<section class="bg-white my-2 pb-24">
+			<div class="px-4 py-4">
+				<p class="text-center text-lg font-semibold mb-4">Donasi di Beriarti Sekarang!</p>
+				<p class="text-base font-normal text-[#989898] text-center">Tentang Beriarti <span class="text-[#4A4A4A]">|</span> Syarat & Ketentuan <span class="text-[#4A4A4A]">|</span> Pusat Bantuan</p>
+				<div class="flex justify-between my-7 px-[10%] text-center">
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-socmed-fb.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-socmed-twitter.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-socmed-instagram.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-socmed-youtube.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-socmed-tiktok.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-linkedin.svg') }}" alt="">
+					</div>
+					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+						<img src="{{ asset('img/icon-techinasia.svg') }}" alt="">
+					</div>
+				</div>
+				<hr class="my-7">
+				<p class="text-base text-[#989898] text-center">Copyright © 2022 - 2023 Beriarti. All Rights Reserved</p>
+			</div>
+		</section>
+		<!-- Footer End -->
 
     <!-- Navbar Start -->
     <nav class="bg-white fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full">
