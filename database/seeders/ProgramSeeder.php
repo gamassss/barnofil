@@ -119,6 +119,8 @@ class ProgramSeeder extends Seeder
 
         ];
 
+				$status = ['approved', 'rejected', 'waiting'];
+
         $today = Carbon::today();
 				$counter = 1;
 				foreach($dataProgram as $program) {
@@ -126,11 +128,13 @@ class ProgramSeeder extends Seeder
 					$strTotalDana = $program[2];
 					$totalDana = intval(str_replace(array("Rp ", "."), "", $strTotalDana));
 					$targetDana = rand($totalDana, $totalDana * 20);
-					$pathToImage = '/public/img/program_banners' . $counter . 'jpeg';
+					$pathToImage = '/public/img/program_banners/' . $counter . '.jpeg';
+					$counter++;
+					$statusValue = rand(0, 2);
 
 					Program::create([
 						'nama' => $program[0],
-						'status' => 'approved',
+						'status' => $status[$statusValue],
 						'total_dana' => $totalDana,
 						'target_dana' => $targetDana,
 						'banner_img' => $pathToImage,

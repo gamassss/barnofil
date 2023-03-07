@@ -20,9 +20,9 @@ return new class extends Migration
 					// $table->timestamp('email_verified_at')->nullable();
 					$table->string('password');
 					$table->string('role');
-					$table->string('status');
+					// $table->string('status');
 					$table->string('metode_registrasi');
-					$table->rememberToken();
+					// $table->rememberToken();
 					$table->timestamps();
         });
     }

@@ -31,6 +31,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+		protected $attributes = [
+			'role' => 'user',
+			'metode_registrasi' => 'form'
+		];
+
     /**
      * The attributes that should be cast.
      *

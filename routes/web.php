@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// landing page
 Route::get('/', function() {
 		return view('landing_page');
 });
 
-Route::get('/signin', function() {
-	return view('sign_in');
-});
+// authentication
+Route::get('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'auth']);
 
 Route::get('/admin', function() {
     return view('layout.main');
