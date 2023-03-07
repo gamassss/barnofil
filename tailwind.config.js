@@ -11,6 +11,7 @@ module.exports = {
         fontFamily: {
             rubik: ["Rubik", "ui-sans-serif"],
             "open-sans": ["Open Sans", "ui-sans-serif"],
+						inter: ["Inter", "ui-sans-serif"]
         },
         // colors: {
         //     primary: "#00AEEF"
