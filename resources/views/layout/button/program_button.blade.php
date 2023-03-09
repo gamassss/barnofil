@@ -8,7 +8,7 @@
 </div>
 
 <script>
-    $('.btn-info').unbind().on('click', function() {
+    $('.btn-edit-program').unbind().on('click', function() {
         let id = $(this).attr('data-id');
 				
 				$.ajax({

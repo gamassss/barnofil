@@ -46,65 +46,68 @@
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
+
         div.dataTables_processing div {
             display: none;
         }
 
-				.dataTables_wrapper .dataTables_paginate .paginate_button {
-					border: none;
-				}
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            border: none;
+        }
 
-				.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-					border: none;
-					background: #e2e8f0;
-					color: #334155 !important;
-				}
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            border: none;
+            background: #e2e8f0;
+            color: #334155 !important;
+        }
 
-				.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-					background-color: #696CFF;
-					border: none;
-					color: white !important;
-				}
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background-color: #696CFF;
+            border: none;
+            color: white !important;
+        }
 
-				.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-					color: white !important;
-					border: none;
-					background-color: #3e41d3;
-				}
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+            color: white !important;
+            border: none;
+            background-color: #3e41d3;
+        }
 
-				.dataTables_wrapper .dataTables_paginate .paginate_button:active {
-					border: none;
-					transform: scale(0.95);
-					box-shadow: none;
-				}
+        .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+            border: none;
+            transform: scale(0.95);
+            box-shadow: none;
+        }
 
-				table.dataTable.display tbody td {
-					border-right: 1px solid rgba(0, 0, 0, 0.15);
-				}
+        table.dataTable.display tbody td {
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+        }
 
-				table.dataTable thead > tr > th.sorting {
-					border-right: 1px solid rgba(0, 0, 0, 0.15);
-					border-top: 2px solid rgba(0, 0, 0, 0.30);
-					border-bottom: 2px solid rgba(0, 0, 0, 0.30);
-				}
+        table.dataTable thead>tr>th.sorting {
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            border-top: 2px solid rgba(0, 0, 0, 0.30);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+        }
 
-				.dataTables_filter {margin-bottom: 24px;}
+        .dataTables_filter {
+            margin-bottom: 24px;
+        }
 
-				table.dataTable thead > tr > th:first-child {
-					border-right: 1px solid rgba(0, 0, 0, 0.15);
-					border-left: 2px solid rgba(0, 0, 0, 0.30);
-					border-top: 2px solid rgba(0, 0, 0, 0.30);
-					border-bottom: 2px solid rgba(0, 0, 0, 0.30);
-				}
+        table.dataTable thead>tr>th:first-child {
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            border-left: 2px solid rgba(0, 0, 0, 0.30);
+            border-top: 2px solid rgba(0, 0, 0, 0.30);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+        }
 
-				table.dataTable thead > tr > th:last-child {
-					border-right: 2px solid rgba(0, 0, 0, 0.30);
-				}
+        table.dataTable thead>tr>th:last-child {
+            border-right: 2px solid rgba(0, 0, 0, 0.30);
+        }
 
-				table.dataTable thead > tr > th.sorting_disabled.sorting_asc:before,
-				table.dataTable thead > tr > th.sorting_disabled.sorting_asc:after {
-					content: none;
-				}
+        table.dataTable thead>tr>th.sorting_disabled.sorting_asc:before,
+        table.dataTable thead>tr>th.sorting_disabled.sorting_asc:after {
+            content: none;
+        }
     </style>
 </head>
 
@@ -385,8 +388,10 @@
         <script src="{{ asset('vendor/libs/jquery/jquery.js') }}"></script>
         <script src="{{ asset('vendor/libs/popper/popper.js') }}"></script>
         {{-- <script src="{{ asset('vendor/js/bootstrap.js') }}"></script> --}}
-				<!-- CDN Bootstrap Pengganti -->
-				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- CDN Bootstrap Pengganti -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
         <script src="{{ asset('vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
         <script src="{{ asset('vendor/js/menu.js') }}"></script>

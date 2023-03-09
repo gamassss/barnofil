@@ -18,7 +18,7 @@
         </tbody>
     </table>
 
-    <div class="modal fade" id="modal-edit" tabindex="-1" aria-hidden="true" data-bs-toggle="modal">
+    <div class="modal fade" id="modal-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
