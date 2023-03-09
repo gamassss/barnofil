@@ -64,9 +64,11 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Program $program)
     {
-        //
+        $response_data = Program::find($program->id);
+
+				return response()->json($response_data);
     }
 
     /**
@@ -76,9 +78,9 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Program $program)
     {
-        //
+        
     }
 
     /**
