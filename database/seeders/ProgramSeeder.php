@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use App\Models\Program;
+use DateTime;
 use Illuminate\Database\Seeder;
 
 class ProgramSeeder extends Seeder
@@ -16,7 +16,6 @@ class ProgramSeeder extends Seeder
     public function run()
     {
         $dataProgram = [
-            ["#BisaSembuh - Donasi untuk Biaya Penunjang Pasien", "Medical Partnership Kitabisa", "Rp 1.474.109.402", "1000"],
             ["URGENT! 80% Hati Khanza Digerogoti Kanker Ganas", "MiaSyifa Cancer Care", "Rp 393.964.434", "34"],
             ["Bantu Ibu Buruh Cuci Keliling Sembuhkan Anaknya!!!", "LAZ DASI NTB", "Rp 46.604.272", "99"],
             ["Tuhan Yesus, Izinkan Ci Acacia Sembuh dari Kanker", "Tanwijaya gunawan", "Rp 1.423.614.638", "44"],
@@ -119,29 +118,34 @@ class ProgramSeeder extends Seeder
 
         ];
 
-				$status = ['approved', 'rejected', 'waiting'];
+        $status = ['approved', 'rejected', 'waiting'];
 
-        $today = Carbon::today();
-				$counter = 1;
-				foreach($dataProgram as $program) {
-					
-					$strTotalDana = $program[2];
-					$totalDana = intval(str_replace(array("Rp ", "."), "", $strTotalDana));
-					$targetDana = rand($totalDana, $totalDana * 20);
-					$pathToImage = '/public/img/program_banners/' . $counter . '.jpeg';
-					$counter++;
-					$statusValue = rand(0, 2);
+        $counter = 1;
+        foreach ($dataProgram as $program) {
+            $today = new DateTime();
+            $todayStr = $today->format('Y-m-d');
 
-					Program::create([
-						'nama' => $program[0],
-						'status' => $status[$statusValue],
-						'total_dana' => $totalDana,
-						'target_dana' => $targetDana,
-						'banner_img' => $pathToImage,
-						'tanggal_mulai' => $today,
-						'tanggal_berakhir' => $today->addDays(intval($program[3]))
-					]);
-				}
+						$numberOfDays = intval($program[3]);
+            $futureDate = $today->modify("+{$numberOfDays} days");
+            $futureDateStr = $futureDate->format('Y-m-d');
+
+            $strTotalDana = $program[2];
+            $totalDana = intval(str_replace(array("Rp ", "."), "", $strTotalDana));
+            $targetDana = rand($totalDana, $totalDana * 20);
+            $pathToImage = '/public/img/program_banners/' . $counter . '.jpeg';
+            $counter++;
+            $statusValue = rand(0, 2);
+
+            Program::create([
+                'nama' => $program[0],
+                'status' => $status[$statusValue],
+                'total_dana' => $totalDana,
+                'target_dana' => $targetDana,
+                'banner_img' => $pathToImage,
+                'tanggal_mulai' => $todayStr,
+                'tanggal_berakhir' => $futureDateStr,
+            ]);
+        }
 
     }
 }
