@@ -23,7 +23,7 @@ return new class extends Migration
 					// $table->decimal('target_dana', $precision = 9, $scale = 2);
 					$table->bigInteger('total_dana');
 					$table->bigInteger('target_dana');
-					$table->string('banner_img');
+					$table->string('banner_img')->nullable();
 					$table->date('tanggal_mulai');
 					$table->date('tanggal_berakhir');
 					$table->timestamps();

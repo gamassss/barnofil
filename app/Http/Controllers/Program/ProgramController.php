@@ -17,7 +17,7 @@ class ProgramController extends Controller
     public function index()
     {
         if(request()->ajax()) {
-					return DataTables::of(Program::query())
+					return DataTables::of(Program::latest()->get())
 					->addIndexColumn()
 					->addColumn('action', 'layout.button.program_button')
 					->make(true);
