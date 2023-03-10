@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Program\ProgramController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,21 +24,24 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login', [LoginController::class, 'auth']);
 
-Route::prefix('/admin')->group(function () {
+//log users out
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// admin authorization
+Route::group(['middleware' => ['role:admin'], 'prefix' => '/admin'], function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     });
 
-		Route::prefix('/data')->group(function () {
-			Route::resource('/program', ProgramController::class);
-		});
+    Route::prefix('/data')->group(function () {
+        Route::resource('/program', ProgramController::class);
+    });
 
-		
-		Route::prefix('/trashed')->group(function () {
-				Route::get('/program', [ProgramController::class, 'trash'])->name('program.trash');
-		});
+    Route::prefix('/trashed')->group(function () {
+        Route::get('/program', [ProgramController::class, 'trash'])->name('program.trash');
+    });
 
-		Route::prefix('/restore')->group(function () {
-				Route::get('/program/{id}', [ProgramController::class, 'restore'])->name('program.restore');
-		});
+    Route::prefix('/restore')->group(function () {
+        Route::get('/program/{id}', [ProgramController::class, 'restore'])->name('program.restore');
+    });
 });
