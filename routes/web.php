@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::get('/signup', [RegistrasiController::class, 'signup']);
 Route::post('/signup', [RegistrasiController::class, 'store']);
 
-Route::get('/email/verify', [VerificationController::Class, 'notice'])->middleware('auth');
+Route::get('/email/verify', [VerificationController::Class, 'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verified-success', [VerificationController::Class, 'after_verified'])->middleware('auth');
 Route::get('/email/verified/{id}/{hash}', [VerificationController::Class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 
@@ -42,7 +42,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // admin authorization
 
-Route::group(['middleware' => ['role:admin'], 'prefix' => '/admin'], function () {
+Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'], function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     });
