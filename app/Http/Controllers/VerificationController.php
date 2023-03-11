@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -37,4 +38,11 @@ class VerificationController extends Controller
 
         return view('verify.after_verified');
     }
+
+		public function send(Request $request)
+		{
+			$request->user()->sendEmailVerificationNotification();
+
+			return back()->with('status', 'We have sent you a verification link. Please check your email.');
+		}
 }

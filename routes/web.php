@@ -27,9 +27,10 @@ Route::get('/', function () {
 Route::get('/signup', [RegistrasiController::class, 'signup']);
 Route::post('/signup', [RegistrasiController::class, 'store']);
 
-Route::get('/email/verify', [VerificationController::Class, 'notice'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify', [VerificationController::Class, 'notice'])->name('verification.notice');
 Route::get('/email/verified-success', [VerificationController::Class, 'after_verified'])->middleware('auth');
 Route::get('/email/verified/{id}/{hash}', [VerificationController::Class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/resend-email', [VerificationController::class, 'send'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // authentication
 

@@ -71,26 +71,29 @@
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner py-4">
           <!-- Forgot Password -->
-          <div class="card">
-            <div class="card-body">
-              <!-- Logo -->
-              <div class="app-brand justify-content-center demo" style="margin-bottom: 16px;">
-								<a href="/" class="app-brand-link">
-										<div class="d-flex gap-1">
+					<div class="card">
+						<div class="card-body">
+							<!-- Logo -->
+							<div class="app-brand justify-content-center demo" style="margin-bottom: 16px;">
+									<a href="/" class="app-brand-link">
+											<div class="d-flex gap-1">
 												<img src="{{ asset('img/beriarti-logo.png') }}" alt=""
-														style="height: 30px;">
+													style="height: 30px;">
 												<p
-														style="font-size: 30px; color: #697a8d; font-weight: 700; font-family: 'Poppins', sans-serif;">
-														Beriarti</p>
-										</div>
-								</a>
+													style="font-size: 30px; color: #697a8d; font-weight: 700; font-family: 'Poppins', sans-serif;">
+													Beriarti</p>
+											</div>
+									</a>
+							</div>
+											<!-- /Logo -->
+							<h4 class="mb-2">Verifikasi Akun 🔒</h4>
+							<p class="mb-4">Verifikasi akunmu terlebih dahulu. Kami sudah mengirim pesan di emailmu.</p>
+							<span>Belum mendapatkan email?</span>
+							<a href="/email/resend-email" id="resend-btn">
+								<span>Kirim ulang email</span>
+							</a>
 						</div>
-              <!-- /Logo -->
-              <h4 class="mb-2">Verifikasi Akun 🔒</h4>
-              <p class="mb-4">Verifikasi akunmu terlebih dahulu. Kami sudah mengirim pesan di emailmu.</p>
-              
-            </div>
-          </div>
+					</div>
           <!-- /Forgot Password -->
         </div>
       </div>
@@ -114,7 +117,18 @@
     <script src="{{ asset('') }}js/main.js"></script>
 
     <!-- Page JS -->
+		<script>
+				var flashMessage = @json(session('status'));
+				window.__FLASH__ = {
+						message: flashMessage ?? '',
+						type: 'success'
+				};
 
+				if (window.__FLASH__.message) {
+						// Display the flash message to the user
+						alert(window.__FLASH__.message);
+				}
+		</script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
