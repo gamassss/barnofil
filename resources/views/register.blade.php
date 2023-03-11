@@ -8,7 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login</title>
+    <title>Registrasi</title>
 
     <meta name="description" content="" />
 
@@ -52,12 +52,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endforeach
-    @if (session('status'))
-        <div class="alert alert-success alert-dismissible fade show fixed-top text-center" role="alert">
-            {{ session('status') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">
@@ -79,19 +73,24 @@
                         <!-- /Logo -->
                         <h4 class="mb-2">Selamat Datang! 👋</h4>
 
-                        <form id="formAuthentication" class="mb-3" action="/login" method="POST">
+                        <form id="formAuthentication" class="mb-3" action="/signup" method="POST">
                             @csrf
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Enter your name" autofocus />
+                            </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Enter your email" autofocus />
+                                    placeholder="Enter your email" />
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    <a href="auth-forgot-password-basic.html">
+                                    {{-- <a href="auth-forgot-password-basic.html">
                                         <small>Forgot Password?</small>
-                                    </a>
+                                    </a> --}}
                                 </div>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password"
@@ -100,21 +99,36 @@
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                            <div class="mb-3 form-password-toggle">
+                                <div class="d-flex justify-content-between">
+                                    <label class="form-label" for="confirmation_password">Confirmation Password</label>
+                                </div>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="confirmation_password" class="form-control" name="confirmation_password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms-conditions"
+                                        name="terms" />
+                                    <label class="form-check-label" for="terms-conditions">
+                                        I agree to
+                                        <a href="javascript:void(0);">privacy policy & terms</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-primary d-grid w-100" type="submit">Sign up</button>
                             </div>
                         </form>
 
                         <p class="text-center">
-                            <span>New on our platform?</span>
-                            <a href="/signup">
-                                <span>Create an account</span>
+                            <span>Already have an account?</span>
+                            <a href="/login">
+                                <span>Sign in instead</span>
                             </a>
                         </p>
                     </div>

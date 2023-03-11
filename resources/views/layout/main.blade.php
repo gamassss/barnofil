@@ -46,9 +46,9 @@
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        div.dataTables_processing div {
+        /* div.dataTables_processing div {
             display: none;
-        }
+        } */
 
         .dataTables_wrapper .dataTables_paginate .paginate_button {
             border: none;

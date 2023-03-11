@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Program\ProgramController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\Program\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +21,22 @@ Route::get('/', function () {
     return view('landing_page');
 });
 
+// registration
+
+Route::get('/signup', [RegistrasiController::class, 'signup']);
+Route::post('/signup', [RegistrasiController::class, 'store']);
+
 // authentication
+
 Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login', [LoginController::class, 'auth']);
 
 //log users out
+
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // admin authorization
+
 Route::group(['middleware' => ['role:admin'], 'prefix' => '/admin'], function () {
     Route::get('/', function () {
         return view('admin.dashboard');
