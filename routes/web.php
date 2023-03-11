@@ -19,9 +19,8 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 |
  */
 
-// Auth::routes(['verify' => true, 'reset' => true]);
-
 // landing page
+
 Route::get('/', function () {
     return view('landing_page');
 });
@@ -30,6 +29,8 @@ Route::get('/', function () {
 
 Route::get('/signup', [RegistrasiController::class, 'signup']);
 Route::post('/signup', [RegistrasiController::class, 'store']);
+
+// verify registration email
 
 Route::get('/email/verify', [VerificationController::class, 'notice'])->name('verification.notice');
 Route::get('/email/verified-success', [VerificationController::class, 'after_verified'])->middleware('auth');
@@ -41,18 +42,20 @@ Route::get('/email/resend-email', [VerificationController::class, 'send'])->midd
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'auth']);
 
-Route::get('/forgot-password', [ResetPasswordController::class, 'get_reset_password']);
-Route::post('/forgot-password', [ResetPasswordController::class, 'reset_password'])->middleware('guest')->name('password.email');
-
-Route::get('/reset-password/{token}', function ($token) {
-	return view('reset_password', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
-
-Route::post('/reset-password', [ResetPasswordController::class, 'password_update'])->middleware('guest')->name('password.update');
-
 //log users out
 
 Route::post('/logout', [LoginController::class, 'logout']);
+
+// ask link to reset password
+
+Route::get('/forgot-password', [ResetPasswordController::class, 'get_reset_password']);
+Route::post('/forgot-password', [ResetPasswordController::class, 'reset_password'])->middleware('guest')->name('password.email');
+
+// password resetting
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'get_reset_form'])->middleware('guest')->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'password_update'])->middleware('guest')->name('password.update');
+
 
 // admin authorization
 

@@ -13,7 +13,7 @@ class ResetPasswordController extends Controller
 {
     public function get_reset_password()
     {
-        return view('forgot_password');
+        return view('reset_password.forgot_password');
     }
 
     public function reset_password(Request $request)
@@ -27,6 +27,11 @@ class ResetPasswordController extends Controller
         return $status === Password::RESET_LINK_SENT
         ? back()->with(['status' => __($status)])
         : back()->withErrors(['email' => __($status)]);
+    }
+
+    public function get_reset_form($token)
+    {
+        return view('reset_password.reset_password', ['token' => $token]);
     }
 
     public function password_update(Request $request)

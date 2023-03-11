@@ -13,7 +13,7 @@ class VerificationController extends Controller
 
     public function notice()
     {
-        return view('verify.email');
+        return view('verify.notice');
     }
 
     public function verify(EmailVerificationRequest $request)
@@ -36,7 +36,7 @@ class VerificationController extends Controller
         // Store a session variable to indicate that the user has seen the verification success message
         session()->put('verification_success', true);
 
-        return view('verify.after_verified');
+        return view('verify.success_notification');
     }
 
 		public function send(Request $request)
