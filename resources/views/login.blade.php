@@ -52,12 +52,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endforeach
-    @if (session('status'))
-        <div class="alert alert-success alert-dismissible fade show fixed-top text-center" role="alert">
-            {{ session('status') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+		
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">

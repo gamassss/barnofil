@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class RegistrasiController extends Controller
 {
@@ -22,8 +24,12 @@ class RegistrasiController extends Controller
 				'confirmation_password' => 'required|same:password'
 			]);
 
-			User::create($validated);
+			$user = User::create($validated);
 
-			return redirect('/login')->with('status', 'Registrasi berhasil silahkan login!');
+			event(new Registered($user));
+
+			auth()->login($user);
+
+			return redirect('/email/verify')->with('success', 'Silahkan verifikasi akun di email anda untuk mengaktifkan akun.');
 		}
 }
