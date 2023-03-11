@@ -1,21 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
     public function login()
     {
         if (Auth::user()) {
-            if(Auth::user()->role == 'admin') {
-							return redirect('/admin');
-						} else {
-							return redirect('/');
-						}
+            if (Auth::user()->role == 'admin') {
+                return redirect('/admin');
+            } else {
+                return redirect('/');
+            }
         }
 
         return view('login');
@@ -51,4 +55,6 @@ class LoginController extends Controller
 
         return redirect('/login');
     }
+
+    
 }

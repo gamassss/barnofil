@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,8 @@ use App\Http\Controllers\Program\ProgramController;
 |
  */
 
+// Auth::routes(['verify' => true, 'reset' => true]);
+
 // landing page
 Route::get('/', function () {
     return view('landing_page');
@@ -27,15 +31,24 @@ Route::get('/', function () {
 Route::get('/signup', [RegistrasiController::class, 'signup']);
 Route::post('/signup', [RegistrasiController::class, 'store']);
 
-Route::get('/email/verify', [VerificationController::Class, 'notice'])->name('verification.notice');
-Route::get('/email/verified-success', [VerificationController::Class, 'after_verified'])->middleware('auth');
-Route::get('/email/verified/{id}/{hash}', [VerificationController::Class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify', [VerificationController::class, 'notice'])->name('verification.notice');
+Route::get('/email/verified-success', [VerificationController::class, 'after_verified'])->middleware('auth');
+Route::get('/email/verified/{id}/{hash}', [VerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend-email', [VerificationController::class, 'send'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // authentication
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'auth']);
+
+Route::get('/forgot-password', [ResetPasswordController::class, 'get_reset_password']);
+Route::post('/forgot-password', [ResetPasswordController::class, 'reset_password'])->middleware('guest')->name('password.email');
+
+Route::get('/reset-password/{token}', function ($token) {
+	return view('reset_password', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+Route::post('/reset-password', [ResetPasswordController::class, 'password_update'])->middleware('guest')->name('password.update');
 
 //log users out
 

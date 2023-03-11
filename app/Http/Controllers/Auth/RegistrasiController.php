@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class RegistrasiController extends Controller
 {
@@ -23,6 +23,8 @@ class RegistrasiController extends Controller
 				'password' => 'required',
 				'confirmation_password' => 'required|same:password'
 			]);
+
+			$validated['password'] = Hash::make($validated['password']);
 
 			$user = User::create($validated);
 

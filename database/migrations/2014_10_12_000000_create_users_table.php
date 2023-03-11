@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('metode_registrasi');
             $table->boolean('verification_success')->default(false);
             // $table->string('google_id')->nullable();
-            // $table->rememberToken();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
