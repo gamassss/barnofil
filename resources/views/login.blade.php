@@ -44,6 +44,12 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('js/config.js') }}"></script>
+
+		<style>
+			.auth-google:hover {
+				background: #edf2f7;
+			}
+		</style>
 </head>
 
 <body>
@@ -106,24 +112,17 @@
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                             </div>
-                            <div class="text-center mb-3">
+														<p class="text-center mb-3">Or sign in with:</p>
+                            <a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
+															<img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
+															<button class="btn d-grid w-100" type="submit">Sign in with Google</button>
+                            </a>
+                            {{-- <div class="text-center mb-3">
                                 <p>Or sign in with:</p>
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
                                 <a type="button" class="btn btn-link btn-floating mx-1" href="/auth/google">
                                     <i class="fa-brands fa-google"></i>
                                 </a>
-
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
+                            </div> --}}
 
                         </form>
 

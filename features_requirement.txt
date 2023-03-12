@@ -1,0 +1,27 @@
+// 1. Terdapat 2 Role, yaitu Admin dan Donatur/Pengunjung
+// 2. System dapat melakukan authorization.
+// 3. Donatur dapat mendaftarkan akun dengan 2 cara, melalui form atau google.
+// 4. Donatur dapat login dengan cara yang sama dengan pada saat mendaftarkan akun.
+// 5. Donatur dapat menggunakan fitur lupa password.
+// 6. Donatur dapat menerima otp ketika menggunakan fitur lupa password.
+7. Donatur/Pengunjung dapat melihat blog atau news.
+8. User (Pengunjung yang memiliki akun) dapat melakukan ganti password.
+9. User dapat melihat semua program yang diikuti.
+10. User dapat melakukan submit program dengan syarat Program disetujui oleh admin.
+11. User dapat melihat list program dan status yang mereka submit.
+12. Pengunjung dapat melihat banner (Gambar, Slider).
+13. Pengunjung dapat melakukan pencarian program dengan filter kategori.
+14. Pengunjung dapat melihat detail suatu program.
+15. User dapat melihat info berita mengenai suatu program seperti sudah terkumpul atau belum.
+16. User bisa melakukan donasi dengan payment gateway (Midtrans, Xendit).
+17. Dapat melihat daftar donatur dan isi program seperti nama, nominal, dan doa.
+// 18. Admin dapat melakukan login dengan 2 cara yaitu login form, atau dengan google.
+// 19. Admin dapat menggunakan fitur lupa password.
+20. Admin dapat melakukan ganti password.
+// 21. Admin dapat memanajemen data master (User, Program).
+22. Admin dapat melihat transaksi.
+23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
+24. Pada Dashboard, admin dapat melihat total dana terkumpul dari suatu program atau dengan menggunakan filter.
+25. Admin dapat melihat jumlah program yang telah disetujui.
+26. Admin dapat melihat 5 donatur dengan jumlah tertinggi.
+27. Admin dapat melihat 5 donatur dengan jumlah frekuensi donasi terbanyak.

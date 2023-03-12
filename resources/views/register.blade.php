@@ -42,6 +42,11 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('js/config.js') }}"></script>
+    <style>
+        .auth-google:hover {
+            background: #edf2f7;
+        }
+    </style>
 </head>
 
 <body>
@@ -104,7 +109,8 @@
                                     <label class="form-label" for="confirmation_password">Confirmation Password</label>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="confirmation_password" class="form-control" name="confirmation_password"
+                                    <input type="password" id="confirmation_password" class="form-control"
+                                        name="confirmation_password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
@@ -113,7 +119,7 @@
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="terms-conditions"
-                                        name="terms" required/>
+                                        name="terms" required />
                                     <label class="form-check-label" for="terms-conditions">
                                         I agree to
                                         <a href="javascript:void(0);">privacy policy & terms</a>
@@ -123,6 +129,11 @@
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Sign up</button>
                             </div>
+                            <p class="text-center mb-3">Or sign in with:</p>
+                            <a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
+                                <img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
+                                <button class="btn d-grid w-100" type="submit">Sign in with Google</button>
+                            </a>
                         </form>
 
                         <p class="text-center">
