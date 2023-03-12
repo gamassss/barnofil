@@ -11,11 +11,11 @@ class Artikel extends Model
 
 		public function kategori()
 		{
-			$this->belongsTo(Kategori::class);
+			return $this->belongsTo(Kategori::class);
 		}
 
 		public function user()
 		{
-			$this->belongsTo(User::class);
+			return $this->belongsTo(User::class);
 		}
 }

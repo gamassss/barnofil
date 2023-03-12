@@ -71,7 +71,7 @@
                             </a>
                         </div>
                         <!-- /Logo -->
-                        <h4 class="mb-2">Selamat Datang! 👋</h4>
+                        <h4 class="mb-2">Daftar Sekarang</h4>
 
                         <form id="formAuthentication" class="mb-3" action="/signup" method="POST">
                             @csrf

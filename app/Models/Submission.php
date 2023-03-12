@@ -13,11 +13,11 @@ class Submission extends Model
 
 		public function program()
 		{
-			$this->belongsTo(Program::class);
+			return $this->belongsTo(Program::class);
 		}
 
 		public function user()
 		{
-			$this->belongsTo(User::class);
+			return $this->belongsTo(User::class);
 		}
 }

@@ -11,11 +11,11 @@ class TransaksiMetode extends Model
 
 		public function transaksi()
 		{
-			$this->belongsTo(Transaksi::class);
+			return $this->belongsTo(Transaksi::class);
 		}
 
 		public function metode()
 		{
-			$this->belongsTo(MetodePembayaran::class);
+			return $this->belongsTo(MetodePembayaran::class);
 		}
 }

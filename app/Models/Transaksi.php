@@ -13,11 +13,11 @@ class Transaksi extends Model
 
 		public function program()
 		{
-			$this->belongsTo(Program::class);
+			return $this->belongsTo(Program::class);
 		}
 
 		public function transaksi_metodes()
 		{
-			$this->hasMany(TransaksiMetode::class);
+			return $this->hasMany(TransaksiMetode::class);
 		}
 }

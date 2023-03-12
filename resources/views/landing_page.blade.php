@@ -875,6 +875,18 @@
         carousel.cycle();
     </script>
     <script src="{{ asset('js/doa-script.js') }}"></script>
+		<script>
+			var flashMessage = @json(session('success'));
+			window.__FLASH__ = {
+					message: flashMessage ?? '',
+					type: 'success'
+			};
+
+			if (window.__FLASH__.message) {
+					// Display the flash message to the user
+					alert(window.__FLASH__.message);
+			}
+	</script>
 </body>
 
 </html>

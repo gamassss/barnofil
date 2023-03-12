@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use DateTime;
+use App\Models\User;
+use App\Models\SocialAccount;
 use App\Http\Controllers\Controller;
+use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
@@ -14,7 +18,7 @@ class SocialiteController extends Controller
     public function handleProvideCallback($provider)
     {
         try {
-            $user = Socialite::driver($provider)->stateless()->user();
+            $user = Socialite::driver($provider)->user();
         } catch (Exception $e) {
             return redirect()->back();
         }
@@ -25,7 +29,7 @@ class SocialiteController extends Controller
         Auth()->login($authUser, true);
 
         // setelah login redirect ke dashboard
-        return redirect()->route('/admin');
+        return redirect()->intended('/')->with('success', 'Selamat akun anda sudah terdaftar!');
     }
 
     public function findOrCreateUser($socialUser, $provider)
@@ -49,9 +53,16 @@ class SocialiteController extends Controller
             // Jika Tidak ada user
             if (!$user) {
                 // Create user baru
+                $today = new DateTime();
+                $todayStr = $today->format('Y-m-d');
+
                 $user = User::create([
                     'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
+										'role' => 'user',
+                    'email_verified_at' => $todayStr,
+                    'metode_registrasi' => 'google',
+										'verification_success' => true
                 ]);
             }
 

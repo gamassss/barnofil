@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -42,7 +43,11 @@ Route::get('/email/resend-email', [VerificationController::class, 'send'])->midd
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'auth']);
 
-//log users out
+// auth with driver
+Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
+Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback'])->name('google.callback');
+
+// log users out
 
 Route::post('/logout', [LoginController::class, 'logout']);
 

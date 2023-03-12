@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => $todayStr,
             'password' => Hash::make('123'),
             'role' => 'admin',
+						'verification_success' => true
         ]);
 
         $this->call([

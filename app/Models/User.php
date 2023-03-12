@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use App\Models\Artikel;
 use App\Models\Submission;
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail, CanResetPasswordContract
 {
@@ -52,11 +51,16 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPasswordC
 
     public function submissions()
     {
-        $this->hasMany(Submission::class);
+        return $this->hasMany(Submission::class);
     }
 
     public function artikels()
     {
-        $this->hasMany(Artikel::class);
+        return $this->hasMany(Artikel::class);
+    }
+
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
     }
 }

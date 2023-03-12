@@ -15,16 +15,16 @@ class Program extends Model
 
 		public function berita()
 		{
-			$this->hasOne(Berita::class);
+			return $this->hasOne(Berita::class);
 		}
 
 		public function submissions()
 		{
-			$this->hasMany(Submission::class);
+			return $this->hasMany(Submission::class);
 		}
 
 		public function transaksis()
 		{
-			$this->hasMany(Transaksi::class);
+			return $this->hasMany(Transaksi::class);
 		}
 }
