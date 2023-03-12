@@ -10,21 +10,31 @@ class Program extends Model
 {
     use HasFactory, SoftDeletes;
 
-		protected $guarded = ['id'];
-		protected $dates = ['deleted_at'];
+    protected $guarded = ['id'];
+    protected $dates = ['deleted_at'];
 
-		public function berita()
-		{
-			return $this->hasOne(Berita::class);
-		}
+    public function doa_programs()
+    {
+        return $this->belongsToMany(User::class, 'doas');
+    }
 
-		public function submissions()
-		{
-			return $this->hasMany(Submission::class);
-		}
+    public function berita()
+    {
+        return $this->hasOne(Berita::class);
+    }
 
-		public function transaksis()
-		{
-			return $this->hasMany(Transaksi::class);
-		}
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class);
+    }
+
+    public function transaksis()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
 }

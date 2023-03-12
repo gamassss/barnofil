@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
 					$table->id();
+					$table->foreignId('user_id');
 					$table->foreignId('kategori_id')->nullable();
 					$table->string('nama');
 					$table->string('deskripsi')->nullable();

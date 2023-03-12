@@ -49,6 +49,16 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPasswordC
         'email_verified_at' => 'datetime',
     ];
 
+		public function program_doas()
+		{
+			return $this->belongsToMany(Program::class, 'doas');
+		}
+
+		public function programs()
+		{
+			return $this->hasMany(Program::class);
+		}
+
     public function submissions()
     {
         return $this->hasMany(Submission::class);

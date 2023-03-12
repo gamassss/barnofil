@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use DateTime;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserSeeder;
 use Database\Seeders\ProgramSeeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -29,6 +30,9 @@ class DatabaseSeeder extends Seeder
 						'verification_success' => true
         ]);
 
+        $this->call([
+            UserSeeder::class,
+        ]);
         $this->call([
             ProgramSeeder::class,
         ]);

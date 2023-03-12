@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use DateTime;
 use App\Models\User;
-use App\Models\Program;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
-class ProgramSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -1017,37 +1016,30 @@ class ProgramSeeder extends Seeder
             ["Saya seorang Tunawisma yang ingin sekali bangkit", "Made Widhya Widjajaprana", "Rp 1.730.154", "5429"],
             ["Di Usia 88 Tahun, Mbah Painah Hidupi Putri yg Buta", "Rumah Zakat DIY", "Rp 2.257.740", "69"],
             ["Aksi untuk Nelayan", "Yayasan Konservasi Alam Nusantara", "Rp 15.135.230", "1000"],
-
         ];
 
-        $status = ['approved', 'rejected', 'waiting'];
+				$users = [];
 
-        $counter = 1;
-        foreach ($dataProgram as $program) {
-            $today = new DateTime();
-            $todayStr = $today->format('Y-m-d');
+				foreach($dataProgram as $program) {
+					$users[] = $program[1];
+				}
 
-            $numberOfDays = intval($program[3]);
-            $futureDate = $today->modify("+{$numberOfDays} days");
-            $futureDateStr = $futureDate->format('Y-m-d');
+				$users = array_unique($users);
 
-            $strTotalDana = $program[2];
-            $totalDana = intval(str_replace(array("Rp ", "."), "", $strTotalDana));
-            $targetDana = rand($totalDana, $totalDana * 20);
-            // $pathToImage = '/public/img/program_banners/' . $counter . '.jpeg';
-            $counter++;
-            $statusValue = rand(0, 2);
+				foreach($users as $user) {
+					$rand_num = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 5);
+					$email = substr(str_replace(" ", "", $user), 0, 5). $rand_num . "@gmail.com";
+					$rand_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 7);
+					$reg_method = ['form', 'google'];
 
-            Program::create([
-								'user_id' => User::where('name', $program[1])->first()->id,
-                'nama' => $program[0],
-                'status' => $status[$statusValue],
-                'total_dana' => $totalDana,
-                'target_dana' => $targetDana,
-                'tanggal_mulai' => $todayStr,
-                'tanggal_berakhir' => $futureDateStr,
-            ]);
-        }
-
+					User::create([
+						'name' => $user,
+						'email' => $email,
+						'password' => Hash::make($rand_str),
+						'role' => 'user',
+						'metode_registrasi' => $reg_method[rand(0, 1)],
+						'verification_success' => true
+					]);
+				}
     }
 }
