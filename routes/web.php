@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\Auth\SocialiteController;
@@ -19,6 +20,8 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+Route::get('/payment', [PaymentController::class, 'index']);
 
 // landing page
 
