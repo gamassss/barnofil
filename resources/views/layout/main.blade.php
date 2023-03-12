@@ -152,13 +152,18 @@
                             <div data-i18n="Form Layouts">Data Master</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item {{ Request::is('admin/program') ? 'active' : '' }}">
+                            <li class="menu-item {{ Request::is('admin/data/user') ? 'active' : '' }}">
+                                <a href="/admin/data/user" class="menu-link">
+                                    <div data-i18n="Horizontal Form">User</div>
+                                </a>
+                            </li>
+                            <li class="menu-item {{ Request::is('admin/data/program') ? 'active' : '' }}">
                                 <a href="/admin/data/program" class="menu-link">
                                     <div data-i18n="Horizontal Form">Program</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="form-layouts-horizontal.html" class="menu-link">
+                            <li class="menu-item {{ Request::is('admin/data/penggalang') ? 'active' : '' }}">
+                                <a href="/admin/data/penggalang" class="menu-link">
                                     <div data-i18n="Horizontal Form">Penggalang Dana</div>
                                 </a>
                             </li>

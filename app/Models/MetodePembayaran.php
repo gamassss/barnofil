@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Transaksi;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MetodePembayaran extends Model
 {
@@ -11,8 +12,8 @@ class MetodePembayaran extends Model
 
 		protected $guarded = ['id'];
 
-		public function transaksi_metodes()
+		public function transaksis()
 		{
-			return $this->hasMany(TransaksiMetode::class);
+			return $this->belongsToMany(Transaksi::class, 'transaksi_metodes');
 		}
 }

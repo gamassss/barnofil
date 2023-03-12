@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Program;
+use App\Models\MetodePembayaran;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Transaksi extends Model
 {
@@ -16,8 +18,8 @@ class Transaksi extends Model
 			return $this->belongsTo(Program::class);
 		}
 
-		public function transaksi_metodes()
+		public function metodes()
 		{
-			return $this->hasMany(TransaksiMetode::class);
+			return $this->belongsToMany(MetodePembayaran::class, 'transaksi_metodes');
 		}
 }

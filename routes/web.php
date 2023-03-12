@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\User\PenggalangDanaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +76,8 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 
     Route::prefix('/data')->group(function () {
         Route::resource('/program', ProgramController::class);
+        Route::resource('/user', UserDashboardController::class);
+        Route::resource('/penggalang', PenggalangDanaController::class);
     });
 
     Route::prefix('/trashed')->group(function () {
