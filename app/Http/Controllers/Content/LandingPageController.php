@@ -20,6 +20,7 @@ class LandingPageController extends Controller
             ->select('programs.*', 'users.name as user_name')
             ->join('users', 'programs.user_id', '=', 'users.id')
             ->where('users.account_verified', 1)
+						->whereRaw('total_dana / target_dana > 0.38')
             ->get();
 				// dd($program_pilihans);
         return view('user.content.landing_page', [

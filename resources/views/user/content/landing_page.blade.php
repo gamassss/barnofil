@@ -152,7 +152,8 @@
                         class="min-w-[70%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}"
-                                alt="banner/{{ $program->nama }}" style="max-height: 145px; object-fit: cover; width: 100%;"/>
+                                alt="banner/{{ $program->nama }}"
+                                style="max-height: 145px; object-fit: cover; width: 100%;" />
                         </a>
                         <div class="py-2 px-2">
                             <div class="flex flex-col gap-y-2">
@@ -195,7 +196,8 @@
                     <div
                         class="w-2/5 min-w-[40%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#" class="">
-                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="" class="w-8 h-8"/>
+                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt=""
+                                class="w-8 h-8" />
                         </a>
                         <div class="p-2">
                             <div class="flex flex-col gap-y-2">
@@ -207,7 +209,9 @@
                                         class="w-[31px] h-3">
                                 </div>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                    <div class="w-4/5 h-full bg-blue-400"></div>
+                                    <div class="h-1 bg-blue-400 param-width-pilihan" data-id="{{ $program->id }}"
+                                        data-dana="{{ $program->total_dana }}"
+                                        data-target="{{ $program->target_dana }}"></div>
                                 </div>
                                 <div class="flex flex-col gap-y-1 mt-2">
                                     <span class="text-[10px] font-normal ">Terkumpul</span>
@@ -762,6 +766,15 @@
         let html = $(".param-width");
 
         [...html].forEach(e => {
+            let total_dana = $(e).data('dana')
+            let target_dana = $(e).data('target')
+            let percent = parseInt(total_dana / target_dana * 100)
+            $(e).width(percent + '%');
+        })
+
+				let html_pilihan = $(".param-width-pilihan");
+
+        [...html_pilihan].forEach(e => {
             let total_dana = $(e).data('dana')
             let target_dana = $(e).data('target')
             let percent = parseInt(total_dana / target_dana * 100)
