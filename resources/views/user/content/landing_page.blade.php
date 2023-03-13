@@ -149,82 +149,28 @@
             <div class="flex gap-x-4 overflow-x-auto pb-4">
                 @foreach ($program_specials as $program)
                     <div
-                        class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
+                        class="min-w-[70%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="banner/{{ $program->nama }}" />
                         </a>
-                        <div class="py-4 px-2">
+                        <div class="p-2 pb-2">
                             <div class="flex flex-col gap-y-2">
-                                <p class=" text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
+                                <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
                                     <div class="h-1 bg-blue-400 param-width" data-id="{{ $program->id }}"
                                         data-dana="{{ $program->total_dana }}"
                                         data-target="{{ $program->target_dana }}"></div>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm font-medium ">@convert($program->total_dana)</span>
+                                <div class="flex justify-between gap-y-1 mt-2">
+                                    <span class="text-xs font-medium ">@convert($program->total_dana)</span>
                                     <span
-                                        class="text-sm font-medium ">{{ \Carbon\Carbon::parse($program->tanggal_mulai)->diffInDays(\Carbon\Carbon::parse($program->tanggal_berakhir)) }}
+                                        class="text-xs font-medium">{{ \Carbon\Carbon::parse($program->tanggal_mulai)->diffInDays(\Carbon\Carbon::parse($program->tanggal_berakhir)) }}
                                         hari lagi</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                {{-- <div
-                    class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="{{ asset('img/beasiswa.avif') }}" alt="" />
-                    </a>
-                    <div class="py-4 px-2">
-                        <div class="flex flex-col gap-y-2">
-                            <p class=" text-sm font-semibold">Beasiswa Pendidikan, Lukis...</p>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-1/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-sm font-medium ">Rp 53.366.186</span>
-                                <span class="text-sm font-medium ">18 hari lagi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="{{ asset('img/berkah.avif') }}" alt="" />
-                    </a>
-                    <div class="py-4 px-2">
-                        <div class="flex flex-col gap-y-2">
-                            <p class=" text-sm font-semibold">Raih Berkah Sedekah Reno...</p>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-1/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-sm font-medium ">Rp 10.382.694</span>
-                                <span class="text-sm font-medium ">9 hari lagi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="{{ asset('img/stunting.avif') }}" alt="" />
-                    </a>
-                    <div class="py-4 px-2">
-                        <div class="flex flex-col gap-y-2">
-                            <p class=" text-sm font-semibold">Atasi Stuning, Bangun Generasi...</p>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-1/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-sm font-medium ">Rp 12.731.573</span>
-                                <span class="text-sm font-medium ">61 hari lagi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
@@ -907,7 +853,7 @@
             let total_dana = $(e).data('dana')
             let target_dana = $(e).data('target')
             let percent = parseInt(total_dana / target_dana * 100)
-            $(e).width(percent);
+            $(e).width(percent + '%');
         })
     </script>
 </body>
