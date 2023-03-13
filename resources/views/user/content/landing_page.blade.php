@@ -151,9 +151,10 @@
                     <div
                         class="min-w-[70%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="banner/{{ $program->nama }}" />
+                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}"
+                                alt="banner/{{ $program->nama }}" style="max-height: 145px; object-fit: cover; width: 100%;"/>
                         </a>
-                        <div class="py-4 px-2">
+                        <div class="py-2 px-2">
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
@@ -191,30 +192,31 @@
             </div>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
                 @foreach ($program_pilihans as $program)
-								<div
-								class="w-2/5 min-w-[40%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-								<a href="#">
-										<img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="" />
-								</a>
-								<div class="p-2 pb-2">
-										<div class="flex flex-col gap-y-2">
-												<p class=" text-xs font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
-												<div class="flex">
-														<span class="font-normal text-[10px] mr-2">{{ substr($program->user_name, 0, 16) }}</span>
-														<img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
-																class="w-[31px] h-3">
-												</div>
-												<div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-														<div class="w-4/5 h-full bg-blue-400"></div>
-												</div>
-												<div class="flex flex-col gap-y-1 mt-2">
-														<span class="text-[10px] font-normal ">Terkumpul</span>
-														<span class="text-sm font-medium ">@convert($program->total_dana)</span>
-												</div>
-										</div>
-								</div>
-						</div>
-								@endforeach
+                    <div
+                        class="w-2/5 min-w-[40%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#" class="">
+                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="" class="w-8 h-8"/>
+                        </a>
+                        <div class="p-2">
+                            <div class="flex flex-col gap-y-2">
+                                <p class=" text-xs font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
+                                <div class="flex">
+                                    <span
+                                        class="font-normal text-[10px] mr-2">{{ substr($program->user_name, 0, 16) }}</span>
+                                    <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
+                                        class="w-[31px] h-3">
+                                </div>
+                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                    <div class="w-4/5 h-full bg-blue-400"></div>
+                                </div>
+                                <div class="flex flex-col gap-y-1 mt-2">
+                                    <span class="text-[10px] font-normal ">Terkumpul</span>
+                                    <span class="text-sm font-medium ">@convert($program->total_dana)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
