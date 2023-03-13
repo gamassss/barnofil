@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\Content\LandingPageController;
 use App\Http\Controllers\User\PenggalangDanaController;
 
 /*
@@ -23,13 +24,10 @@ use App\Http\Controllers\User\PenggalangDanaController;
 |
  */
 
-Route::get('/payment', [PaymentController::class, 'index']);
 
 // landing page
 
-Route::get('/', function () {
-    return view('landing_page');
-});
+Route::get('/', [LandingPageController::class, 'index']);
 
 // registration
 
@@ -88,3 +86,7 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
         Route::get('/program/{id}', [ProgramController::class, 'restore'])->name('program.restore');
     });
 });
+
+// user authorization
+Route::get('/payment', [PaymentController::class, 'index']);
+

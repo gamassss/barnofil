@@ -112,18 +112,15 @@
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                             </div>
-														<p class="text-center mb-3">Or sign in with:</p>
+														<div class="d-flex align-items-center gap-4 mb-3 rounded-circle">
+															<div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
+															<span class="align-self-center">Or</span>
+															<div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
+														</div>
                             <a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
 															<img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
 															<button class="btn d-grid w-100" type="submit">Sign in with Google</button>
                             </a>
-                            {{-- <div class="text-center mb-3">
-                                <p>Or sign in with:</p>
-                                <a type="button" class="btn btn-link btn-floating mx-1" href="/auth/google">
-                                    <i class="fa-brands fa-google"></i>
-                                </a>
-                            </div> --}}
-
                         </form>
 
                         <p class="text-center">

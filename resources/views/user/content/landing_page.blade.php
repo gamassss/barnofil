@@ -54,7 +54,7 @@
             <div class="flex flex-wrap mt-6 flex-row gap-2">
                 <!-- Blue Button -->
                 <div
-                    class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#007aff]">
+                    class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#1E88DA]">
                     <p class="font-bold text-base text-white">Galang Dana Sekarang</p>
                 </div>
                 <!-- White button-->
@@ -147,25 +147,31 @@
         <div class="container py-4">
             <h3 class=" text-[#4A4A4A] font-semibold text-base mb-4">Program Spesial Beriarti</h3>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
-                <div
-                    class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="{{ asset('img/gempa.avif') }}" alt="" />
-                    </a>
-                    <div class="py-4 px-2">
-                        <div class="flex flex-col gap-y-2">
-                            <p class=" text-sm font-semibold">Gempa Susulan Terjang Tur...</p>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-1/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-sm font-medium ">Rp 10.382.694</span>
-                                <span class="text-sm font-medium ">9 hari lagi</span>
+                @foreach ($program_specials as $program)
+                    <div
+                        class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt="" />
+                        </a>
+                        <div class="py-4 px-2">
+                            <div class="flex flex-col gap-y-2">
+                                <p class=" text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
+                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                    <div class="h-1 bg-blue-400 param-width" data-id="{{ $program->id }}"
+                                        data-dana="{{ $program->total_dana }}"
+                                        data-target="{{ $program->target_dana }}"></div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm font-medium ">@convert($program->total_dana)</span>
+                                    <span
+                                        class="text-sm font-medium ">{{ \Carbon\Carbon::parse($program->tanggal_mulai)->diffInDays(\Carbon\Carbon::parse($program->tanggal_berakhir)) }}
+                                        hari lagi</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div
+                @endforeach
+                {{-- <div
                     class="w-3/4 min-w-[75%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-full">
                     <a href="#">
                         <img class="rounded-t-lg" src="{{ asset('img/beasiswa.avif') }}" alt="" />
@@ -218,7 +224,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -736,51 +742,58 @@
 
             <div class="w-full h-[1px] bg-slate-300 rounded mb-3 mt-4"></div>
 
-						<div class="w-full flex items-center justify-center">
-							<div class="w-40 p-[5px] bg bg-[#E7F5FF] rounded-full relative">
-								<p class="text-center text-xs text-[#10A8E5]">Lihat Semua</p>
-								<span class="absolute top-1/2 -translate-y-1/2 right-[15px]">
-									<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" class="w-3"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z" fill="#10A8E5"></path></svg>
-								</span>
-							</div>
-						</div>
+            <div class="w-full flex items-center justify-center">
+                <div class="w-40 p-[5px] bg bg-[#E7F5FF] rounded-full relative">
+                    <p class="text-center text-xs text-[#10A8E5]">Lihat Semua</p>
+                    <span class="absolute top-1/2 -translate-y-1/2 right-[15px]">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" role="img" class="w-3">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
+                                fill="#10A8E5"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Pilih Kategori Favorit End -->
 
-		<!-- Footer Start -->
-		<section class="bg-white my-2 pb-24">
-			<div class="px-4 py-4">
-				<p class="text-center text-lg font-semibold mb-4">Donasi di Beriarti Sekarang!</p>
-				<p class="text-base font-normal text-[#989898] text-center">Tentang Beriarti <span class="text-[#4A4A4A]">|</span> Syarat & Ketentuan <span class="text-[#4A4A4A]">|</span> Pusat Bantuan</p>
-				<div class="flex justify-between my-7 px-[10%] text-center">
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-socmed-fb.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-socmed-twitter.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-socmed-instagram.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-socmed-youtube.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-socmed-tiktok.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-linkedin.svg') }}" alt="">
-					</div>
-					<div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
-						<img src="{{ asset('img/icon-techinasia.svg') }}" alt="">
-					</div>
-				</div>
-				<hr class="my-7">
-				<p class="text-base text-[#989898] text-center">Copyright © 2022 - 2023 Beriarti. All Rights Reserved</p>
-			</div>
-		</section>
-		<!-- Footer End -->
+    <!-- Footer Start -->
+    <section class="bg-white my-2 pb-24">
+        <div class="px-4 py-4">
+            <p class="text-center text-lg font-semibold mb-4">Donasi di Beriarti Sekarang!</p>
+            <p class="text-base font-normal text-[#989898] text-center">Tentang Beriarti <span
+                    class="text-[#4A4A4A]">|</span> Syarat & Ketentuan <span class="text-[#4A4A4A]">|</span> Pusat
+                Bantuan</p>
+            <div class="flex justify-between my-7 px-[10%] text-center">
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-socmed-fb.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-socmed-twitter.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-socmed-instagram.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-socmed-youtube.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-socmed-tiktok.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-linkedin.svg') }}" alt="">
+                </div>
+                <div class="grid place-items-center w-8 h-8 rounded-full bg-[#E8E8E8]">
+                    <img src="{{ asset('img/icon-techinasia.svg') }}" alt="">
+                </div>
+            </div>
+            <hr class="my-7">
+            <p class="text-base text-[#989898] text-center">Copyright © 2022 - 2023 Beriarti. All Rights Reserved</p>
+        </div>
+    </section>
+    <!-- Footer End -->
 
     <!-- Navbar Start -->
     <nav class="bg-white fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full">
@@ -875,18 +888,30 @@
         carousel.cycle();
     </script>
     <script src="{{ asset('js/doa-script.js') }}"></script>
-		<script>
-			var flashMessage = @json(session('success'));
-			window.__FLASH__ = {
-					message: flashMessage ?? '',
-					type: 'success'
-			};
+    <script>
+        var flashMessage = @json(session('success'));
+        window.__FLASH__ = {
+            message: flashMessage ?? '',
+            type: 'success'
+        };
 
-			if (window.__FLASH__.message) {
-					// Display the flash message to the user
-					alert(window.__FLASH__.message);
-			}
-	</script>
+        if (window.__FLASH__.message) {
+            // Display the flash message to the user
+            alert(window.__FLASH__.message);
+        }
+    </script>
+    <script>
+        let html = $(".param-width");
+
+        [...html].forEach(e => {
+            // console.log($(e).data('id'))
+            let total_dana = $(e).data('dana')
+            let target_dana = $(e).data('target')
+            let percent = parseInt(total_dana / target_dana * 100)
+            $(e).width(percent);
+            console.log(percent)
+        })
+    </script>
 </body>
 
 </html>
