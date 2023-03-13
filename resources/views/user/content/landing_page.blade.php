@@ -904,12 +904,10 @@
         let html = $(".param-width");
 
         [...html].forEach(e => {
-            // console.log($(e).data('id'))
             let total_dana = $(e).data('dana')
             let target_dana = $(e).data('target')
             let percent = parseInt(total_dana / target_dana * 100)
             $(e).width(percent);
-            console.log(percent)
         })
     </script>
 </body>

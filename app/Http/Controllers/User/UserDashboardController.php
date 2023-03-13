@@ -16,11 +16,11 @@ class UserDashboardController extends Controller
      */
     public function index()
     {
-				$users = User::where('role', 'user')->select(['name', 'email', 'metode_registrasi', 'verification_success'])->get();
+				$users = User::where('role', 'user')->select(['name', 'email', 'metode_registrasi', 'email_verified'])->get();
         if (request()->ajax()) {
             return DataTables::of($users)
-                ->addColumn('status_text', function ($user) {
-                    return $user->verification_success == 1 ? 'verified' : 'not verified';
+                ->addColumn('status_email', function ($user) {
+                    return $user->email_verified == 1 ? 'verified' : 'not verified';
                 })
                 ->addIndexColumn()
                 ->addColumn('action', 'layout.button.user_button')

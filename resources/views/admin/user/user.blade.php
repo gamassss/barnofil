@@ -96,8 +96,8 @@
                         name: 'metode_registrasi'
                     },
                     {
-                        data: 'status_text',
-                        name: 'status_text'
+                        data: 'status_email',
+                        name: 'status_email'
                     },
 										{
                         data: 'action',

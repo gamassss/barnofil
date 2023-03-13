@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('role');
             // $table->string('status');
             $table->string('metode_registrasi');
-            $table->boolean('verification_success')->default(false);
-            // $table->string('google_id')->nullable();
+            $table->boolean('email_verified')->default(false);
+            $table->boolean('account_verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

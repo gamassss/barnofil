@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Program;
 
 use DataTables;
 use App\Models\Program;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -56,6 +57,7 @@ class ProgramController extends Controller
     public function show(Program $program)
     {
         $response_data = Program::find($program->id);
+				$response_data->nama_kategori =  Kategori::find($response_data->kategori_id)->nama_kategori;
 
 				return response()->json($response_data);
     }

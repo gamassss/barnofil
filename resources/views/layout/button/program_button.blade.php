@@ -15,11 +15,11 @@
 					type: "get",
 					url: `/admin/data/program/${id}`,
 					data: '',
-					success: function ({ nama, kategori, status, total_dana, target_dana, tanggal_mulai, tanggal_berakhir }) {
+					success: function ({ nama, nama_kategori, status, total_dana, target_dana, tanggal_mulai, tanggal_berakhir }) {
 						total_dana = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total_dana)
 						target_dana = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(target_dana)
 						$('#nama-program').val(nama);
-						$('#kategori-program').val(kategori);
+						$('#kategori-program').val(nama_kategori);
 						$('#status-program').val(status);
 						$('#dana-terkumpul').val(total_dana);
 						$('#target-dana').val(target_dana);

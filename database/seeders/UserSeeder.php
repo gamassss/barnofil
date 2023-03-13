@@ -873,7 +873,8 @@ class UserSeeder extends Seeder
                 'password' => Hash::make($rand_str),
                 'role' => 'user',
                 'metode_registrasi' => (rand(0, 1) == 1) ? 'form' : 'google',
-                'verification_success' => (rand(0, 10) < 7) ? true : false,
+                'email_verified' => (rand(0, 10) < 7) ? true : false,
+                'account_verified' => (rand(0, 10) < 41) ? true : false,
             ]);
         }
     }

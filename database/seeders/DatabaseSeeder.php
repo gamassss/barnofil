@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ProgramSeeder;
+use Database\Seeders\KategoriSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -27,11 +28,14 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => $todayStr,
             'password' => Hash::make('123'),
             'role' => 'admin',
-						'verification_success' => true
+						'email_verified' => true
         ]);
 
         $this->call([
             UserSeeder::class,
+        ]);
+        $this->call([
+            KategoriSeeder::class,
         ]);
         $this->call([
             ProgramSeeder::class,

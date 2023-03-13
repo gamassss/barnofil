@@ -117,11 +117,11 @@
 															<span class="align-self-center">Or</span>
 															<div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
 														</div>
-                            <a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
-															<img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
-															<button class="btn d-grid w-100" type="submit">Sign in with Google</button>
-                            </a>
-                        </form>
+													</form>
+													<a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
+														<img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
+														<button class="btn d-grid w-100" type="submit">Sign in with Google</button>
+													</a>
 
                         <p class="text-center">
                             <span>New on our platform?</span>

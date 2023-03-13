@@ -1451,6 +1451,7 @@ class ProgramSeeder extends Seeder
             Program::create([
                 'user_id' => User::where('name', $program[1])->first()->id,
                 'nama' => $program[0],
+								'kategori_id' => rand(0,3),
                 'status' => $status[$statusValue],
                 'total_dana' => $totalDana,
                 'target_dana' => $targetDana,
