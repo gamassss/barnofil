@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('convert', function (string $int) {
-            return "Rp " . "<?php echo number_format($int, 2, ',', '.') ?>";
+            return "Rp " . "<?php echo number_format($int, 0, ',', '.') ?>";
         });
     }
 }

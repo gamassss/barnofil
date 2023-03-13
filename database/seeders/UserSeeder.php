@@ -874,7 +874,7 @@ class UserSeeder extends Seeder
                 'role' => 'user',
                 'metode_registrasi' => (rand(0, 1) == 1) ? 'form' : 'google',
                 'email_verified' => (rand(0, 10) < 7) ? true : false,
-                'account_verified' => (rand(0, 10) < 41) ? true : false,
+                'account_verified' => (rand(0, 10) < 4) ? true : false,
             ]);
         }
     }
