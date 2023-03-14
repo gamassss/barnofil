@@ -21,8 +21,8 @@
 
 <body class="bg-[#F7F7F7] font-rubik">
     <!-- Search Section Start -->
-    <section class="bg-[#00AEEF] h-16 py-3 z-[100] fixed top-0 w-full">
-        <div class="container h-full">
+    <section class="bg-[#00AEEF] h-16 py-3 z-[100] fixed top-0 left-0 right-0 w-full">
+        <div class="container h-full lg:max-w-lg">
             <div class="flex gap-x-2 items-center h-full">
                 <!-- Logo -->
                 <div class="grid w-11 place-items-center">
@@ -48,17 +48,17 @@
     <!-- Search Section End -->
 
     <!-- Fast way Start -->
-    <section class="bg-white pt-16 pb-2">
+    <section class="bg-white pt-16 pb-2 lg:max-w-lg lg:mx-auto">
         <div class="container py-4">
             <h3 class="font-semibold text-lg mt-1">Ingin Menggalang Dana?</h3>
             <div class="flex flex-wrap mt-6 flex-row gap-2">
                 <!-- Blue Button -->
-                <div
+                <a href="#"
                     class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#1E88DA]">
                     <p class="font-bold text-base text-white">Galang Dana Sekarang</p>
-                </div>
+                </a>
                 <!-- White button-->
-                <div
+                <a href="#"
                     class="group w-full h-12 bg-white rounded-full py-2 flex items-center justify-center border border-[#00aeef] text-[#00aeef] hover:text-white hover:bg-[#00AEEF]">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg" role="img" class="mr-2 inline w-[21px]">
@@ -72,14 +72,14 @@
                             d="M13.875 5.5c-.517 0-.977.102-1.376.308-.397.205-.706.47-.921.793-.216.326-.328.66-.328.995 0 .223.096.425.271.594.176.17.398.258.649.258.402 0 .7-.221.854-.61l.033-.093c.09-.255.199-.446.317-.566.088-.088.25-.14.501-.14.208 0 .363.052.48.154.11.096.157.199.157.331 0 .059-.013.11-.043.16a.906.906 0 0 1-.16.199l-.097.088c-.058.05-.129.112-.214.182l-.089.074c-.227.188-.409.352-.547.492a1.88 1.88 0 0 0-.374.553 1.817 1.817 0 0 0-.145.749c0 .274.086.504.266.667a.886.886 0 0 0 .609.227c.424 0 .723-.223.83-.615l.078-.313a.548.548 0 0 1 .054-.138.65.65 0 0 1 .09-.117c.04-.043.09-.092.153-.148l.4-.341c.197-.17.344-.299.442-.39a2.27 2.27 0 0 0 .43-.545c.133-.232.198-.498.198-.792 0-.372-.111-.72-.33-1.033a2.163 2.163 0 0 0-.902-.727 3.075 3.075 0 0 0-1.286-.256ZM13.063 11.875a1.01 1.01 0 0 1 .704-.268.99.99 0 0 1 .698.27.915.915 0 0 1 .294.684c0 .29-.107.537-.317.714a1.028 1.028 0 0 1-.675.245c-.256 0-.488-.082-.682-.24a.892.892 0 0 1-.323-.719.91.91 0 0 1 .301-.686Z"
                             class="fill-[#10A8E5] group-hover:fill-white"></path>
                         <p class="font-bold text-base">Tanya Tentang Galang Dana</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
     <!-- Fast way End -->
 
     <!-- Slider Banner Start -->
-    <section class="bg-white my-2 px-4 py-4">
+    <section class="bg-white my-2 px-4 py-4 lg:max-w-lg lg:mx-auto">
         <div class="relative">
             <!-- Carousel wrapper -->
             <div class="overflow-hidden relative h-44 md:h-64 xl:h-80 2xl:h-96">
@@ -124,7 +124,7 @@
     <!-- Slider Banner End -->
 
     <!-- Jenis Donasi Start -->
-    <section class="bg-white my-2 pb-20 pt-4 px-5">
+    <section class="bg-white my-2 pb-20 pt-4 px-5 lg:max-w-lg lg:mx-auto">
         <div class="container flex h-full justify-around gap-x-8">
             <div class="w-20 h-20 rounded-full">
                 <img src="{{ asset('img/donasi-pic.avif') }}" alt="">
@@ -143,7 +143,7 @@
     <!-- Jenis Donasi End -->
 
     <!-- Program Spesial Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-2 lg:max-w-lg lg:mx-auto">
         <div class="container py-4">
             <h3 class=" text-[#4A4A4A] font-semibold text-base mb-4">Program Spesial Beriarti</h3>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
@@ -151,9 +151,8 @@
                     <div
                         class="min-w-[70%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}"
-                                alt="banner/{{ $program->nama }}"
-                                style="max-height: 145px; object-fit: cover; width: 100%;" />
+                            <img class="h-[130px] w-full rounded-t object-cover" src="{{ asset($program->banner_img) }}"
+                                alt="banner/{{ $program->nama }}"/>
                         </a>
                         <div class="py-2 px-2">
                             <div class="flex flex-col gap-y-2">
@@ -179,13 +178,13 @@
     <!-- Program Spesial End -->
 
     <!-- Section Zakat Start -->
-    <section class="my-2">
+    <section class="my-2 lg:max-w-lg lg:mx-auto">
         <img src="{{ asset('img/zakat.avif') }}" alt="">
     </section>
     <!-- Section Zakat End -->
 
     <!-- Pilihan Beriarti Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-2 lg:max-w-lg lg:mx-auto">
         <div class="container py-4">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-base font-semibold text-[#4A4A4A]">Pilihan Beriarti</p>
@@ -196,7 +195,7 @@
                     <div
                         class="w-2/5 min-w-[40%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#" class="">
-                            <img class="rounded-t-lg" src="{{ asset($program->banner_img) }}" alt=""
+                            <img class="h-[85px] w-full rounded-t object-cover" src="{{ asset($program->banner_img) }}" alt=""
                                 class="w-8 h-8" />
                         </a>
                         <div class="p-2">
@@ -204,7 +203,7 @@
                                 <p class=" text-xs font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="flex">
                                     <span
-                                        class="font-normal text-[10px] mr-2">{{ substr($program->user_name, 0, 16) }}</span>
+                                        class="font-normal text-[10px] mr-2">{{ substr($program->user_name, 0, 16) }}...</span>
                                     <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
                                         class="w-[31px] h-3">
                                 </div>
@@ -227,13 +226,13 @@
     <!-- Pilihan Beriarti End -->
 
     <!-- Sponsor Start -->
-    <section class="my-2">
+    <section class="my-2 lg:max-w-lg lg:mx-auto">
         <img src="{{ asset('img/sponsor.avif') }}" alt="">
     </section>
     <!-- Sponsor End -->
 
     <!-- Doa-doa Section Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-2 lg:max-w-lg lg:mx-auto">
         <div class="container pt-4">
             <!-- Sub Title -->
             <div class="flex justify-between items-center mb-4">
@@ -461,7 +460,7 @@
     <!-- Doa-doa Section End -->
 
     <!-- Pilih Kategori Favorit Start -->
-    <section class="bg-white my-2">
+    <section class="bg-white my-2 lg:max-w-lg lg:mx-auto">
         <div class="container pt-4 pb-[12px]">
             <p class="font-bold text-base text-[#4A4A4A] mb-4">Pilih Kategori Favoritmu</p>
 
@@ -503,108 +502,42 @@
             </div>
 
             <!-- Item 1 -->
-            <a href="#" class="inline-block mb-4">
-                <div class="flex w-full">
-                    <div class="flex-1 mr-4 h-full">
-                        <img src="{{ asset('img/infaq.avif') }}" alt="" class="rounded-lg">
-                    </div>
-                    <div class="flex-1 max-w-[45%]">
-                        <div class="flex flex-col h-full justify-between">
-                            <p class="text-xs font-semibold">Infaq Yatim: Kebahagiaan untuk 500 anak-anak Yatim</p>
-                            <div class="flex">
-                                <span class="font-normal text-[10px] mr-2">Yuk Peduli</span>
-                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
-                                    class="w-[31px] h-3">
-                            </div>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-4/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <div class="flex flex-col">
-                                    <p class="font-normal text-[10px]">Terkumpul</p>
-                                    <p class="font-bold text-xs">Rp 1.132.034.156</p>
+            @foreach ($program_kategoris as $program)
+                <a href="#" class="inline-block my-4">
+                    <div class="flex w-full">
+                        <div class="flex-1 mr-4 h-full">
+                            <img src="{{ asset($program->banner_img) }}" alt="" class="rounded-lg">
+                        </div>
+                        <div class="flex-1 max-w-[45%]">
+                            <div class="flex flex-col h-full justify-between">
+                                <p class="text-xs font-semibold">{{ substr($program->nama, 0, 50) }}</p>
+                                <div class="flex">
+                                    <span class="font-normal text-[10px] mr-2">{{ substr($program->user_name, 0, 25) }}</span>
+                                    <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
+                                        class="w-[31px] h-3">
                                 </div>
-                                <div class="flex flex-col items-end">
-                                    <p class="font-normal text-[10px]">Sisa hari</p>
-                                    <p class="font-bold text-xs">1006</p>
+                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                    <div class="w-4/5 h-full bg-blue-400"></div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col">
+                                        <p class="font-normal text-[10px]">Terkumpul</p>
+                                        <p class="font-bold text-xs">@convert($program->total_dana)</p>
+                                    </div>
+                                    <div class="flex flex-col items-end">
+                                        <p class="font-normal text-[10px]">Sisa hari</p>
+                                        <p class="font-bold text-xs">{{ \Carbon\Carbon::parse($program->tanggal_mulai)->diffInDays(\Carbon\Carbon::parse($program->tanggal_berakhir)) }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <div class="w-full h-[1px] bg-slate-300 rounded"></div>
+                <div class="w-full h-[1px] bg-slate-300 rounded"></div>
+            @endforeach
 
-            <!-- Item 2 -->
-            <a href="#" class="inline-block my-4">
-                <div class="flex w-full">
-                    <div class="flex-1 mr-4 h-full">
-                        <img src="{{ asset('img/masjid.avif') }}" alt="" class="rounded-lg">
-                    </div>
-                    <div class="flex-1 max-w-[45%]">
-                        <div class="flex flex-col h-full justify-between">
-                            <p class="text-xs font-semibold">Bantu selesaikan masjid pondok quran 2 yg...</p>
-                            <div class="flex">
-                                <span class="font-normal text-[10px] mr-2">Infaq Berkah Qurani</span>
-                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
-                                    class="w-[31px] h-3">
-                            </div>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-4/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <div class="flex flex-col">
-                                    <p class="font-normal text-[10px]">Terkumpul</p>
-                                    <p class="font-bold text-xs">Rp 1.139.982.411</p>
-                                </div>
-                                <div class="flex flex-col items-end">
-                                    <p class="font-normal text-[10px]">Sisa hari</p>
-                                    <p class="font-bold text-xs">306</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <div class="w-full h-[1px] bg-slate-300 rounded"></div>
-
-            <!-- Item 3 -->
-            <a href="#" class="inline-block my-4">
-                <div class="flex w-full">
-                    <div class="flex-1 mr-4 h-full">
-                        <img src="{{ asset('img/pahala.avif') }}" alt="" class="rounded-lg">
-                    </div>
-                    <div class="flex-1 max-w-[45%]">
-                        <div class="flex flex-col h-full justify-between">
-                            <p class="text-xs font-semibold">Pahala Mengalir Selamanya! Ayo Beramal...</p>
-                            <div class="flex">
-                                <span class="font-normal text-[10px] mr-2">Yayasan Masjid Al Fatih Al...</span>
-                                <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
-                                    class="w-[31px] h-3">
-                            </div>
-                            <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                <div class="w-4/5 h-full bg-blue-400"></div>
-                            </div>
-                            <div class="flex justify-between">
-                                <div class="flex flex-col">
-                                    <p class="font-normal text-[10px]">Terkumpul</p>
-                                    <p class="font-bold text-xs">Rp 471.934.022</p>
-                                </div>
-                                <div class="flex flex-col items-end">
-                                    <p class="font-normal text-[10px]">Sisa hari</p>
-                                    <p class="font-bold text-xs">25</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <div class="w-full h-[1px] bg-slate-300 rounded mb-3 mt-4"></div>
-
-            <div class="w-full flex items-center justify-center">
+            <div class="w-full flex items-center justify-center mt-4">
                 <div class="w-40 p-[5px] bg bg-[#E7F5FF] rounded-full relative">
                     <p class="text-center text-xs text-[#10A8E5]">Lihat Semua</p>
                     <span class="absolute top-1/2 -translate-y-1/2 right-[15px]">
@@ -622,7 +555,7 @@
     <!-- Pilih Kategori Favorit End -->
 
     <!-- Footer Start -->
-    <section class="bg-white my-2 pb-24">
+    <section class="bg-white my-2 pb-24 lg:max-w-lg lg:mx-auto">
         <div class="px-4 py-4">
             <p class="text-center text-lg font-semibold mb-4">Donasi di Beriarti Sekarang!</p>
             <p class="text-base font-normal text-[#989898] text-center">Tentang Beriarti <span
@@ -658,7 +591,7 @@
     <!-- Footer End -->
 
     <!-- Navbar Start -->
-    <nav class="bg-white fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full">
+    <nav class="bg-white fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full lg:max-w-lg lg:mx-auto">
         <div class="container grid grid-cols-4 gap-x-1 font-semibold items-center h-full text-xs">
 
             <!-- Home Navbar -->
@@ -772,7 +705,7 @@
             $(e).width(percent + '%');
         })
 
-				let html_pilihan = $(".param-width-pilihan");
+        let html_pilihan = $(".param-width-pilihan");
 
         [...html_pilihan].forEach(e => {
             let total_dana = $(e).data('dana')

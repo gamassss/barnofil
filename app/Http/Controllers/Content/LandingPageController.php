@@ -20,12 +20,20 @@ class LandingPageController extends Controller
             ->select('programs.*', 'users.name as user_name')
             ->join('users', 'programs.user_id', '=', 'users.id')
             ->where('users.account_verified', 1)
-						->whereRaw('total_dana / target_dana > 0.38')
+            ->whereRaw('total_dana / target_dana > 0.38')
             ->get();
-				// dd($program_pilihans);
+
+        $program_kategoris = DB::select(DB::raw("SELECT users.name as user_name, programs.nama, programs.total_dana, 
+																									programs.tanggal_mulai, programs.tanggal_berakhir, programs.banner_img from programs
+																								JOIN users on users.id = programs.user_id
+																								WHERE programs.total_dana > 1000000000
+																								LIMIT 3
+																								"));
+        // dd($program_pilihans);
         return view('user.content.landing_page', [
             'program_specials' => $program_specials,
-            'program_pilihans'=> $program_pilihans,
+            'program_pilihans' => $program_pilihans,
+						'program_kategoris' => $program_kategoris
         ]);
     }
 }
