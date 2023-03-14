@@ -29,11 +29,17 @@ class LandingPageController extends Controller
 																								WHERE programs.total_dana > 1000000000
 																								LIMIT 3
 																								"));
+				$doas = DB::select(DB::raw("SELECT doas.doa, users.name as user_name, programs.nama as program_nama from doas
+																		JOIN users on users.id = doas.user_id
+																		JOIN programs on programs.id = doas.program_id
+																		LIMIT 10
+																	"));
         // dd($program_pilihans);
         return view('user.content.landing_page', [
             'program_specials' => $program_specials,
             'program_pilihans' => $program_pilihans,
-						'program_kategoris' => $program_kategoris
+						'program_kategoris' => $program_kategoris,
+						'doas' => $doas
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use DateTime;
 use App\Models\User;
+use Database\Seeders\DoaSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ProgramSeeder;
@@ -34,11 +35,17 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
         ]);
+
         $this->call([
             KategoriSeeder::class,
         ]);
+
         $this->call([
             ProgramSeeder::class,
         ]);
+
+				$this->call([
+					DoaSeeder::class
+				]);
     }
 }
