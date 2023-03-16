@@ -21,7 +21,7 @@
 
 <body class="bg-[#F7F7F7] font-rubik">
     <!-- Search Section Start -->
-    <section class="bg-[#00AEEF] h-16 py-3 z-[100] fixed top-0 left-0 right-0 w-full">
+    <section class="bg-primer h-16 py-3 z-[100] fixed top-0 left-0 right-0 w-full">
         <div class="container h-full lg:max-w-lg">
             <div class="flex gap-x-2 items-center h-full">
                 <!-- Logo -->
@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Search bar -->
-                <div class="bg-[#1BBAF5] h-full text-white w-full rounded-full">
+                <div class="bg-secondary h-full text-white w-full rounded-full">
                     <div class="flex justify-between items-center h-full px-4">
                         <!-- Placeholder search bar -->
                         <p class=" font-normal text-xs">Bantu sesama, cari 'pengobatan'</p>
@@ -54,23 +54,23 @@
             <div class="flex flex-wrap mt-6 flex-row gap-2">
                 <!-- Blue Button -->
                 <a href="#"
-                    class="w-full h-12 bg-[#00aeef] rounded-full py-2 flex items-center justify-center hover:bg-[#1E88DA]">
+                    class="w-full h-12 bg-primer rounded-full py-2 flex items-center justify-center hover:bg-primerhover">
                     <p class="font-bold text-base text-white">Galang Dana Sekarang</p>
                 </a>
                 <!-- White button-->
                 <a href="#"
-                    class="group w-full h-12 bg-white rounded-full py-2 flex items-center justify-center border border-[#00aeef] text-[#00aeef] hover:text-white hover:bg-[#00AEEF]">
+                    class="group w-full h-12 bg-white rounded-full py-2 flex items-center justify-center border border-primer text-primer hover:text-white hover:bg-primer">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg" role="img" class="mr-2 inline w-[21px]">
                         <path
                             d="M5 13.286V7.028c-.197.028.183-.065 0 0a3.001 3.001 0 0 0-2 2.83v3.856c0 1.21.358 2.337.975 3.28.085.928-.096 1.814-.324 2.513-.23.704.223 1.489.942 1.309.764-.192 1.675-.596 2.433-1.434A5.99 5.99 0 0 0 9 19.714h2.857c1.36 0 2.56-.678 3.283-1.714.184-.264-.117.305 0 0H9.43C7.299 18 5 15.416 5 13.286Z"
-                            class="fill-[#10A8E5] group-hover:fill-white"></path>
+                            class="fill-secondary group-hover:fill-white"></path>
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M9.857 3.75A2.25 2.25 0 0 0 7.607 6v6.857a2.25 2.25 0 0 0 2.25 2.25H15c.56 0 1.098-.087 1.602-.249l.446-.142.324.337c.68.708 1.493 1.05 2.189 1.213a.184.184 0 0 0 .017.004.138.138 0 0 0 .016-.021.411.411 0 0 0 .025-.34c-.248-.732-.463-1.68-.413-2.705l.01-.212.12-.175c.577-.842.914-1.86.914-2.96V6A2.25 2.25 0 0 0 18 3.75H9.857Zm9.73 12.52h-.002.001ZM6.106 6a3.75 3.75 0 0 1 3.75-3.75H18A3.75 3.75 0 0 1 21.75 6v3.857c0 1.33-.385 2.572-1.05 3.618-.005.707.148 1.386.34 1.953.19.561.115 1.178-.192 1.644-.325.495-.923.82-1.628.655a5.945 5.945 0 0 1-2.598-1.316 6.763 6.763 0 0 1-1.622.196H9.857a3.75 3.75 0 0 1-3.75-3.75V6Z"
-                            class="fill-[#10A8E5] group-hover:fill-white"></path>
+                            class="fill-secondary group-hover:fill-white"></path>
                         <path
                             d="M13.875 5.5c-.517 0-.977.102-1.376.308-.397.205-.706.47-.921.793-.216.326-.328.66-.328.995 0 .223.096.425.271.594.176.17.398.258.649.258.402 0 .7-.221.854-.61l.033-.093c.09-.255.199-.446.317-.566.088-.088.25-.14.501-.14.208 0 .363.052.48.154.11.096.157.199.157.331 0 .059-.013.11-.043.16a.906.906 0 0 1-.16.199l-.097.088c-.058.05-.129.112-.214.182l-.089.074c-.227.188-.409.352-.547.492a1.88 1.88 0 0 0-.374.553 1.817 1.817 0 0 0-.145.749c0 .274.086.504.266.667a.886.886 0 0 0 .609.227c.424 0 .723-.223.83-.615l.078-.313a.548.548 0 0 1 .054-.138.65.65 0 0 1 .09-.117c.04-.043.09-.092.153-.148l.4-.341c.197-.17.344-.299.442-.39a2.27 2.27 0 0 0 .43-.545c.133-.232.198-.498.198-.792 0-.372-.111-.72-.33-1.033a2.163 2.163 0 0 0-.902-.727 3.075 3.075 0 0 0-1.286-.256ZM13.063 11.875a1.01 1.01 0 0 1 .704-.268.99.99 0 0 1 .698.27.915.915 0 0 1 .294.684c0 .29-.107.537-.317.714a1.028 1.028 0 0 1-.675.245c-.256 0-.488-.082-.682-.24a.892.892 0 0 1-.323-.719.91.91 0 0 1 .301-.686Z"
-                            class="fill-[#10A8E5] group-hover:fill-white"></path>
+                            class="fill-secondary group-hover:fill-white"></path>
                         <p class="font-bold text-base">Tanya Tentang Galang Dana</p>
                 </a>
             </div>
@@ -158,7 +158,7 @@
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                    <div class="h-1 bg-blue-400 param-width" data-id="{{ $program->id }}"
+                                    <div class="h-1 bg-primer param-width" data-id="{{ $program->id }}"
                                         data-dana="{{ $program->total_dana }}"
                                         data-target="{{ $program->target_dana }}"></div>
                                 </div>
@@ -188,7 +188,7 @@
         <div class="container py-4">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-base font-semibold text-[#4A4A4A]">Pilihan Beriarti</p>
-                <p class="text-sm text-[#00aeef]">Lihat Lainnya</p>
+                <p class="text-sm text-secondary">Lihat Lainnya</p>
             </div>
             <div class="flex gap-x-4 overflow-x-auto pb-4">
                 @foreach ($program_pilihans as $program)
@@ -208,7 +208,7 @@
                                         class="w-[31px] h-3">
                                 </div>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                    <div class="h-1 bg-blue-400 param-width-pilihan" data-id="{{ $program->id }}"
+                                    <div class="h-1 bg-primer param-width-pilihan" data-id="{{ $program->id }}"
                                         data-dana="{{ $program->total_dana }}"
                                         data-target="{{ $program->target_dana }}"></div>
                                 </div>
@@ -237,7 +237,7 @@
             <!-- Sub Title -->
             <div class="flex justify-between items-center mb-4">
                 <p class="text-base font-semibold text-[#4A4A4A]">Doa-doa #OrangBaik</p>
-                <p class="text-sm text-[#00aeef]">Lihat Lainnya</p>
+                <p class="text-sm text-secondary">Lihat Lainnya</p>
             </div>
 
             <!-- Slider Wrapper -->
@@ -283,7 +283,7 @@
                                     xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
                                     <path
                                         d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
-                                        fill="#989898" class=""></path>
+                                        fill="#989898" class="like-doa-icon"></path>
                                 </svg>
                                 <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
                             </div>
@@ -300,159 +300,6 @@
                         </div>
                     </div>
                 @endforeach
-
-                <!-- Doa 2 -->
-                {{-- <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
-
-                    <!-- More button -->
-                    <div class="flex justify-end text-base">
-                        <button><i class="fa-solid fa-ellipsis"></i></button>
-                    </div>
-
-                    <!-- Profile pic, name, timestamp -->
-                    <div class="flex w-full h-12 mb-4">
-                        <div class="pr-4 h-full">
-                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
-                        </div>
-                        <div class="flex-col">
-                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
-                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
-                                    Bengkak...</span><span
-                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
-                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-between h-32 pb-6">
-                        <!-- Doa -->
-                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
-                            <span class="text-[#989898]">Lihat selengkapnya</span>
-                        </p>
-                        <!-- Like doa -->
-                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
-                    </div>
-                    <div class="flex justify-around py-4 border-t-2">
-                        <div class="flex items-center">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
-                                <path
-                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
-                        </div>
-                        <div class="flex items-center">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img">
-                                <path
-                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doa 3 -->
-                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
-
-                    <!-- More button -->
-                    <div class="flex justify-end text-base">
-                        <button><i class="fa-solid fa-ellipsis"></i></button>
-                    </div>
-
-                    <!-- Profile pic, name, timestamp -->
-                    <div class="flex w-full h-12 mb-4">
-                        <div class="pr-4 h-full">
-                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
-                        </div>
-                        <div class="flex-col">
-                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
-                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
-                                    Bengkak...</span><span
-                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
-                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-between h-32 pb-6">
-                        <!-- Doa -->
-                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
-                            <span class="text-[#989898]">Lihat selengkapnya</span>
-                        </p>
-                        <!-- Like doa -->
-                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
-                    </div>
-                    <div class="flex justify-around py-4 border-t-2">
-                        <div class="flex items-center">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
-                                <path
-                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
-                        </div>
-                        <div class="flex items-center">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img">
-                                <path
-                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doa 4 -->
-                <div class="h-72 min-w-[88%] border-2 rounded-lg mb-8 shadow-md py-3 px-4">
-
-                    <!-- More button -->
-                    <div class="flex justify-end text-base">
-                        <button><i class="fa-solid fa-ellipsis"></i></button>
-                    </div>
-
-                    <!-- Profile pic, name, timestamp -->
-                    <div class="flex w-full h-12 mb-4">
-                        <div class="pr-4 h-full">
-                            <img src="{{ asset('img/user_doa.avif') }}" alt="">
-                        </div>
-                        <div class="flex-col">
-                            <p class="text-sm font-bold text-[#4A4A4A]">Orang Baik</p>
-                            <div class="text-[10px] font-normal"><span class="text-[#989898]">Kepala
-                                    Bengkak...</span><span
-                                    class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
-                                    class="text-[#6A6A6A]">2 menit yang lalu</span></div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-between h-32 pb-6">
-                        <!-- Doa -->
-                        <p class="text-sm font-normal">Semoga hati ini selalu dilapangkan dalam hal bersedekah. Dan...
-                            <span class="text-[#989898]">Lihat selengkapnya</span>
-                        </p>
-                        <!-- Like doa -->
-                        <p class="font-normal text-xs"><span class="font-bold">2 Orang</span> mengaminkan doa ini</p>
-                    </div>
-                    <div class="flex justify-around py-4 border-t-2">
-                        <div class="flex items-center">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
-                                <path
-                                    d="M8.687 4.121c1.03.228 1.895.754 2.633 1.5.226.228.474.435.68.623.25-.232.53-.487.806-.747 1.088-1.025 2.364-1.571 3.877-1.483 1.045.06 1.97.442 2.71 1.18 1.438 1.435 1.918 3.15 1.411 5.122-.26 1.008-.742 1.914-1.322 2.77-.906 1.336-2.018 2.49-3.207 3.574-1.146 1.045-2.367 1.998-3.616 2.916a.993.993 0 0 1-1.168.004l-2.11-1.514c-1.375-1.084-2.659-2.266-3.8-3.596-.747-.87-1.41-1.799-1.901-2.84-.36-.76-.608-1.551-.667-2.394-.08-1.151.22-2.202.856-3.162C4.971 4.415 6.74 3.692 8.687 4.121Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Aamiin</p>
-                        </div>
-                        <div class="flex items-center">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" role="img">
-                                <path
-                                    d="M17.5 10A3.5 3.5 0 1 0 14 6.5c0 .43-.203.86-.595 1.037L10.034 9.07c-.427.194-.924.052-1.283-.25a3.5 3.5 0 1 0-.2 5.517c.38-.275.885-.381 1.297-.156l3.585 1.955c.412.225.597.707.572 1.176a3.5 3.5 0 1 0 1.445-2.649c-.38.275-.886.381-1.298.156l-3.585-1.955c-.412-.225-.597-.707-.572-1.176.003-.062.005-.125.005-.188 0-.43.203-.86.595-1.037l3.371-1.533c.428-.194.924-.052 1.283.25.609.512 1.394.82 2.251.82Z"
-                                    fill="#989898"></path>
-                            </svg>
-                            <p class="text-xs ml-2 font-normal text-[#6A6A6A]">Bagikan</p>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
@@ -467,7 +314,7 @@
             <div class="flex w-full justify-evenly gap-x-3 mb-4">
                 <!-- Kategori 1 -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-blue-500 p-2 rounded-xl">
+                    <div class="grid place-items-center w-12 border-2 border-primer p-2 rounded-xl">
                         <img src="{{ asset('img/icon-bencana.png') }}" alt="" class="">
                     </div>
                     <p class="text-xs font-normal text-center">Bencana Alam</p>
@@ -517,7 +364,7 @@
                                         class="w-[31px] h-3">
                                 </div>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
-                                    <div class="w-4/5 h-full bg-blue-400"></div>
+                                    <div class="w-4/5 h-full bg-primer"></div>
                                 </div>
                                 <div class="flex justify-between">
                                     <div class="flex flex-col">
@@ -647,7 +494,7 @@
             interval: 3000,
 
             indicators: {
-                activeClasses: 'bg-[#00AEEF] w-6 dark:bg-gray-800',
+                activeClasses: 'bg-[#639cd9] w-6 dark:bg-gray-800',
                 inactiveClasses: 'bg-white dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
                 items: [{
                         position: 0,

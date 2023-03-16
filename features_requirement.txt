@@ -17,7 +17,7 @@
 17. Dapat melihat daftar donatur dan isi program seperti nama, nominal, dan doa.
 // 18. Admin dapat melakukan login dengan 2 cara yaitu login form, atau dengan google.
 // 19. Admin dapat menggunakan fitur lupa password.
-20. Admin dapat melakukan ganti password.
+// 20. Admin dapat melakukan ganti password.
 // 21. Admin dapat memanajemen data master (User, Program).
 22. Admin dapat melihat transaksi.
 23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
