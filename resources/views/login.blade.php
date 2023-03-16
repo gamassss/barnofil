@@ -45,11 +45,11 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('js/config.js') }}"></script>
 
-		<style>
-			.auth-google:hover {
-				background: #edf2f7;
-			}
-		</style>
+    <style>
+        .auth-google:hover {
+            background: #edf2f7;
+        }
+    </style>
 </head>
 
 <body>
@@ -112,21 +112,27 @@
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                             </div>
-														<div class="d-flex align-items-center gap-4 mb-3 rounded-circle">
-															<div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
-															<span class="align-self-center">Or</span>
-															<div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
-														</div>
-													</form>
-													<a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
-														<img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
-														<button class="btn d-grid w-100" type="submit">Sign in with Google</button>
-													</a>
+                            <div class="d-flex align-items-center gap-4 mb-3 rounded-circle">
+                                <div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
+                                <span class="align-self-center">Or</span>
+                                <div style="background: #cbd5e1; width: 100%; height: 2px;"></div>
+                            </div>
+                        </form>
+                        <a class="mb-3 d-flex border px-4 rounded auth-google" href="/auth/google">
+                            <img src="{{ asset('img/google-logo.svg') }}" alt="" style="width: 20px;">
+                            <button class="btn d-grid w-100" type="submit">Sign in with Google</button>
+                        </a>
 
                         <p class="text-center">
                             <span>New on our platform?</span>
                             <a href="/signup">
                                 <span>Create an account</span>
+                            </a>
+                        </p>
+                        <p class="text-center">
+                            <span>Back to </span>
+                            <a href="/">
+                                <span>Home</span>
                             </a>
                         </p>
                     </div>
