@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
@@ -260,10 +261,12 @@
                                 <img src="{{ asset('img/user_doa.avif') }}" alt="">
                             </div>
                             <div class="flex-col">
-                                <p class="text-sm font-bold text-[#4A4A4A]">{{ rand(0, 10) > 7 ? $doa->user_name : 'Orang Baik' }}</p>
-                                <div class="text-[10px] font-normal"><span class="text-[#989898]">{{ substr($doa->program_nama, 0, 15) }}...</span><span
+                                <p class="text-sm font-bold text-[#4A4A4A]">
+                                    {{ rand(0, 10) > 7 ? $doa->user_name : 'Orang Baik' }}</p>
+                                <div class="text-[10px] font-normal"><span
+                                        class="text-[#989898]">{{ substr($doa->program_nama, 0, 15) }}...</span><span
                                         class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
-                                        class="text-[#6A6A6A]">{{ rand(0,15) }} menit yang lalu</span></div>
+                                        class="text-[#6A6A6A]">{{ rand(0, 15) }} menit yang lalu</span></div>
                             </div>
                         </div>
                         <div class="flex flex-col justify-between h-32 pb-6">
@@ -272,13 +275,14 @@
                                 <span class="text-[#989898]">Lihat selengkapnya</span>
                             </p>
                             <!-- Like doa -->
-                            <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle">Kamu <span
-                                        class="font-normal">dan </span></span><span class="font-bold">2 Orang</span>
-                                <span class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini</p>
+                            <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle" data-doa-id="{{ $doa->id }}">Kamu <span
+                                        class="font-normal">dan </span></span><span class="font-bold">{{ $doa->like }} Orang</span>
+                                <span class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini
+                            </p>
                         </div>
                         <div class="flex justify-around py-4 border-t-2">
                             <!-- Like -->
-                            <div class="flex items-center svg-like" data-user-id="{{ $doa->user_id }}" data-program-id="{{ $doa->program_id }}">
+                            <div class="flex items-center svg-like" data-id="{{ $doa->id }}">
                                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
                                     <path
@@ -469,6 +473,15 @@
     </nav>
     <!-- Navbar End -->
 
+		<!-- Setup forajax csrf -->
+    <script>
+        // set csrf for ajax request
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     <script src="{{ asset('js/flowbite.min.js') }}"></script>
     <script>
         const items = [{

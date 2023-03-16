@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Content;
 
-use App\Http\Controllers\Controller;
+use App\Models\Doa;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class LandingPageController extends Controller
 {
@@ -23,13 +24,13 @@ class LandingPageController extends Controller
             ->whereRaw('total_dana / target_dana > 0.38')
             ->get();
 
-        $program_kategoris = DB::select(DB::raw("SELECT users.name as user_name, programs.nama, programs.total_dana, 
+        $program_kategoris = DB::select(DB::raw("SELECT users.name as user_name, programs.nama, programs.total_dana,
 																									programs.tanggal_mulai, programs.tanggal_berakhir, programs.banner_img from programs
 																								JOIN users on users.id = programs.user_id
 																								WHERE programs.total_dana > 1000000000
 																								LIMIT 3
 																								"));
-				$doas = DB::select(DB::raw("SELECT doas.doa, users.name as user_name, programs.nama as program_nama, doas.user_id, doas.program_id from doas
+        $doas = DB::select(DB::raw("SELECT doas.doa, users.name as user_name, doas.like, programs.nama as program_nama, doas.id from doas
 																		JOIN users on users.id = doas.user_id
 																		JOIN programs on programs.id = doas.program_id
 																		LIMIT 10
@@ -38,8 +39,22 @@ class LandingPageController extends Controller
         return view('user.content.landing_page', [
             'program_specials' => $program_specials,
             'program_pilihans' => $program_pilihans,
-						'program_kategoris' => $program_kategoris,
-						'doas' => $doas
+            'program_kategoris' => $program_kategoris,
+            'doas' => $doas,
         ]);
+    }
+
+    public function increaseLikes($id)
+    {
+        $doa = Doa::find($id);
+        $doa->like++;
+        $doa->save();
+    }
+
+    public function decreaseLikes($id)
+    {
+        $doa = Doa::find($id);
+        $doa->like--;
+        $doa->save();
     }
 }

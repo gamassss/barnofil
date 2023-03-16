@@ -14,9 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('doas', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id');
             $table->foreignId('program_id');
-						$table->text('doa');
+            $table->text('doa');
+            $table->integer('like')->default(2);
             $table->timestamps();
         });
     }

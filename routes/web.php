@@ -28,10 +28,13 @@ use App\Http\Controllers\User\PenggalangDanaController;
 // landing page
 
 Route::get('/', [LandingPageController::class, 'index']);
+Route::post('/increase-likes/{id}', [LandingPageController::class, 'increaseLikes']);
+Route::post('/decrease-likes/{id}', [LandingPageController::class, 'decreaseLikes']);
+
 
 // registration
 
-Route::get('/signup', [RegistrasiController::class, 'signup']);
+Route::get('/signup', [RegistrasiController::class, 'signup'])->middleware('guest');
 Route::post('/signup', [RegistrasiController::class, 'store']);
 
 // verify registration email
