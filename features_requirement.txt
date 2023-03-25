@@ -5,11 +5,11 @@
 // 5. Donatur dapat menggunakan fitur lupa password.
 // 6. Donatur dapat menerima otp ketika menggunakan fitur lupa password.
 7. Donatur/Pengunjung dapat melihat blog atau news.
-8. User (Pengunjung yang memiliki akun) dapat melakukan ganti password.
+// 8. User (Pengunjung yang memiliki akun) dapat melakukan ganti password.
 9. User dapat melihat semua program yang diikuti.
 10. User dapat melakukan submit program dengan syarat Program disetujui oleh admin.
 11. User dapat melihat list program dan status yang mereka submit.
-12. Pengunjung dapat melihat banner (Gambar, Slider).
+// 12. Pengunjung dapat melihat banner (Gambar, Slider).
 13. Pengunjung dapat melakukan pencarian program dengan filter kategori.
 14. Pengunjung dapat melihat detail suatu program.
 15. User dapat melihat info berita mengenai suatu program seperti sudah terkumpul atau belum.

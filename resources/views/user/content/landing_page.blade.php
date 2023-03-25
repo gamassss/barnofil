@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+		<link rel="shortcut icon" href="{{ asset('img/beriarti-logo.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
@@ -16,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Landing Page</title>
+    <title>Beriarti - Memberikan Harapan dan Mengubah Dunia dengan Aksi Nyata</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -27,7 +28,7 @@
             <div class="flex gap-x-2 items-center h-full">
                 <!-- Logo -->
                 <div class="grid w-11 place-items-center">
-                    <img src="{{ asset('img/logo-kitabisa.png') }}" alt="">
+                    <img src="{{ asset('img/beriarti-white-notext.png') }}" alt="">
                 </div>
 
                 <!-- Search bar -->
@@ -155,7 +156,7 @@
                             <img class="h-[130px] w-full rounded-t object-cover"
                                 src="{{ asset($program->banner_img) }}" alt="banner/{{ $program->nama }}" />
                         </a>
-                        <div class="py-2 px-2">
+                        <a href="#" class="block py-2 px-2">
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
@@ -170,7 +171,7 @@
                                         hari lagi</span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -275,8 +276,9 @@
                                 <span class="text-[#989898]">Lihat selengkapnya</span>
                             </p>
                             <!-- Like doa -->
-                            <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle" data-doa-id="{{ $doa->id }}">Kamu <span
-                                        class="font-normal">dan </span></span><span class="font-bold">{{ $doa->like }} Orang</span>
+                            <p class="font-normal text-xs"><span class="font-bold hidden amin-toggle"
+                                    data-doa-id="{{ $doa->id }}">Kamu <span class="font-normal">dan
+                                    </span></span><span class="font-bold">{{ $doa->like }} Orang</span>
                                 <span class="hidden amin-toggle font-bold">lainnya </span>mengaminkan doa ini
                             </p>
                         </div>
@@ -407,7 +409,7 @@
     </section>
     <!-- Pilih Kategori Favorit End -->
 
-		@include('layout.navbar')
+    @include('layout.navbar')
 
     <!-- Footer Start -->
     <section class="bg-white my-2 pb-24 lg:max-w-lg lg:mx-auto">
@@ -445,7 +447,7 @@
     </section>
     <!-- Footer End -->
 
-		<!-- Setup forajax csrf -->
+    <!-- Setup forajax csrf -->
     <script>
         // set csrf for ajax request
         $.ajaxSetup({

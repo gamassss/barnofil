@@ -12,7 +12,7 @@ class LandingPageController extends Controller
     {
         $program_specials = DB::table('programs')
             ->select('*')
-            ->whereRaw('total_dana / target_dana > 0.38')
+            ->whereRaw('total_dana / target_dana > 0.35 AND total_dana > 1000000')
             ->limit(10)
             ->latest()
             ->get();

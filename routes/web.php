@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\User\AkunController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\Auth\SocialiteController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Content\LandingPageController;
 use App\Http\Controllers\User\PenggalangDanaController;
+use App\Http\Controllers\Program\DetailProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,9 @@ Route::get('/', [LandingPageController::class, 'index']);
 Route::post('/increase-likes/{id}', [LandingPageController::class, 'increaseLikes']);
 Route::post('/decrease-likes/{id}', [LandingPageController::class, 'decreaseLikes']);
 
+// user auth
+
+Route::get('/user', [AkunController::class, 'index']);
 
 // registration
 
@@ -91,5 +96,19 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 });
 
 // user authorization
-Route::get('/payment', [PaymentController::class, 'index']);
 
+// Route::group(['middleware' => ['role:user', 'verified'], 'prefix' => '/user'], function () {
+// 	// landing page
+
+// 	Route::get('/', function () {
+// 		return view('user.content.landing_page');
+// 	});
+
+// 	// detail program
+
+// 	Route::get('/porgram/{id}', [DetailProgramController::class, 'index']);
+
+// 	Route::get('/payment', [PaymentController::class, 'index']);
+// });
+
+// // pengunjung authorization

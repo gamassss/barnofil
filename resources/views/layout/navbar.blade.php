@@ -3,26 +3,26 @@
 			<div class="container grid grid-cols-4 gap-x-1 font-semibold items-center h-full text-xs">
 
 					<!-- Home Navbar -->
-					<div class="flex flex-row flex-wrap items-center justify-center">
-							<img src="{{ asset(Request::is('/') ? 'img/home_navbar_active.svg' : 'img/home-navbar.svg') }}" alt="" class="w-8">
-							<p class="w-full text-center text-[10px] text-[#00AEEF]">Donasi</p>
-					</div>
+					<a href="/" class="flex flex-row flex-wrap items-center justify-center">
+							<img src="{{ asset(Request::is('/') ? 'img/icons/navigation/home_navbar_active.svg' : 'img/icons/navigation/home-navbar.svg') }}" alt="" class="w-8">
+							<p class="w-full text-center text-[10px] {{ Request::is('/') ? 'text-primer' : 'text-[#A8A8A8]' }}">Donasi</p>
+					</a>
 
 					<!-- Galang Dana Navbar -->
 					<div class="flex flex-col flex-wrap items-center justify-center">
-							<img src="{{ asset('img/galang-navbar.svg') }}" alt="" class="w-8">
-							<p class="text-center text-[10px] text-slate-400">Galang Dana</p>
+							<img src="{{ asset('img/icons/navigation/galang-navbar.svg') }}" alt="" class="w-8">
+							<p class="text-center text-[10px] text-[#A8A8A8]">Galang Dana</p>
 					</div>
 
 					<!-- Donasi Navbar -->
 					<div class="flex flex-col flex-wrap items-center justify-center">
-							<img src="{{ asset('img/donasi-navbar.svg') }}" alt="" class="w-8">
-							<p class="text-[10px] text-slate-400">Donasi Saya</p>
+							<img src="{{ asset('img/icons/navigation/donasi-navbar.svg') }}" alt="" class="w-8">
+							<p class="text-[10px] text-[#A8A8A8]">Donasi Saya</p>
 					</div>
 					<!-- Account Navbar -->
-					<a href="/login" class="flex flex-row flex-wrap items-center justify-center">
-							<img src="{{ asset('img/account-navbar.svg') }}" alt="" class="w-8">
-							<p class="w-full text-center text-[10px] text-slate-400">Akun</p>
+					<a href="/user" class="flex flex-row flex-wrap items-center justify-center">
+							<img src="{{ asset(Request::is('user') ? 'img/icons/navigation/account_navbar_active.svg' : 'img/icons/navigation/account-navbar.svg') }}" alt="" class="w-8">
+							<p class="w-full text-center text-[10px] {{ Request::is('/user') ? 'text-primer' : 'text-[#A8A8A8]' }}">Akun</p>
 					</a>
 			</div>
 	</nav>
