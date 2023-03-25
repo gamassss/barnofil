@@ -33,7 +33,8 @@
                 <p>Masukkan Nominal Donasi</p>
             </div>
             <!-- Nominal 30k -->
-            <form action="/payment" method="get" onclick="submit(this)" id="jml_30" class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
+            <div onclick="window.location.href='/isi_doa/{{ $id }}/{{ Auth::id() }}/30000'" id="jml_30"
+                class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-[30px] h-[30px] mr-3">
@@ -47,15 +48,11 @@
                             d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
                             fill="#10A8E5"></path>
                     </svg>
-										<input type="hidden" name="total_dana" value="30000">
-										<input type="hidden" name="name" value="{{ $username }}">
-										<input type="hidden" name="user_id" value="{{ $user_id }}">
-										<input type="hidden" name="program_id" value="{{ $id }}">
-										<input type="hidden" name="email" value="{{ $user_email }}">
                 </div>
-            </form>
+            </div>
             <!-- Nominal 50k -->
-            <form action="/payment" method="get" onclick="submit(this)" id="jml_30" class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
+            <div onclick="window.location.href='/isi_doa/{{ $id }}/{{ Auth::id() }}/50000'" id="jml_50"
+                class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-[30px] h-[30px] mr-3">
@@ -69,15 +66,11 @@
                             d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
                             fill="#10A8E5"></path>
                     </svg>
-										<input type="hidden" name="total_dana" value="50000">
-										<input type="hidden" name="name" value="{{ $username }}">
-										<input type="hidden" name="user_id" value="{{ $user_id }}">
-										<input type="hidden" name="program_id" value="{{ $id }}">
-										<input type="hidden" name="email" value="{{ $user_email }}">
                 </div>
-            </form>
+            </div>
             <!-- Nominal 75k -->
-            <form action="/payment" method="get" onclick="submit(this)" id="jml_30" class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
+            <div onclick="window.location.href='/isi_doa/{{ $id }}/{{ Auth::id() }}/75000'" id="jml_75"
+                class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-[30px] h-[30px] mr-3">
@@ -91,15 +84,11 @@
                             d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
                             fill="#10A8E5"></path>
                     </svg>
-										<input type="hidden" name="total_dana" value="75000">
-										<input type="hidden" name="name" value="{{ $username }}">
-										<input type="hidden" name="user_id" value="{{ $user_id }}">
-										<input type="hidden" name="program_id" value="{{ $id }}">
-										<input type="hidden" name="email" value="{{ $user_email }}">
                 </div>
-            </form>
-            <!-- Nominal 75k -->
-            <form action="/payment" method="get" onclick="submit(this)" id="jml_30" class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
+            </div>
+            <!-- Nominal 100k -->
+            <div onclick="window.location.href='/isi_doa/{{ $id }}/{{ Auth::id() }}/100000'"
+                id="jml_100" class="my-4 p-4 rounded-md shadow-lg hover:shadow-xl">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-[30px] h-[30px] mr-3">
@@ -113,31 +102,63 @@
                             d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
                             fill="#10A8E5"></path>
                     </svg>
-										<input type="hidden" name="total_dana" value="100000">
+                    {{-- <input type="hidden" name="total_dana" value="30000">
 										<input type="hidden" name="name" value="{{ $username }}">
 										<input type="hidden" name="user_id" value="{{ $user_id }}">
 										<input type="hidden" name="program_id" value="{{ $id }}">
-										<input type="hidden" name="email" value="{{ $user_email }}">
+										<input type="hidden" name="email" value="{{ $user_email }}"> --}}
                 </div>
-            </form>
+            </div>
 
-            <nav
-                class="bg-[#F7F7F7] fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full lg:max-w-lg lg:mx-auto py-2 px-[14px]">
-                <button onclick="window.location.href='/amount/{{ $id }}'"
-                    class="bg-[#CB1552] text-white hover:bg-[#a60e41] font-bold text-base w-full h-full rounded-md">Lanjut
-                    Pembayaran</button>
-            </nav>
+            <form action="/isi_doa/{{ $id }}/{{ Auth::id() }}/">
+                <div class="border rounded-md p-3">
+                    <p class="my-[1em] text-[#272727] text-sm font-semibold">Nominal Donasi Lainnya</p>
+                    <input
+                        class="h-[52px] w-full rounded-md border-none border-coal bg-[#F2F3F4] py-[7.5px] pl-[1.9em] pr-[15px] text-right text-[1.5rem] font-bold focus:outline-none"
+                        name="amount" placeholder="Rp" id="nominal" type="tel" value="Rp 0"
+                        autocomplete="off">
+                    <p class="my-[1em] text-[#989898] text-xs font-semibold">Min. donasi sebesar Rp 10.000</p>
+                </div>
+
+                <nav
+                    class="bg-[#F7F7F7] fixed bottom-0 left-0 right-0 h-16 border-t-2 w-full lg:max-w-lg lg:mx-auto py-2 px-[14px]">
+                    <button type="submit"
+                        class="bg-[#CB1552] text-white hover:bg-[#a60e41] font-bold text-base w-full h-full rounded-md">Lanjut
+                        Pembayaran</button>
+                </nav>
+            </form>
         </div>
     </section>
 
-		<script>
-			// $(document).ready(function () {
-			// 	function submit(element) {
-			// 		let form = $(element).html();
-			// 		console.log(form)
-			// 	}
-			// });
-		</script>
+    <script>
+        var input = document.getElementById("nominal");
+        input.addEventListener("input", function() {
+            var value = input.value;
+            value = value.replace(/\D/g, ''); // menghilangkan karakter selain angka
+            value = "Rp " + value.replace(/\B(?=(\d{3})+(?!\d))/g,
+                "."); // menambahkan "Rp" dan memisahkan ribuan dengan titik
+            input.value = value;
+        });
+
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault(); // prevent the form from submitting by default
+
+                var inputVal = $('#nominal').val(); // get the value of the input
+                var formAction = $(this).attr('action'); // get the current form action
+                inputVal = Number(inputVal.replace(/[^0-9,-]+/g, "").replace(",",
+                ".")); // get the number without Rp or period or space
+                // append the input value to the form action
+                var newAction = formAction + encodeURIComponent(inputVal);
+
+                // set the new form action
+                $(this).attr('action', newAction);
+
+                // submit the form
+                this.submit();
+            });
+        });
+    </script>
 </body>
 
 </html>

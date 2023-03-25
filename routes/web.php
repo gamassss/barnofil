@@ -35,7 +35,7 @@ Route::post('/decrease-likes/{id}', [LandingPageController::class, 'decreaseLike
 
 // detail program
 Route::get('/detail/{id}', [DetailProgramController::class, 'index']);
-
+Route::get('/isi_doa/{id}/{user_id}/{nominal}', [PaymentController::class, 'isiDoa']);
 // user auth
 
 Route::get('/user', [AkunController::class, 'index']);

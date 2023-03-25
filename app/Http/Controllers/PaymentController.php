@@ -15,14 +15,29 @@ class PaymentController extends Controller
     public function index($id, $user_id)
     {
         $program = Program::find($id);
-        $user = User::find($user_id);
-
+        // $user = User::find($user_id);
+        // dd($id);
         return view('user.payment.nominal', [
+            'id' => $id,
+            // 'user_id' => $user->id,
+            // 'username' => $user->name,
+            'nama' => $program->nama,
+            // 'user_email' => $user->email
+        ]);
+    }
+
+    public function isiDoa($id, $user_id, $nominal)
+    {
+        $user = User::find($user_id);
+        $program = Program::find($id);
+
+        return view('user.payment.isi_doa', [
             'id' => $id,
             'user_id' => $user->id,
             'username' => $user->name,
             'nama' => $program->nama,
-						'user_email' => $user->email
+            'user_email' => $user->email,
+						'nominal' => intval($nominal)
         ]);
     }
 
@@ -43,11 +58,15 @@ class PaymentController extends Controller
         $nama_arr = explode(" ", $nama); // memecah string berdasarkan spasi dan menempatkan hasilnya ke dalam array
         $nama_depan = $nama_arr[0]; // mengambil kata pertama dari array sebagai first name
         $nama_belakang = $nama_arr[count($nama_arr) - 1];
-
+				// dd($request->amount);
+				$amount = $request->amount;
+				// parsing uang
+				$amount = intval(preg_replace('/[^0-9]+/', '', $amount));
+				// dd($amount);
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => $request->total_dana,
+                'gross_amount' => $amount,
             ),
             'customer_details' => array(
                 'first_name' => $nama_depan,
@@ -57,15 +76,15 @@ class PaymentController extends Controller
             ),
         );
 
-				$program = Program::find($request->program_id);
-				$program->total_dana = $program->total_dana + $request->total_dana;
-				$program->save();
+        $program = Program::find($request->program_id);
+        $program->total_dana = $program->total_dana + $amount;
+        $program->save();
 
-				Donasi::create([
-					'user_id' => $request->user_id,
-					'program_id' => $request->program_id,
-					'amount' => $request->total_dana
-				]);
+        Donasi::create([
+            'user_id' => $request->user_id,
+            'program_id' => $request->program_id,
+            'amount' => $amount,
+        ]);
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken);
