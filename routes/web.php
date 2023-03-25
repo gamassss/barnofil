@@ -68,7 +68,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // ask link to reset password
 
 Route::get('/forgot-password', [ResetPasswordController::class, 'get_reset_password']);
-Route::post('/forgot-password', [ResetPasswordController::class, 'reset_password'])->middleware('guest')->name('password.email');
+Route::post('/forgot-password', [ResetPasswordController::class, 'reset_password'])->name('password.email');
 
 // password resetting
 
@@ -99,18 +99,5 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 });
 
 // user authorization
-
-// Route::group(['middleware' => ['role:user', 'verified'], 'prefix' => '/user'], function () {
-// 	// landing page
-
-// 	Route::get('/', function () {
-// 		return view('user.content.landing_page');
-// 	});
-
-// 	// detail program
-
-// 	Route::get('/porgram/{id}', [DetailProgramController::class, 'index']);
-
-	Route::get('/payment', [PaymentController::class, 'index']);
-
-// // pengunjung authorization
+Route::get('/amount/{id}/{user_id}', [PaymentController::class, 'index']);
+Route::get('/payment', [PaymentController::class, 'payment']);

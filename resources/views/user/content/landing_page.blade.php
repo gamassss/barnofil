@@ -159,7 +159,7 @@
                         <a href="/detail/{{ $program->id }}" class="block py-2 px-2">
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
-                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1 bg-gray-300">
                                     <div class="h-1 bg-primer param-width" data-id="{{ $program->id }}"
                                         data-dana="{{ $program->total_dana }}"
                                         data-target="{{ $program->target_dana }}"></div>
@@ -196,11 +196,11 @@
                 @foreach ($program_pilihans as $program)
                     <div
                         class="w-2/5 min-w-[40%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#" class="">
+                        <a href="/detail/{{ $program->id }}" class="">
                             <img class="h-[85px] w-full rounded-t object-cover"
                                 src="{{ asset($program->banner_img) }}" alt="" class="w-8 h-8" />
                         </a>
-                        <div class="p-2">
+                        <a href="/detail/{{ $program->id }}" class="block p-2">
                             <div class="flex flex-col gap-y-2">
                                 <p class=" text-xs font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="flex">
@@ -209,7 +209,7 @@
                                     <img src="{{ asset('img/verified_icon-org.svg') }}" alt=""
                                         class="w-[31px] h-3">
                                 </div>
-                                <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+                                <div class="bg-gray-300 overflow-hidden w-full rounded-full h-1">
                                     <div class="h-1 bg-primer param-width-pilihan" data-id="{{ $program->id }}"
                                         data-dana="{{ $program->total_dana }}"
                                         data-target="{{ $program->target_dana }}"></div>
@@ -219,7 +219,7 @@
                                     <span class="text-sm font-medium ">@convert($program->total_dana)</span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -355,7 +355,7 @@
 
             <!-- Item 1 -->
             @foreach ($program_kategoris as $program)
-                <a href="#" class="inline-block my-4">
+                <a href="/detail/{{ $program->id }}" class="inline-block my-4">
                     <div class="flex w-full">
                         <div class="flex-1 mr-4 h-full">
                             <img src="{{ asset($program->banner_img) }}" alt="" class="rounded-lg">

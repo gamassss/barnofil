@@ -5,15 +5,18 @@ namespace App\Http\Controllers\Program;
 use App\Models\Program;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DetailProgramController extends Controller
 {
     public function index($id)
 		{
-			// dd($id);
 			$program = Program::find($id);
+			// dd($program->nama);
+			// $user = Auth::user();
 			
 			return view('user.program.detail_program', [
+				'id' => $id,
 				'banner' => $program->banner_img,
 				'nama' => $program->nama,
 				'total_dana' => $program->total_dana,

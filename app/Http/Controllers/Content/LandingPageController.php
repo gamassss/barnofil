@@ -24,7 +24,7 @@ class LandingPageController extends Controller
             ->whereRaw('total_dana / target_dana > 0.38')
             ->get();
 
-        $program_kategoris = DB::select(DB::raw("SELECT users.name as user_name, programs.nama, programs.total_dana,
+        $program_kategoris = DB::select(DB::raw("SELECT users.name as user_name, programs.nama, programs.id, programs.total_dana,
 																									programs.tanggal_mulai, programs.tanggal_berakhir, programs.banner_img from programs
 																								JOIN users on users.id = programs.user_id
 																								WHERE programs.total_dana > 1000000000

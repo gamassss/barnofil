@@ -66,6 +66,12 @@
 
   <body>
     <!-- Content -->
+  @foreach ($errors->all() as $message)
+		<div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert">
+			{{ $message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	@endforeach
 
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">

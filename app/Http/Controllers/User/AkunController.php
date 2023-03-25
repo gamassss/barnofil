@@ -19,10 +19,13 @@ class AkunController extends Controller
             }
 
 						$init = substr($init, 0, 2);
+						
+						return view('user.auth.login', [
+							'inisial' => $init,
+							'nama' => $nama
+						]);
         }
-        return view('user.auth.login', [
-					'inisial' => $init,
-					'nama' => $nama
-				]);
+
+				return view('user.auth.login');
     }
 }

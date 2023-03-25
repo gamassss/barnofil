@@ -322,7 +322,8 @@
                     </svg>
                     <p class="font-bold text-sm text-primer">Bagikan</p>
                 </a>
-								<button class="bg-[#CB1552] text-white hover:bg-[#a60e41] font-bold text-base w-full rounded-md">Donasi Sekarang</button>
+                <button onclick="window.location.href='/amount/{{ $id }}/{{ Auth::id() }}'" class="bg-[#CB1552] text-white hover:bg-[#a60e41] font-bold text-base w-full rounded-md">Donasi
+                    Sekarang</button>
             </div>
         </div>
     </nav>

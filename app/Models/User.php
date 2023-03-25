@@ -38,7 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPasswordC
     ];
 
     protected $attributes = [
-        'role' => 'admin',
+        'role' => 'user',
         'metode_registrasi' => 'form',
     ];
 
@@ -54,6 +54,11 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPasswordC
 		public function program_doas()
 		{
 			return $this->belongsToMany(Program::class, 'doas');
+		}
+
+		public function donasis()
+		{
+			return $this->belongsToMany(Program::class, 'donasis');
 		}
 
 		public function programs()

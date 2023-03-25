@@ -22,6 +22,11 @@ class Program extends Model
         return $this->belongsToMany(User::class, 'doas');
     }
 
+		public function donasis()
+		{
+			return $this->belongsToMany(User::class, 'donasis');
+		}
+
     public function berita()
     {
         return $this->hasOne(Berita::class);
