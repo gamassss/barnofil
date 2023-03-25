@@ -87,25 +87,25 @@
             <div class="overflow-hidden relative h-44 md:h-64 xl:h-80 2xl:h-96">
                 <!-- Item 1 -->
                 <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
-                    <img src="{{ asset('img/car1-1.avif') }}"
+                    <img src="{{ asset('img/slider/slider5.avif') }}"
                         class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         alt="...">
                 </div>
                 <!-- Item 2 -->
                 <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
-                    <img src="{{ asset('img/car2.avif') }}"
+                    <img src="{{ asset('img/slider/slider1.avif') }}"
                         class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
-                    <img src="{{ asset('img/car3.avif') }}"
+                    <img src="{{ asset('img/slider/slider2.avif') }}"
                         class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         alt="...">
                 </div>
                 <!-- Item 4 -->
                 <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
-                    <img src="{{ asset('img/car4.avif') }}"
+                    <img src="{{ asset('img/slider/slider3.avif') }}"
                         class="block rounded-xl border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         alt="...">
                 </div>
