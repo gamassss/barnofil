@@ -152,11 +152,11 @@
                 @foreach ($program_specials as $program)
                     <div
                         class="min-w-[70%] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
+                        <a href="/detail/{{ $program->id }}">
                             <img class="h-[130px] w-full rounded-t object-cover"
                                 src="{{ asset($program->banner_img) }}" alt="banner/{{ $program->nama }}" />
                         </a>
-                        <a href="#" class="block py-2 px-2">
+                        <a href="/detail/{{ $program->id }}" class="block py-2 px-2">
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm font-semibold">{{ substr($program->nama, 0, 25) }}...</p>
                                 <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">

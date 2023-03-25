@@ -33,6 +33,9 @@ Route::get('/', [LandingPageController::class, 'index']);
 Route::post('/increase-likes/{id}', [LandingPageController::class, 'increaseLikes']);
 Route::post('/decrease-likes/{id}', [LandingPageController::class, 'decreaseLikes']);
 
+// detail program
+Route::get('/detail/{id}', [DetailProgramController::class, 'index']);
+
 // user auth
 
 Route::get('/user', [AkunController::class, 'index']);
@@ -108,7 +111,6 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 
 // 	Route::get('/porgram/{id}', [DetailProgramController::class, 'index']);
 
-// 	Route::get('/payment', [PaymentController::class, 'index']);
-// });
+	Route::get('/payment', [PaymentController::class, 'index']);
 
 // // pengunjung authorization

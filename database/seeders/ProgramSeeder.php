@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Program;
 use App\Models\User;
 use DateTime;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 class ProgramSeeder extends Seeder
@@ -16,6 +17,7 @@ class ProgramSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create();
         $dataProgram = [["#BisaSembuh - Donasi untuk Biaya Penunjang Pasien", "Medical Partnership Kitabisa", "Rp 1.491.041.394", "1000"],
             ["URGENT! 80% Hati Khanza Digerogoti Kanker Ganas", "MiaSyifa Cancer Care", "Rp 403.170.429", "31"],
             ["Upah Pas-Pasan Tak Mampu Bawa Anaknya Berobat!", "LAZ DASI NTB", "Rp 58.345.051", "96"],
@@ -1443,21 +1445,22 @@ class ProgramSeeder extends Seeder
             $targetDana = rand($totalDana, $totalDana * 20);
             $pathToImage = 'img/program_banners/' . $counter . '.jpeg';
             $counter++;
-						if ($counter > 100) {
-							$counter = 1;
-						}
+            if ($counter > 100) {
+                $counter = 1;
+            }
             $statusValue = rand(0, 2);
 
             Program::create([
                 'user_id' => User::where('name', $program[1])->first()->id,
                 'nama' => $program[0],
-								'kategori_id' => rand(0,3),
+                'kategori_id' => rand(0, 3),
+								'deskripsi' => $faker->text(2000),
                 'status' => $status[$statusValue],
                 'total_dana' => $totalDana,
                 'target_dana' => $targetDana,
                 'tanggal_mulai' => $todayStr,
                 'tanggal_berakhir' => $futureDateStr,
-								'banner_img' => $pathToImage
+                'banner_img' => $pathToImage,
             ]);
         }
 

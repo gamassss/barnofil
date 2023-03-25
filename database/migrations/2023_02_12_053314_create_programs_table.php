@@ -18,7 +18,7 @@ return new class extends Migration
 					$table->foreignId('user_id');
 					$table->foreignId('kategori_id')->nullable();
 					$table->string('nama');
-					$table->string('deskripsi')->nullable();
+					$table->text('deskripsi');
 					$table->string('status'); // Disetujui, Ditolak, Menunggu
 					// $table->decimal('total_dana', $precision = 9, $scale = 2);
 					// $table->decimal('target_dana', $precision = 9, $scale = 2);
