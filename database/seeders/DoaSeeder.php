@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DoaSeeder extends Seeder
 {
@@ -1013,6 +1014,8 @@ class DoaSeeder extends Seeder
                 DB::table('doas')->insert([
                     'donasi_id' => rand(0, 10000),
                     'doa' => $doa[1],
+										'created_at' => Carbon::now(),
+										'updated_at' => Carbon::now()
                 ]);
             }
         }

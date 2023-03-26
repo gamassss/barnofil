@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-		<link rel="shortcut icon" href="{{ asset('img/beriarti-logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/beriarti-logo.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
@@ -244,7 +244,9 @@
 
             <!-- Slider Wrapper -->
             <div class="flex overflow-x-auto gap-x-4">
-
+                @php
+                    use Carbon\Carbon;
+                @endphp
                 <!-- Slider Card Start -->
 
                 <!-- Doa 1 -->
@@ -266,7 +268,7 @@
                                 <div class="text-[10px] font-normal"><span
                                         class="text-[#989898]">{{ substr($doa->program_nama, 0, 15) }}...</span><span
                                         class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
-                                        class="text-[#6A6A6A]">{{ rand(0, 15) }} menit yang lalu</span></div>
+                                        class="text-[#6A6A6A]">{{ Carbon::parse($doa->created_at)->diffForHumans() }}</span></div>
                             </div>
                         </div>
                         <div class="flex flex-col justify-between h-32 pb-6">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Content;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doa;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 
@@ -48,8 +50,8 @@ class LandingPageController extends Controller
             $doas = DB::select(DB::raw("SELECT doas.doa, CASE
 																													WHEN donasis.anonim = 1 THEN 'Orang Baik'
 																													ELSE users.name
-																													END AS user_name, 
-																				doas.like, programs.nama as program_nama, doas.id from doas
+																													END AS user_name,
+																				doas.like, programs.nama as program_nama, doas.id, doas.created_at from doas
 																				JOIN donasis on donasis.id = doas.donasi_id
 																				JOIN users on users.id = donasis.user_id
 																				JOIN programs on programs.id = donasis.program_id
