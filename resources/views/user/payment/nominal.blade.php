@@ -102,11 +102,6 @@
                             d="M6.389 2.389a1.327 1.327 0 0 1 1.876 0l8.673 8.673a1.326 1.326 0 0 1 0 1.876l-8.673 8.673a1.327 1.327 0 0 1-1.876-1.876L14.124 12 6.389 4.265a1.327 1.327 0 0 1 0-1.876Z"
                             fill="#10A8E5"></path>
                     </svg>
-                    {{-- <input type="hidden" name="total_dana" value="30000">
-										<input type="hidden" name="name" value="{{ $username }}">
-										<input type="hidden" name="user_id" value="{{ $user_id }}">
-										<input type="hidden" name="program_id" value="{{ $id }}">
-										<input type="hidden" name="email" value="{{ $user_email }}"> --}}
                 </div>
             </div>
 

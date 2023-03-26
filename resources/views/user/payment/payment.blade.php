@@ -25,7 +25,7 @@
             window.snap.pay('{{ $snap_token }}', {
                 onSuccess: function(result) {
                     /* You may add your own implementation here */
-                    alert("payment success!");
+                    // alert("payment success!");
                     window.location.href='/'
                 },
                 onPending: function(result) {

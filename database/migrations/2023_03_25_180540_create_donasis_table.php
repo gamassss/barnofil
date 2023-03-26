@@ -18,6 +18,7 @@ return new class extends Migration
 						$table->foreignId('user_id');
 						$table->foreignId('program_id');
 						$table->integer('amount');
+						$table->boolean('anonim')->default(false);
             $table->timestamps();
         });
     }

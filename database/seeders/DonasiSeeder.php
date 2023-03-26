@@ -19,7 +19,8 @@ class DonasiSeeder extends Seeder
 					Donasi::create([
 						'user_id' => rand(0, 800),
 						'program_id' => rand(0, 1300),
-						'amount' => rand(30000, 150000)
+						'amount' => rand(30000, 150000),
+						'anonim' => true
 					]);
 				}
     }

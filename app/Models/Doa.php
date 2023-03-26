@@ -10,4 +10,6 @@ class Doa extends Model
     use HasFactory;
 
 		protected $table = 'doas';
+
+		protected $guarded = ['id'];
 }

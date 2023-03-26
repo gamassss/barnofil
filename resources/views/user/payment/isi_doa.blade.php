@@ -51,7 +51,7 @@
                             anonim)</span>
                     </label>
                     <label class="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" class="sr-only peer">
+                        <input type="checkbox" value="1" class="sr-only peer" name="anonim">
                         <div
                             class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                         </div>
@@ -65,7 +65,7 @@
                 class="h-full min-h-[70px] w-full rounded-md border border-solid border-[#ccd0d3] bg-white px-2 pt-2.5 pb-4 focus:outline-none fontsninja-family-12314"
                 data-testid="contribute-textarea-dua" id="contribute-textarea-dua" maxlength="280" rows="5"
                 placeholder="Tulis doa untuk penggalang dana atau dirimu sendiri di sini. Biar doa kamu bisa dilihat dan diamini oleh #OrangBaik lainnya."
-                style="resize: none;"></textarea>
+                style="resize: none;" name="doa"></textarea>
 
             <div class="my-3 items-center rounded-md bg-[#F2F3F4] p-4">
                 <p class="text-xs text-[#4A4A4A]">Nominal di atas termasuk 5% donasi operasional Yayasan Kitabisa,

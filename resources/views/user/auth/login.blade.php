@@ -30,7 +30,7 @@
 
     @guest
         <!-- Login and Registration Section -->
-        <section class="bg-white pt-16 pb-4">
+        <section class="bg-white pt-16 pb-4 lg:max-w-lg lg:mx-auto">
             <div class="container">
                 <div class="my-6 mx-2">
                     <h3 class="text-lg text-[#4A4A4A] font-semibold">Masuk untuk nikmati mudahnya donasi dan akses ke fitur
@@ -48,7 +48,7 @@
         </section>
 
         <!-- User Link Section -->
-        <section class="mt-2 bg-white">
+        <section class="mt-2 bg-white lg:max-w-lg lg:mx-auto">
             <div class="container">
                 <!-- Bantuan Section -->
                 <div class="py-[21px] px-[7px] border-b">
@@ -133,7 +133,7 @@
     @endguest
 
     @auth
-        <section class="bg-white pt-16">
+        <section class="bg-white pt-16 lg:max-w-lg lg:mx-auto">
             <div class="container">
                 <div class="py-[21px] px-[7px] flex border-b">
                     <!-- Profile Pic -->
@@ -214,7 +214,7 @@
         </section>
 
         <!-- User Link Section -->
-        <section class="mt-2 bg-white">
+        <section class="mt-2 bg-white lg:max-w-lg lg:mx-auto">
             <div class="container">
                 <!-- Pengaturan Section -->
                 <div class="py-[21px] px-[7px] border-b">

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Midtrans\Snap;
+use App\Models\Doa;
 use App\Models\User;
 use Midtrans\Config;
 use App\Models\Donasi;
 use App\Models\Program;
 use Illuminate\Http\Request;
+use Exception;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\QueryException;
 
 class PaymentController extends Controller
 {
@@ -30,6 +33,12 @@ class PaymentController extends Controller
     {
         $user = User::find($user_id);
         $program = Program::find($id);
+				// dd($program, $user, $nominal);
+
+				// jika belum donasi harap login
+				if (!$user) {
+					return view('user.auth.login');
+				}
 
         return view('user.payment.isi_doa', [
             'id' => $id,
@@ -72,19 +81,45 @@ class PaymentController extends Controller
                 'first_name' => $nama_depan,
                 'last_name' => $nama_belakang,
                 'email' => $request->email,
-                'phone' => '08111222333',
             ),
         );
-
+				
         $program = Program::find($request->program_id);
         $program->total_dana = $program->total_dana + $amount;
         $program->save();
+				
+				
+				try {
+					$anonim = $request->anonim ? true : false;
+				} catch(Exception $e) {
+					dd($e->getMessage());					
+				}
 
-        Donasi::create([
-            'user_id' => $request->user_id,
-            'program_id' => $request->program_id,
-            'amount' => $amount,
+				
+        $donasi = Donasi::create([
+					'user_id' => $request->user_id,
+					'program_id' => $request->program_id,
+					'amount' => $amount,
+					'anonim' => $anonim
         ]);
+				
+				try{
+					$donasi_id = $donasi->id;
+				} catch( Exception $e) {
+					dd($e->getMessage());
+				}
+				
+				// dd($request->anonim, $request->doa, $request->user_id, $anonim, $donasi_id);
+				try {
+					$doa = Doa::create([
+						'donasi_id' => $donasi_id,
+						'doa' => $request->doa
+					]);
+				} catch(Exception $e) {
+					dd($e->getMessage());
+				}
+				
+				// dd($doa);
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken);

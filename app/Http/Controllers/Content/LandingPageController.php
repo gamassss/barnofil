@@ -45,12 +45,17 @@ class LandingPageController extends Controller
         }
 
         try {
-            $doas = DB::select(DB::raw("SELECT doas.doa, users.name as user_name, doas.like, programs.nama as program_nama, doas.id from doas
-																		JOIN donasis on donasis.id = doas.donasi_id
-																		JOIN users on users.id = donasis.user_id
-																		JOIN programs on programs.id = donasis.program_id
-																		LIMIT 10
-																	"));
+            $doas = DB::select(DB::raw("SELECT doas.doa, CASE
+																													WHEN donasis.anonim = 1 THEN 'Orang Baik'
+																													ELSE users.name
+																													END AS user_name, 
+																				doas.like, programs.nama as program_nama, doas.id from doas
+																				JOIN donasis on donasis.id = doas.donasi_id
+																				JOIN users on users.id = donasis.user_id
+																				JOIN programs on programs.id = donasis.program_id
+																				ORDER BY doas.created_at desc
+																				LIMIT 10
+																			"));
         } catch (QueryException $e) {
             dd($e->getMessage());
         }

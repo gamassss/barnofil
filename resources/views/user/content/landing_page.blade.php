@@ -262,8 +262,7 @@
                                 <img src="{{ asset('img/user_doa.avif') }}" alt="">
                             </div>
                             <div class="flex-col">
-                                <p class="text-sm font-bold text-[#4A4A4A]">
-                                    {{ rand(0, 10) > 7 ? $doa->user_name : 'Orang Baik' }}</p>
+                                <p class="text-sm font-bold text-[#4A4A4A]">{{ $doa->user_name }}</p>
                                 <div class="text-[10px] font-normal"><span
                                         class="text-[#989898]">{{ substr($doa->program_nama, 0, 15) }}...</span><span
                                         class="w-[4px] mx-1 h-[4px] inline-block bg-[#4A4A4A] rounded-full"></span><span
