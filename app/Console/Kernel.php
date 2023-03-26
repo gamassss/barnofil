@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-				$schedule->command('auth:clear-resets')->everyFifteenMinutes();
+        $schedule->command('auth:clear-resets')->everyFifteenMinutes();
     }
 
     /**
@@ -26,8 +26,12 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
+
+        $this->command('freshseed', function () {
+            $this->call('migrate:fresh', ['--seed' => true]);
+        })->describe('Fresh the database and run seeders');
     }
 }

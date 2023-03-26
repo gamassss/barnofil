@@ -55,6 +55,7 @@ class LandingPageController extends Controller
 																				JOIN donasis on donasis.id = doas.donasi_id
 																				JOIN users on users.id = donasis.user_id
 																				JOIN programs on programs.id = donasis.program_id
+																				WHERE doas.doa IS NOT NULL
 																				ORDER BY doas.created_at desc
 																				LIMIT 10
 																			"));
