@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use DateTime;
 use App\Models\User;
+use Exception;
 use App\Models\SocialAccount;
 use App\Http\Controllers\Controller;
-use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Database\QueryException;
+use Socialite;
 
 class SocialiteController extends Controller
 {
@@ -17,14 +19,16 @@ class SocialiteController extends Controller
 
     public function handleProvideCallback($provider)
     {
-        try {
-            $user = Socialite::driver($provider)->user();
-        } catch (Exception $e) {
-            return redirect()->back();
-        }
-        // find or create user and send params user get from socialite and provider
-        $authUser = $this->findOrCreateUser($user, $provider);
-
+			// dd($provider);
+			try {
+				$user = Socialite::driver('google')->stateless()->user();
+			} catch (Exception $e) {
+				return redirect()->back();
+			}
+			// dd($user);
+			// find or create user and send params user get from socialite and provider
+			$authUser = $this->findOrCreateUser($user, 'google');
+			
         // login user
         Auth()->login($authUser, true);
 
@@ -36,34 +40,41 @@ class SocialiteController extends Controller
     {
         // Get Social Account
         $socialAccount = SocialAccount::where('provider_id', $socialUser->getId())
-            ->where('provider_name', $provider)
-            ->first();
-
+				->where('provider_name', 'google')
+				->first();
+				
         // Jika sudah ada
         if ($socialAccount) {
             // return user
             return $socialAccount->user;
 
             // Jika belum ada
-        } else {
+					} else {
 
             // User berdasarkan email
             $user = User::where('email', $socialUser->getEmail())->first();
-
+						
             // Jika Tidak ada user
             if (!$user) {
                 // Create user baru
                 $today = new DateTime();
                 $todayStr = $today->format('Y-m-d');
-
-                $user = User::create([
-                    'name' => $socialUser->getName(),
-                    'email' => $socialUser->getEmail(),
+								
+                try{
+									$user = User::create([
+										'name' => $socialUser->getName(),
+										'email' => $socialUser->getEmail(),
 										'role' => 'user',
-                    'email_verified_at' => $todayStr,
-                    'metode_registrasi' => 'google',
-										'verification_success' => true
-                ]);
+										'email_verified_at' => $todayStr,
+										'metode_registrasi' => 'google',
+										'email_verified' => true,
+										'account_verified' => true
+									]);
+								} catch(QueryException $e) {
+									dd($e->getMessage());
+								}
+
+								// dd($user);
             }
 
             // Buat Social Account baru

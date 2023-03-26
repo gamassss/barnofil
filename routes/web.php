@@ -58,8 +58,8 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'auth']);
 
 // auth with driver
-Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
-Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback'])->name('google.callback');
+Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('google.login');
+Route::get('auth/{provider}/callback/', [SocialiteController::class, 'handleProvideCallback'])->name('google.callback');
 
 // log users out
 
