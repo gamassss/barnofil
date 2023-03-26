@@ -100,4 +100,4 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 
 // user authorization
 Route::get('/amount/{id}/{user_id}', [PaymentController::class, 'index']);
-Route::get('/payment', [PaymentController::class, 'payment']);
+Route::post('/payment', [PaymentController::class, 'payment']);

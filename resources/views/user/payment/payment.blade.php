@@ -18,13 +18,12 @@
 </head>
 
 <body class="bg-[#F7F7F7] font-rubik grid place-items-center">
-    {{-- <button id="pay-button"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Bayar Sekarang</button> --}}
     <div class="px-8 flex flex-col gap-y-4">
-			<div class="grid place-items-center w-full">
-				<img src="{{ asset('img/receipt.png') }}" alt="" class="w-20 h-20">
-			</div>
-						<p class="text-base font-light text-center">Anda akan diarahkan langsung ke halaman pembayaran. Jika tidak, klik <span class="font-bold" id="pay-button">disini</span>.</p>
+        <div class="grid place-items-center w-full">
+            <img src="{{ asset('img/receipt.png') }}" alt="" class="w-20 h-20">
+        </div>
+        <p class="text-base font-light text-center">Anda akan diarahkan langsung ke halaman pembayaran. Jika tidak, klik
+            <span class="font-bold" id="pay-button">disini</span>.</p>
     </div>
 
     <script type="text/javascript">

@@ -31,7 +31,8 @@
         </div>
     </section>
     <section class="bg-white pt-16 pb-4">
-        <form action="/payment" class="container">
+        <form action="/payment" class="container" method="post">
+					@csrf
             <div class="border-b pb-4">
                 <p class="my-[1em] mx-0 text-[#272727] text-sm">Isi Nominal Donasi</p>
                 <input
