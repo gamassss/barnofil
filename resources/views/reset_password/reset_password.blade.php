@@ -45,6 +45,12 @@
 </head>
 
 <body>
+    @foreach ($errors->all() as $message)
+        <div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endforeach
     <!-- Content -->
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
@@ -93,13 +99,14 @@
                                     <label class="form-label" for="password_confirmation">Confirmation Password</label>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password_confirmation" class="form-control" name="password_confirmation"
+                                    <input type="password" id="password_confirmation" class="form-control"
+                                        name="password_confirmation"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-														<input type="hidden" name="token" value="{{ $token }}">
+                            <input type="hidden" name="token" value="{{ $token }}">
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Reset Password</button>
                             </div>

@@ -144,10 +144,17 @@
                     <!-- Nama dan edit profile -->
                     <div class="flex-row justify-between">
                         <p class="text-[#3A3A3A] text-base font-semibold mb-2">{{ $nama }}</p>
-                        <a href="/login"
-                            class="grouppx-[23px] py-[6px] bg-white rounded-md transition duration-300 flex items-center justify-center border border-primer text-primer hover:text-white hover:bg-primer">
-                            <p class="font-bold text-xs">Edit Profile</p>
-                        </a>
+                        <div class="flex gap-x-2">
+                            <a href="/login"
+                                class="group px-[23px] py-[6px] bg-white rounded-md transition duration-300 flex items-center justify-center border border-primer text-primer hover:text-white hover:bg-primer">
+                                <p class="font-bold text-xs">Edit Profile</p>
+                            </a>
+                            <form action="/logout" method="post"
+                                class="group px-[23px] py-[6px] bg-white rounded-md transition duration-300 flex items-center justify-center border border-primer text-primer hover:text-white hover:bg-primer">
+																@csrf
+                                <button type="submit" class="font-bold text-xs">Logout</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="py-[21px] px-[7px] border-b">
@@ -352,7 +359,7 @@
                 </div>
             </div>
         </section>
-				<div class="pb-24"></div>
+        <div class="pb-24"></div>
     @endauth
 
     @include('layout.navbar')
