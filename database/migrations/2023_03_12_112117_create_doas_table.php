@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('doas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('program_id');
+            $table->foreignId('donasi_id');
             $table->text('doa');
             $table->integer('like')->default(2);
             $table->timestamps();

@@ -284,7 +284,7 @@
                         </div>
                         <div class="flex justify-around py-4 border-t-2">
                             <!-- Like -->
-                            <div class="flex items-center svg-like" data-id="{{ $doa->id }}">
+                            <div class="flex items-center svg-like cursor-pointer" data-id="{{ $doa->id }}">
                                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="img" class="w-5">
                                     <path

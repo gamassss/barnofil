@@ -1008,12 +1008,13 @@ class DoaSeeder extends Seeder
 
         ];
 
-        foreach ($dataDoa as $doa) {
-            DB::table('doas')->insert([
-                'user_id' => $doa[0],
-                'program_id' => $doa[2],
-                'doa' => $doa[1],
-            ]);
+        for ($i = 0; $i < 5; $i++) {
+            foreach ($dataDoa as $doa) {
+                DB::table('doas')->insert([
+                    'donasi_id' => rand(0, 10000),
+                    'doa' => $doa[1],
+                ]);
+            }
         }
     }
 }

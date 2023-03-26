@@ -47,7 +47,7 @@
                 class="text-xs font-normal">{{ \Carbon\Carbon::parse($tanggal_mulai)->diffInDays(\Carbon\Carbon::parse($tanggal_berakhir)) }}
                 hari</span>
         </div>
-        <div class="bg-slate-200 overflow-hidden w-full rounded-full h-1">
+        <div class="bg-gray-400 overflow-hidden w-full rounded-full h-1">
             <div class="h-1 bg-primer param-width" data-dana="{{ $total_dana }}" data-target="{{ $target_dana }}">
             </div>
         </div>
