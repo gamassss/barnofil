@@ -94,7 +94,6 @@ class PaymentController extends Controller
 				} catch(Exception $e) {
 					dd($e->getMessage());					
 				}
-
 				
         $donasi = Donasi::create([
 					'user_id' => $request->user_id,

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Exception;
 
 class RegistrasiController extends Controller
 {
@@ -23,19 +24,23 @@ class RegistrasiController extends Controller
             'password' => 'required',
             'confirmation_password' => 'required|same:password',
         ]);
-
+        // dd($validated);
         $validated['password'] = Hash::make($validated['password']);
 
         $user = User::create($validated);
+        // dd($user);
+        try {
+            event(new Registered($user));
 
-        event(new Registered($user));
-
-        auth()->login($user);
+            auth()->login($user);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
 
         if ($user->metode_registrasi == 'form') {
             return redirect('/email/verify')->with('success', 'Silahkan verifikasi akun di email anda untuk mengaktifkan akun.');
         }
 
-				return redirect('/');
+        return redirect('/');
     }
 }
