@@ -13,6 +13,7 @@ class LandingPageController extends Controller
 {
     public function index()
     {
+        // dd('masukk');
         try {
             $program_specials = DB::table('programs')
                 ->select('*')
