@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
     <title>Beriarti - Memberikan Harapan dan Mengubah Dunia dengan Aksi Nyata</title>
     @vite('resources/css/app.css')
@@ -30,7 +30,7 @@
                 <img src="{{ asset('img/icons/navigation/left-arrow-white.svg') }}" alt="">
             </a>
             <div class="container h-full lg:max-w-lg flex items-center">
-                <h4 class="text-white font-semibold text-base">Kategori {{ $kategori }}</h4>
+                <h4 class="text-white font-semibold text-base">Kategori {{ $kategori->nama_kategori }}</h4>
             </div>
         </div>
     </section>
@@ -38,7 +38,8 @@
     <section class="bg-white pt-16 pb-4">
         <form action="{{ route('galangdana.store') }}" method="POST" class="container mt-4">
             @csrf
-
+            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
             <div class="mb-4">
                 <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                     Program</label>
@@ -59,10 +60,44 @@
             </div>
 
             <div class="mb-4">
-                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
+                <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
                     Program</label>
-                <textarea id="message" rows="4" name="deskripsi"
+                <textarea id="deskripsi" rows="4" name="deskripsi"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="tanggal_mulai" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal
+                    Mulai</label>
+                <div class="relative max-w-sm">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <input id="tanggal_mulai" datepicker type="text" name="tanggal_mulai"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="tanggal_berakhir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal
+                    Selesai</label>
+                <div class="relative max-w-sm">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <input id="tanggal_berakhir" datepicker type="text" name="tanggal_berakhir"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
             </div>
 
             <div class="mb-4">
@@ -80,7 +115,7 @@
         </form>
     </section>
 
-    <div id="defaultModal" tabindex="-1" aria-hidden="true"
+    {{-- <div id="defaultModal" tabindex="-1" aria-hidden="true"
         class="fixed top-16 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative w-full max-w-2xl max-h-full">
             <!-- Modal content -->
@@ -125,7 +160,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>

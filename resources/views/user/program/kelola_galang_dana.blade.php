@@ -59,15 +59,41 @@
         </div>
     </section>
 
-    <section class="mt-6 bg-white pb-4">
+    <section class="mt-6 bg-white pb-16">
         <div class="container">
             <div class="mt-6 mb-4">
-                <h2 class="font-semibold text-[#4A4A4A] text-base">Kelola galang dana</h2>
+                <h2 class="font-semibold text-[#4A4A4A] text-base">Menunggu</h2>
             </div>
+            <div class="flex flex-col">
+                @foreach ($waiting_list_programs as $program)
+                    <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">
+                        <img src="{{ asset($program->banner_img) }}" alt=""
+                            class="max-w-[30%] rounded">
+                        <div class="flex flex-col justify-between">
+                            <p class="text-sm font-semibold text-[#4A4A4A]">{{ $program->nama }}</p>
+                            <p class="text-xs text-[#4A4A4A] font-light">Disubmit pada {{ $program->created_at }}</p>
+                        </div>
+                        <div class="mx-auto w-full bg-gray-200/70 rounded-full my-4 h-1">
+                        </div>
+                        <div class="flex justify-between items-center w-full gap-x-2">
+                            <button class="text-primer font-bold text-base py-1 px-2 border rounded border-primer w-full hover:text-white hover:bg-primerhover transition">Lihat detail</button>
+                            <button class="py-1 px-2 border rounded border-gray-300 grid place-items-center">
+                                <img src="{{ asset('img/icons/bin.svg') }}" alt="" style="height: 25px;">
+                            </button>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            {{-- @foreach ($waiting_list_programs as $program)
+                
+            @endforeach --}}
         </div>
     </section>
 
     @include('layout.navbar')
+    {{-- <script>
+            console.log({!! json_encode($programs_submitted) !!})
+        </script> --}}
 </body>
 
 </html>

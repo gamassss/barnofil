@@ -203,7 +203,7 @@
         </div>
     </section>
 
-    <section class="bg-white mt-2 pb-4">
+    <section class="bg-white mt-2 pb-16">
         <div class="container">
             <button class="flex w-full justify-between border-b py-4">
                 <span class="text-[#4A4A4A] text-base font-bold">Kabar Terbaru</span>

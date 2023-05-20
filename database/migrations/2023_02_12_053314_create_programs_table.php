@@ -19,7 +19,7 @@ return new class extends Migration
 					$table->foreignId('kategori_id')->nullable();
 					$table->string('nama');
 					$table->text('deskripsi');
-					$table->string('status'); // Disetujui, Ditolak, Menunggu
+					$table->string('status')->default('menunggu'); // Disetujui, Ditolak, Menunggu
 					$table->bigInteger('total_dana')->default(0);
 					$table->bigInteger('target_dana');
 					$table->string('banner_img')->nullable();

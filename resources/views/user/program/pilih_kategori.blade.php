@@ -38,7 +38,7 @@
             <!-- Kategori 1 -->
             <button id="pendidikan" class="w-full flex items-center justify-between py-4 border-b">
                 <div class="flex items-center">
-                    <img src="{{ asset('img/icons/icon-pendidikan.png') }}" alt="" class="w-[35px] h-[35px]">
+                    <img src="{{ asset('img/icons/icon-pendidikan.png') }}" alt="" class="w-[40px] h-[40px] rounded">
                     <span class="mx-5 text-left text-sm font-semibold text-[#4A4A4A]">Bantuan Pendidikan</span>
                 </div>
                 <div class="grid place-items-center justify-sel-end">
@@ -54,7 +54,7 @@
             <!-- Kategori 2 -->
             <button id="kemanusiaan" class="w-full flex items-center justify-between py-4 border-b">
                 <div class="flex items-center">
-                    <img src="{{ asset('img/icons/icon-kemanusiaan.png') }}" alt="" class="w-[35px] h-[35px]">
+                    <img src="{{ asset('img/icons/icon-kemanusiaan.png') }}" alt="" class="w-[40px] h-[40px] rounded">
                     <span class="mx-5 text-left text-sm font-semibold text-[#4A4A4A]">Kemanusiaan</span>
                 </div>
                 <div class="grid place-items-center justify-sel-end">
@@ -70,8 +70,8 @@
             <!-- Kategori 3 -->
             <button id="lingkungan" class="w-full flex items-center justify-between py-4 border-b">
                 <div class="flex items-center">
-                    <img src="{{ asset('img/icons/icon-lingkungan.png') }}" alt="" class="w-[35px] h-[35px]">
-                    <span class="mx-5 text-left text-sm font-semibold text-[#4A4A4A]">Lingkungan</span>
+                    <img src="{{ asset('img/icons/icon-bencana.png') }}" alt="" class="w-[40px] h-[40px] rounded">
+                    <span class="mx-5 text-left text-sm font-semibold text-[#4A4A4A]">Bencana</span>
                 </div>
                 <div class="grid place-items-center justify-sel-end">
                     <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none"
@@ -95,7 +95,7 @@
                 $('input[name=nama_kategori]').val('Kemanusiaan');
             });
             $('#lingkungan').on('click', function () {
-                $('input[name=nama_kategori]').val('Lingkungan');
+                $('input[name=nama_kategori]').val('Bencana');
             });
         });
     </script>

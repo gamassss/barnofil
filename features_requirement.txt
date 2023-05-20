@@ -1,7 +1,6 @@
 ### To do:
 	hi:
 		23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
-		11. User dapat melihat list program dan status yang mereka submit.
 
 	med:
 		13. Pengunjung dapat melakukan pencarian program dengan filter kategori.
@@ -17,7 +16,7 @@
 
 ### In progress:
 		9. User dapat melihat semua program yang diikuti.
-		10. User dapat melakukan submit program dengan syarat Program disetujui oleh admin.
+		11. User dapat melihat list program dan status yang mereka submit.
 
 
 

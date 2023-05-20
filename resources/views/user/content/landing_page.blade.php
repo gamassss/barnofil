@@ -126,25 +126,6 @@
     </section>
     <!-- Slider Banner End -->
 
-    <!-- Jenis Donasi Start -->
-    <section class="bg-white my-2 pb-20 pt-4 px-5 lg:max-w-lg lg:mx-auto">
-        <div class="container flex h-full justify-around gap-x-8">
-            <div class="w-20 h-20 rounded-full">
-                <img src="{{ asset('img/donasi-pic.avif') }}" alt="">
-                <p class="text-center">Donasi</p>
-            </div>
-            <div class="w-20 h-20 rounded-full">
-                <img src="{{ asset('img/zakat-pic.avif') }}" alt="" class="object-fill">
-                <p class="text-center">Zakat</p>
-            </div>
-            <div class="w-20 h-20 rounded-full">
-                <img src="{{ asset('img/galangdana-pic.avif') }}" alt="">
-                <p class="text-center">Galang Dana</p>
-            </div>
-        </div>
-    </section>
-    <!-- Jenis Donasi End -->
-
     <!-- Program Spesial Start -->
     <section class="bg-white my-2 lg:max-w-lg lg:mx-auto">
         <div class="container py-4">
@@ -182,7 +163,7 @@
 
     <!-- Section Zakat Start -->
     <section class="my-2 lg:max-w-lg lg:mx-auto">
-        <img src="{{ asset('img/zakat.avif') }}" alt="">
+        <img src="{{ asset('img/slider/banner_7.png') }}" alt="">
     </section>
     <!-- Section Zakat End -->
 
@@ -230,7 +211,7 @@
 
     <!-- Sponsor Start -->
     <section class="my-2 lg:max-w-lg lg:mx-auto">
-        <img src="{{ asset('img/sponsor.avif') }}" alt="">
+        <img src="{{ asset('img/slider/banner_1.png') }}" alt="">
     </section>
     <!-- Sponsor End -->
 
@@ -323,37 +304,27 @@
             <div class="flex w-full justify-evenly gap-x-3 mb-4">
                 <!-- Kategori 1 -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-primer p-2 rounded-xl">
-                        <img src="{{ asset('img/icon-bencana.png') }}" alt="" class="">
+                    <div class="grid place-items-center w-12 border-2 border-primer overflow-hidden rounded-xl">
+                        <img src="{{ asset('img/icons/icon-bencana.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Bencana Alam</p>
                 </div>
 
                 <!-- Balita -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
-                        <img src="{{ asset('img/icon-balita.png') }}" alt="" class="">
+                    <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
+                        <img src="{{ asset('img/icons/icon-pendidikan.png') }}" alt="" class="rounded">
                     </div>
-                    <p class="text-xs font-normal text-center">Balita & Anak Sakit</p>
+                    <p class="text-xs font-normal text-center">Pendidikan</p>
                 </div>
 
                 <!-- Medis -->
                 <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
-                        <img src="{{ asset('img/icon-medis.png') }}" alt="" class="">
+                    <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
+                        <img src="{{ asset('img/icons/icon-kemanusiaan.png') }}" alt="" class="rounded">
                     </div>
-                    <p class="text-xs font-normal text-center">Bantuan Medis & Kesehatan</p>
+                    <p class="text-xs font-normal text-center">Kemanusiaan</p>
                 </div>
-
-                <!-- Lainnya -->
-                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
-                    <div class="grid place-items-center w-12 border-2 border-slate-300 p-2 rounded-xl">
-                        <img src="{{ asset('img/icon-list.png') }}" alt="" class="">
-                    </div>
-                    <p class="text-xs font-normal">Lainnya</p>
-                </div>
-
-
             </div>
 
             <!-- Item 1 -->
