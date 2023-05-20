@@ -20,9 +20,7 @@ return new class extends Migration
 					$table->string('nama');
 					$table->text('deskripsi');
 					$table->string('status'); // Disetujui, Ditolak, Menunggu
-					// $table->decimal('total_dana', $precision = 9, $scale = 2);
-					// $table->decimal('target_dana', $precision = 9, $scale = 2);
-					$table->bigInteger('total_dana');
+					$table->bigInteger('total_dana')->default(0);
 					$table->bigInteger('target_dana');
 					$table->string('banner_img')->nullable();
 					$table->date('tanggal_mulai');

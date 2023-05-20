@@ -12,6 +12,7 @@ use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Content\LandingPageController;
+use App\Http\Controllers\GalangDanaController;
 use App\Http\Controllers\User\PenggalangDanaController;
 use App\Http\Controllers\Program\DetailProgramController;
 
@@ -101,3 +102,7 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 // user authorization
 Route::get('/amount/{id}/{user_id}', [PaymentController::class, 'index']);
 Route::post('/payment', [PaymentController::class, 'payment']);
+// Route::get('/galangdana', [GalangDanaController::class, 'index']);
+Route::resource('/galangdana', GalangDanaController::class);
+Route::get('/kelola-galangdana', [GalangDanaController::class, 'kelola_galang_dana'])->name('galangdana.kelola');
+Route::get('/pilih-kategori', [GalangDanaController::class, 'pilih_kategori_galang_dana'])->name('galangdana.pilih_kategori');

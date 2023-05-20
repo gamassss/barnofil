@@ -11,10 +11,10 @@
             </a>
 
             <!-- Galang Dana Navbar -->
-            <div class="flex flex-col flex-wrap items-center justify-center">
-                <img src="{{ asset('img/icons/navigation/galang-navbar.svg') }}" alt="" class="w-8">
+            <a href="/galangdana" class="flex flex-col flex-wrap items-center justify-center">
+                <img src="{{ asset(Request::is('kelola-galangdana') || Request::is('galangdana') ? 'img/icons/navigation/galang-navbar-active.svg' : 'img/icons/navigation/galang-navbar.svg') }}" alt="" class="w-8">
                 <p class="text-center text-[10px] text-[#A8A8A8]">Galang Dana</p>
-            </div>
+            </a>
 
             <!-- Donasi Navbar -->
             <div class="flex flex-col flex-wrap items-center justify-center">
