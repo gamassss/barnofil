@@ -17,10 +17,10 @@
             </a>
 
             <!-- Donasi Navbar -->
-            <div class="flex flex-col flex-wrap items-center justify-center">
-                <img src="{{ asset('img/icons/navigation/donasi-navbar.svg') }}" alt="" class="w-8">
+            <a href="{{ Auth::user() ? '/donasi-saya' : '/login' }}" class="flex flex-col flex-wrap items-center justify-center">
+                <img src="{{ asset(Request::is('donasi-saya*') ? 'img/icons/navigation/donasi_navbar_active.svg' : 'img/icons/navigation/donasi-navbar.svg') }}" alt="" class="w-8">
                 <p class="text-[10px] text-[#A8A8A8]">Donasi Saya</p>
-            </div>
+            </a>
             <!-- Account Navbar -->
             <a href="/user" class="flex flex-row flex-wrap items-center justify-center">
                 <img src="{{ asset(Request::is('user') ? 'img/icons/navigation/account_navbar_active.svg' : 'img/icons/navigation/account-navbar.svg') }}"

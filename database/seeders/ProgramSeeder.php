@@ -1443,7 +1443,7 @@ class ProgramSeeder extends Seeder
             $strTotalDana = $program[2];
             $totalDana = intval(str_replace(array("Rp ", "."), "", $strTotalDana));
             $targetDana = rand($totalDana, $totalDana * 20);
-            $pathToImage = 'img/program_banners/' . $counter . '.jpeg';
+            $pathToImage = 'storage/img/program_banners/' . $counter . '.jpeg';
             $counter++;
             if ($counter > 100) {
                 $counter = 1;

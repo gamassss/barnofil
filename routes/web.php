@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\User\AkunController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\GalangDanaController;
+use App\Http\Controllers\User\DonasiController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Auth\RegistrasiController;
@@ -12,7 +14,6 @@ use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Content\LandingPageController;
-use App\Http\Controllers\GalangDanaController;
 use App\Http\Controllers\User\PenggalangDanaController;
 use App\Http\Controllers\Program\DetailProgramController;
 
@@ -102,7 +103,9 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
 // user authorization
 Route::get('/amount/{id}/{user_id}', [PaymentController::class, 'index']);
 Route::post('/payment', [PaymentController::class, 'payment']);
-// Route::get('/galangdana', [GalangDanaController::class, 'index']);
+
 Route::resource('/galangdana', GalangDanaController::class);
 Route::get('/kelola-galangdana', [GalangDanaController::class, 'kelola_galang_dana'])->name('galangdana.kelola');
 Route::get('/pilih-kategori', [GalangDanaController::class, 'pilih_kategori_galang_dana'])->name('galangdana.pilih_kategori');
+
+Route::get('/donasi-saya', [DonasiController::class, 'index'])->name('donasisaya.index');

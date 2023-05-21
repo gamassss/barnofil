@@ -17,8 +17,6 @@
 ### In progress:
 		9. User dapat melihat semua program yang diikuti.
 
-
-
 ### Done:
 // 1. Terdapat 2 Role, yaitu Admin dan Donatur/Pengunjung
 // 2. System dapat melakukan authorization.
