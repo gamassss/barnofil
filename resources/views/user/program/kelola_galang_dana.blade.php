@@ -46,7 +46,7 @@
 
             <!-- Button Tambah Galang Dana -->
             <button onclick="window.location.href='{{ route('galangdana.pilih_kategori') }}'"
-                class="mt-4 mb-3 py-4 rounded-sm w-full font-bold text-primer text-center border-2 border-dashed border-primer">
+                class="mt-4 mb-3 py-2 rounded-sm w-full font-bold text-primer text-center border-2 border-dashed border-primer">
                 Buat baru galang dana +
             </button>
 
@@ -59,34 +59,124 @@
         </div>
     </section>
 
+    <section class="mt-6 bg-white pb-4">
+        <div class="container">
+            <div class="pt-4 mb-4 flex justify-between items-center">
+                <h2 class="font-semibold text-[#4A4A4A] text-base">Waiting</h2>
+                <p class="text-xs text-primer">See all</p>
+            </div>
+            @if ($is_exist_disetujui)
+                @foreach ($waiting_list_programs as $program)
+                    @if ($program->status == 'menunggu')
+                        <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">
+                            <img src="{{ asset($program->banner_img) }}" alt="" class="max-w-[30%] rounded">
+                            <div class="flex flex-col justify-between">
+                                <p class="text-sm font-semibold text-[#4A4A4A]">{{ $program->nama }}</p>
+                                <p class="text-xs text-[#4A4A4A] font-light">Disubmit pada {{ $program->created_at }}
+                                </p>
+                            </div>
+                            <div class="mx-auto w-full bg-gray-200/70 rounded-full my-4 h-1">
+                            </div>
+                            <div class="flex justify-between items-center w-full gap-x-2">
+                                <button
+                                    class="text-primer font-bold text-base py-1 px-2 border rounded border-primer w-full hover:text-white hover:bg-primerhover transition">Lihat
+                                    detail</button>
+                                <button class="py-1 px-2 border rounded border-gray-300 grid place-items-center">
+                                    <img src="{{ asset('img/icons/bin.svg') }}" alt="" style="height: 25px;">
+                                </button>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @else
+                <div class="flex flex-col items-center w-full py-4">
+                    <img src="{{ asset('img/icons/notfound-jar.svg') }}" alt="" class="w-40">
+                    <p class="text-[#4A4A4A] font-semibold text-base mt-4 my-3">Tidak ada galang dana ditemukan</p>
+                    <p class="text-[#989898] text-xs text-center">Kamu tidak memiliki penggalangan yang sudah disetujui
+                    </p>
+                </div>
+            @endif
+        </div>
+    </section>
+
+    <section class="mt-6 bg-white pb-4">
+        <div class="container">
+            <div class="pt-4 mb-4 flex justify-between items-center">
+                <h2 class="font-semibold text-[#4A4A4A] text-base">Approved</h2>
+                <p class="text-xs text-primer">See all</p>
+            </div>
+            @if ($is_exist_disetujui)
+                @foreach ($waiting_list_programs as $program)
+                    @if ($program->status == 'disetujui')
+                        <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">
+                            <img src="{{ asset($program->banner_img) }}" alt="" class="max-w-[30%] rounded">
+                            <div class="flex flex-col justify-between">
+                                <p class="text-sm font-semibold text-[#4A4A4A]">{{ $program->nama }}</p>
+                                <p class="text-xs text-[#4A4A4A] font-light">Disubmit pada {{ $program->created_at }}
+                                </p>
+                            </div>
+                            <div class="mx-auto w-full bg-gray-200/70 rounded-full my-4 h-1">
+                            </div>
+                            <div class="flex justify-between items-center w-full gap-x-2">
+                                <button
+                                    class="text-primer font-bold text-base py-1 px-2 border rounded border-primer w-full hover:text-white hover:bg-primerhover transition">Lihat
+                                    detail</button>
+                                <button class="py-1 px-2 border rounded border-gray-300 grid place-items-center">
+                                    <img src="{{ asset('img/icons/bin.svg') }}" alt="" style="height: 25px;">
+                                </button>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @else
+                <div class="flex flex-col items-center w-full py-4">
+                    <img src="{{ asset('img/icons/notfound-jar.svg') }}" alt="" class="w-40">
+                    <p class="text-[#4A4A4A] font-semibold text-base mt-4 my-3">Tidak ada galang dana ditemukan</p>
+                    <p class="text-[#989898] text-xs text-center">Kamu tidak memiliki penggalangan yang sudah disetujui
+                    </p>
+                </div>
+            @endif
+        </div>
+    </section>
+
     <section class="mt-6 bg-white pb-16">
         <div class="container">
-            <div class="mt-6 mb-4">
-                <h2 class="font-semibold text-[#4A4A4A] text-base">Menunggu</h2>
+            <div class="pt-4 mb-4 flex justify-between items-center">
+                <h2 class="font-semibold text-[#4A4A4A] text-base">Rejected</h2>
+                <p class="text-xs text-primer">See all</p>
             </div>
-            <div class="flex flex-col">
+            @if ($is_exist_ditolak)
                 @foreach ($waiting_list_programs as $program)
-                    <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">
-                        <img src="{{ asset($program->banner_img) }}" alt=""
-                            class="max-w-[30%] rounded">
-                        <div class="flex flex-col justify-between">
-                            <p class="text-sm font-semibold text-[#4A4A4A]">{{ $program->nama }}</p>
-                            <p class="text-xs text-[#4A4A4A] font-light">Disubmit pada {{ $program->created_at }}</p>
+                    @if ($program->status == 'ditolak')
+                        <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">
+                            <img src="{{ asset($program->banner_img) }}" alt="" class="max-w-[30%] rounded">
+                            <div class="flex flex-col justify-between">
+                                <p class="text-sm font-semibold text-[#4A4A4A]">{{ $program->nama }}</p>
+                                <p class="text-xs text-[#4A4A4A] font-light">Disubmit pada {{ $program->created_at }}
+                                </p>
+                            </div>
+                            <div class="mx-auto w-full bg-gray-200/70 rounded-full my-4 h-1">
+                            </div>
+                            <div class="flex justify-between items-center w-full gap-x-2">
+                                <button
+                                    class="text-primer font-bold text-base py-1 px-2 border rounded border-primer w-full hover:text-white hover:bg-primerhover transition">Lihat
+                                    detail</button>
+                                <button class="py-1 px-2 border rounded border-gray-300 grid place-items-center">
+                                    <img src="{{ asset('img/icons/bin.svg') }}" alt=""
+                                        style="height: 25px;">
+                                </button>
+                            </div>
                         </div>
-                        <div class="mx-auto w-full bg-gray-200/70 rounded-full my-4 h-1">
-                        </div>
-                        <div class="flex justify-between items-center w-full gap-x-2">
-                            <button class="text-primer font-bold text-base py-1 px-2 border rounded border-primer w-full hover:text-white hover:bg-primerhover transition">Lihat detail</button>
-                            <button class="py-1 px-2 border rounded border-gray-300 grid place-items-center">
-                                <img src="{{ asset('img/icons/bin.svg') }}" alt="" style="height: 25px;">
-                            </button>
-                        </div>
-                    </div>
+                    @endif
                 @endforeach
-            </div>
-            {{-- @foreach ($waiting_list_programs as $program)
-                
-            @endforeach --}}
+            @else
+                <div class="flex flex-col items-center w-full py-4">
+                    <img src="{{ asset('img/icons/notfound-jar.svg') }}" alt="" class="w-40">
+                    <p class="text-[#4A4A4A] font-semibold text-base mt-4 my-3">Tidak ada galang dana ditemukan</p>
+                    <p class="text-[#989898] text-xs text-center">Kamu tidak memiliki penggalangan yang ditolak
+                    </p>
+                </div>
+            @endif
         </div>
     </section>
 

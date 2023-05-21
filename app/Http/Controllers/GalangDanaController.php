@@ -66,29 +66,30 @@ class GalangDanaController extends Controller
 
                 // Membuat nama unik untuk gambar
                 $imageName = time() . '_' . $image->getClientOriginalName();
-
                 // Menghindari konflik nama file dengan menambahkan angka unik
                 $i = 1;
                 while (Storage::disk('public')->exists('img/program_banners/' . $imageName)) {
                     $imageName = time() . '_' . $i . '_' . $image->getClientOriginalName();
                     $i++;
                 }
-
+                
                 $image->storeAs('img/program_banners', $imageName, 'public');
             }
         } catch (\Exception $e) {
             // Menangkap exception dan mendapatkan pesan error
             $errorMessage = $e->getMessage();
-
+            
             // Lakukan tindakan yang sesuai dengan pesan error, seperti menampilkan pesan kepada pengguna atau mencatat error tersebut
-
+            
             // Contoh: Menampilkan pesan error
             echo "Terjadi kesalahan: " . $errorMessage;
         }
-
+        
         try {
+            $validated_data['banner_img'] = 'storage/img/program_banners/' . $imageName;
             // Kode yang berpotensi menimbulkan exception
             Program::create($validated_data);
+            // dd($imageName);
         } catch (\Exception $e) {
             // Menangkap exception dan mendapatkan pesan error
             $errorMessage = $e->getMessage();
@@ -151,9 +152,22 @@ class GalangDanaController extends Controller
 
     public function kelola_galang_dana()
     {
-        $waiting_list_programs = DB::select("SELECT * FROM programs where user_id = " . Auth::user()->id . " and status = 'menunggu';");
+        $waiting_list_programs = DB::select("SELECT * FROM programs where user_id = " . Auth::user()->id . ";");
+        $is_exist_menunggu = false;
+        $is_exist_disetujui = false;
+        $is_exist_ditolak = false;
 
-        return view('user.program.kelola_galang_dana', compact('waiting_list_programs'));
+        foreach($waiting_list_programs as $program) {
+            if ($program->status === 'menunggu') {
+                $is_exist_menunggu = true;
+            } else if($program->status === 'disetujui') {
+                $is_exist_disetujui = true;
+            } else if($program->status === 'ditolak') {
+                $is_exist_ditolak =  true;
+            }
+        }
+        // dd($is_exist_disetujui, $is_exist_ditolak);
+        return view('user.program.kelola_galang_dana', compact('waiting_list_programs', 'is_exist_menunggu', 'is_exist_disetujui', 'is_exist_ditolak'));
     }
 
     public function pilih_kategori_galang_dana(Request $request)

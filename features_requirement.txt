@@ -16,7 +16,6 @@
 
 ### In progress:
 		9. User dapat melihat semua program yang diikuti.
-		11. User dapat melihat list program dan status yang mereka submit.
 
 
 
@@ -37,4 +36,6 @@
 // 16. User bisa melakukan donasi dengan payment gateway (Midtrans).
 // 17. User Dapat melihat daftar donatur dan isi program seperti nama, nominal, dan doa.
 // 15. User dapat melihat info berita mengenai suatu program seperti sudah terkumpul atau belum.
+// 10. User dapat melakukan submit penggalangan dana
+// 11. User dapat melihat list program dan status yang mereka submit. 
 

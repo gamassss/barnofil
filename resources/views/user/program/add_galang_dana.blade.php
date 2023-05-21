@@ -36,7 +36,7 @@
     </section>
 
     <section class="bg-white pt-16 pb-4">
-        <form action="{{ route('galangdana.store') }}" method="POST" class="container mt-4">
+        <form action="{{ route('galangdana.store') }}" method="POST" enctype="multipart/form-data" class="container mt-4">
             @csrf
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
