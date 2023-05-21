@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Program\SubmissionController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Content\LandingPageController;
 use App\Http\Controllers\User\PenggalangDanaController;
@@ -98,6 +99,10 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
     Route::prefix('/restore')->group(function () {
         Route::get('/program/{id}', [ProgramController::class, 'restore'])->name('program.restore');
     });
+
+    Route::get('/submission/waiting', [SubmissionController::class, 'index_waiting'])->name('submission.waiting');
+    Route::get('/submission/approved', [SubmissionController::class, 'index_approved'])->name('submission.approved');
+    Route::get('/submission/rejected', [SubmissionController::class, 'index_rejected'])->name('submission.rejected');
 });
 
 // user authorization

@@ -166,6 +166,7 @@ class GalangDanaController extends Controller
                 $is_exist_ditolak =  true;
             }
         }
+        // dd($waiting_list_programs);
         // dd($is_exist_disetujui, $is_exist_ditolak);
         return view('user.program.kelola_galang_dana', compact('waiting_list_programs', 'is_exist_menunggu', 'is_exist_disetujui', 'is_exist_ditolak'));
     }

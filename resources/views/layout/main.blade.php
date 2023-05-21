@@ -197,11 +197,28 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item">
-                        <a href="#" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-file"></i>
-                            <div data-i18n="Documentation">Submission</div>
+                    <li class="menu-item {{ Request::is('admin/submission/*') ? 'active' : '' }}">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-table"></i>
+                            <div data-i18n="Form Layouts">Submission</div>
                         </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item {{ Request::is('admin/submission/waiting') ? 'active' : '' }}">
+                                <a href="/admin/submission/waiting" class="menu-link">
+                                    <div data-i18n="Horizontal Form">Waiting</div>
+                                </a>
+                            </li>
+                            <li class="menu-item {{ Request::is('admin/submission/approved') ? 'active' : '' }}">
+                                <a href="/admin/submission/approved" class="menu-link">
+                                    <div data-i18n="Horizontal Form">Approved</div>
+                                </a>
+                            </li>
+                            <li class="menu-item {{ Request::is('admin/submission/rejected') ? 'active' : '' }}">
+                                <a href="/admin/submission/rejected" class="menu-link">
+                                    <div data-i18n="Horizontal Form">Rejected</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="menu-item">
                         <a href="tables-basic.html" class="menu-link">
@@ -297,7 +314,7 @@
                                     </li>
                                     <li>
                                         <form action="/logout" method="post">
-																					@csrf
+                                            @csrf
                                             <button class="dropdown-item" type="submit">
                                                 <i class="bx bx-power-off me-2"></i>
                                                 <span class="align-middle">Log Out</span>

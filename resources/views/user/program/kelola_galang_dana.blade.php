@@ -65,7 +65,7 @@
                 <h2 class="font-semibold text-[#4A4A4A] text-base">Waiting</h2>
                 <p class="text-xs text-primer">See all</p>
             </div>
-            @if ($is_exist_disetujui)
+            @if ($is_exist_menunggu)
                 @foreach ($waiting_list_programs as $program)
                     @if ($program->status == 'menunggu')
                         <div class="border rounded border-gray-300 py-3 mb-4 px-3 flex gap-x-2 w-full flex-wrap">

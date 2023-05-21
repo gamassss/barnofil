@@ -1429,7 +1429,7 @@ class ProgramSeeder extends Seeder
             ["Help the people in Garogos Island, Moluccas", "Intan M Sukarna", "Rp 15.140.395", "1000"],
         ];
 
-        $status = ['approved', 'rejected', 'waiting'];
+        $status = ['disetujui', 'ditolak', 'menunggu'];
 
         $counter = 1;
         foreach ($dataProgram as $program) {

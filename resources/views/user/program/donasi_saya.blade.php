@@ -33,7 +33,7 @@
             <div class="self-center w-full h-[1px] bg-gray-300 rounded-full mt-2 mb-2"></div>
             <div class="flex items-center">
                 <img src="{{ asset('img/icons/donation.png') }}" alt="" class="w-6 h-6 mr-2">
-                <p class=""><span class="font-semibold">1x</span> Berdonasi </p>
+                <p class=""><span class="font-semibold">{{ $jumlah_donasi[0]->total_donasi }}x</span> Berdonasi </p>
             </div>
         </div>
     </section>

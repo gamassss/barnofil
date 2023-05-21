@@ -18,6 +18,8 @@ class DonasiController extends Controller
                             JOIN doas ON doas.donasi_id = donasis.id
                             WHERE donasis.user_id = " . Auth::user()->id . ";");
         // dd($donasis);
-        return view('user.program.donasi_saya', compact('donasis'));
+        $jumlah_donasi = DB::select("SELECT COUNT(*) as total_donasi FROM donasis where user_id = " . Auth::user()->id . ";");
+        
+        return view('user.program.donasi_saya', compact('donasis', 'jumlah_donasi'));
     }
 }
