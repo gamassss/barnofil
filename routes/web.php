@@ -86,6 +86,7 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('/most-frequent', [DashboardController::class, 'get_most_donatur'])->name('most.donate.frequency');
     Route::get('/most-amount', [DashboardController::class, 'get_most_amount_donatur'])->name('most.donate.amount');
+    Route::get('/transaksis', [DashboardController::class, 'get_transaksis'])->name('transaksis.index');
 
     Route::prefix('/data')->group(function () {
         Route::resource('/program', ProgramController::class);

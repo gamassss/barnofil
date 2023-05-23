@@ -42,7 +42,7 @@ class DashboardController extends Controller
                                     JOIN users ON users.id = donasis.user_id
                                     GROUP BY user_id, users.name, users.email
                                     ORDER BY SUM(amount) DESC
-                                    LIMIT 5");
+                                    LIMIT 5;");
 
             return DataTables::of($donaturs)
                 ->addIndexColumn()
@@ -50,5 +50,21 @@ class DashboardController extends Controller
         }
 
         return view('admin.dashboard');
+    }
+
+    public function get_transaksis()
+    {
+        if (request()->ajax()) {
+            $transaksis = DB::select("SELECT users.name, programs.nama AS nama_program, CONCAT('Rp', ' ', FORMAT(amount, 0, 'id_ID')) AS formatted_amount, users.email
+                                    FROM donasis
+                                    JOIN programs ON donasis.program_id = programs.id
+                                    JOIN users ON donasis.user_id = users.id;");
+
+            return DataTables::of($transaksis)
+                ->addIndexColumn()
+                ->make(true);
+        }
+
+        return view('admin.user.transaksi');
     }
 }

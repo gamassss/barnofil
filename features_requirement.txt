@@ -1,12 +1,9 @@
 ### To do:
 	hi:
-		26. Admin dapat melihat 5 donatur dengan jumlah tertinggi.
-		27. Admin dapat melihat 5 donatur dengan jumlah frekuensi donasi terbanyak.
+		13. Pengunjung dapat melakukan pencarian program dengan filter kategori.		
 
 	med:
-		13. Pengunjung dapat melakukan pencarian program dengan filter kategori.
 		7. Donatur/Pengunjung dapat melihat blog atau news.
-		22. Admin dapat melihat transaksi.
 
 
 ### In progress:
@@ -34,4 +31,8 @@
 // 23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
 // 25. Admin dapat melihat jumlah program yang telah disetujui.
 // 24. Pada Dashboard, admin dapat melihat total dana terkumpul dari suatu program atau dengan menggunakan filter.
+// 26. Admin dapat melihat 5 donatur dengan jumlah tertinggi.
+// 27. Admin dapat melihat 5 donatur dengan jumlah frekuensi donasi terbanyak.
+// 22. Admin dapat melihat transaksi.
+
 

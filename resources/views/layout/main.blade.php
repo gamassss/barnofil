@@ -227,8 +227,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item">
-                        <a href="tables-basic.html" class="menu-link">
+                    <li class="menu-item {{ Request::is('admin/transaksis') ? 'active' : '' }}">
+                        <a href="/admin/transaksis" class="menu-link">
                             <i class='menu-icon tf-icons bx bx-transfer'></i>
                             <div data-i18n="Tables">Transaksi</div>
                         </a>
