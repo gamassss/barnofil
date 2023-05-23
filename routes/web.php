@@ -11,6 +11,7 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\Program\ProgramController;
+use App\Http\Controllers\Program\DashboardController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Program\SubmissionController;
 use App\Http\Controllers\User\UserDashboardController;
@@ -82,9 +83,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'password_update
 // admin authorization
 
 Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'], function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/most-frequent', [DashboardController::class, 'get_most_donatur'])->name('most.donate.frequency');
+    Route::get('/most-amount', [DashboardController::class, 'get_most_amount_donatur'])->name('most.donate.amount');
 
     Route::prefix('/data')->group(function () {
         Route::resource('/program', ProgramController::class);

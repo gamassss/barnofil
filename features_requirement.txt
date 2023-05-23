@@ -8,9 +8,6 @@
 		7. Donatur/Pengunjung dapat melihat blog atau news.
 		22. Admin dapat melihat transaksi.
 
-	low: 
-		24. Pada Dashboard, admin dapat melihat total dana terkumpul dari suatu program atau dengan menggunakan filter.
-
 
 ### In progress:
 
@@ -36,4 +33,5 @@
 // 21. Admin dapat memanajemen data master (User, Program).
 // 23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
 // 25. Admin dapat melihat jumlah program yang telah disetujui.
+// 24. Pada Dashboard, admin dapat melihat total dana terkumpul dari suatu program atau dengan menggunakan filter.
 
