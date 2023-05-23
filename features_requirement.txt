@@ -13,8 +13,6 @@
 
 
 ### In progress:
-		23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
-		25. Admin dapat melihat jumlah program yang telah disetujui.
 
 ### Done:
 // 1. Terdapat 2 Role, yaitu Admin dan Donatur/Pengunjung
@@ -36,4 +34,6 @@
 // 19. Admin dapat menggunakan fitur lupa password.
 // 20. Admin dapat melakukan ganti password.
 // 21. Admin dapat memanajemen data master (User, Program).
+// 23. Admin dapat melihat dan menyetujui atau menolak program yang diajukan user.
+// 25. Admin dapat melihat jumlah program yang telah disetujui.
 

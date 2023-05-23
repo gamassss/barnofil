@@ -6,6 +6,7 @@ use App\Models\Program;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SubmissionController extends Controller
 {
@@ -14,7 +15,7 @@ class SubmissionController extends Controller
         if(request()->ajax()) {
             return DataTables::of(Program::where('status', 'menunggu')->latest()->get())
             ->addIndexColumn()
-            ->addColumn('action', 'layout.button.program_button')
+            ->addColumn('action', 'layout.button.program_submission')
             ->make(true);
         }
         // dd('masuk');
@@ -41,7 +42,19 @@ class SubmissionController extends Controller
             ->addColumn('action', 'layout.button.program_button')
             ->make(true);
         }
-        // dd('masuk');
+
         return view('admin.program.program_rejected');
+    }
+
+    public function approve_waiting_program(Program $program)
+    {
+        $program->status = 'disetujui';
+        $program->save();
+
+        session()->flash('success', [
+            'type' => 'success',
+            'title' => 'Program berhasil disetujui'
+        ]);
+        return redirect()->back();
     }
 }

@@ -103,6 +103,8 @@ Route::group(['middleware' => ['role:admin', 'verified'], 'prefix' => '/admin'],
     Route::get('/submission/waiting', [SubmissionController::class, 'index_waiting'])->name('submission.waiting');
     Route::get('/submission/approved', [SubmissionController::class, 'index_approved'])->name('submission.approved');
     Route::get('/submission/rejected', [SubmissionController::class, 'index_rejected'])->name('submission.rejected');
+
+    Route::put('/submission/waiting/{program}', [SubmissionController::class, 'approve_waiting_program'])->name('approve.waiting');
 });
 
 // user authorization

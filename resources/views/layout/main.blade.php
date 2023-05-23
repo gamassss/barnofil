@@ -107,7 +107,14 @@
         table.dataTable thead>tr>th.sorting_disabled.sorting_asc:after {
             content: none;
         }
+
+        .swal2-container {
+            z-index: 20000 !important;
+        }
+        
     </style>
+    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
+    <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 </head>
 
 <body>

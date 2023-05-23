@@ -187,6 +187,7 @@ return [
          */
 				Yajra\DataTables\DataTablesServiceProvider::class,
 				Laravel\Socialite\SocialiteServiceProvider::class,
+                RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -213,6 +214,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
 				'Datatables' => Yajra\DataTables\Facades\DataTables::class,
 				'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+                'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];
