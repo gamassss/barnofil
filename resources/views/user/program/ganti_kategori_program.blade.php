@@ -34,7 +34,7 @@
     </section>
 
     <section class="bg-white flex-1 pt-16 pb-4">
-        <form action="{{ route('program.bencana') }}" class="container">
+        <form action="{{ route('program.kategori') }}" class="container">
             <!-- Kategori 1 -->
             <button id="pendidikan" class="w-full flex items-center justify-between py-4 border-b">
                 <div class="flex items-center">

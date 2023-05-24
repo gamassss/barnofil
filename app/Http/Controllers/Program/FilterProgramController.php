@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class FilterProgramController extends Controller
 {
-    public function get_program_bencana(Request $request)
+    public function get_program(Request $request)
     {
         // dd($request->input('nama_kategori'));
         if ($request->input('nama_kategori') == 'Bencana') {

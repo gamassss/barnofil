@@ -299,32 +299,32 @@
             <p class="font-bold text-base text-[#4A4A4A] mb-4">Pilih Kategori Favoritmu</p>
 
             <!-- PIlihan Kategori -->
-            <div class="flex w-full justify-evenly gap-x-3 mb-4">
+            <form action="{{ route('program.kategori') }}" class="flex w-full justify-evenly gap-x-3 mb-4">
                 <!-- Kategori 1 -->
-                <a href="/kategori/bencana" class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <button id="bencana" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-primer overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-bencana.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Bencana Alam</p>
-                </a>
+                </button>
 
                 <!-- Balita -->
-                <a href="/kategori/pendidika" class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <button id="pendidikan" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-pendidikan.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Pendidikan</p>
-                </a>
+                </button>
 
                 <!-- Medis -->
-                <a href="/kategori/kemanusiaan" class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <button id="kemanusiaan" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-kemanusiaan.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Kemanusiaan</p>
-                </a>
-
-            </div>
+                </button>
+                <input type="hidden" name="nama_kategori" value="">
+            </form>
 
             <!-- Item 1 -->
             @foreach ($program_kategoris as $program)
@@ -522,6 +522,19 @@
             let percent = parseInt(total_dana / target_dana * 100)
             $(e).width(percent + '%');
         })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pendidikan').on('click', function () {
+                $('input[name=nama_kategori]').val('Pendidikan');
+            });
+            $('#kemanusiaan').on('click', function () {
+                $('input[name=nama_kategori]').val('Kemanusiaan');
+            });
+            $('#bencana').on('click', function () {
+                $('input[name=nama_kategori]').val('Bencana');
+            });
+        });
     </script>
 </body>
 

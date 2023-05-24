@@ -121,6 +121,6 @@ Route::get('/pilih-kategori', [GalangDanaController::class, 'pilih_kategori_gala
 Route::get('/donasi-saya', [DonasiController::class, 'index'])->name('donasisaya.index');
 
 // explore program by kategori
-Route::get('/kategori/bencana', [FilterProgramController::class, 'get_program_bencana'])->name('program.bencana');
+Route::get('/kategori', [FilterProgramController::class, 'get_program'])->name('program.kategori');
 Route::get('/ganti-kategori', [FilterProgramController::class, 'ganti_kategori'])->name('program.ganti');
 Route::get('/search-program', [FilterProgramController::class, 'search_program'])->name('program.search');
