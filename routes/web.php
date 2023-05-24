@@ -124,3 +124,5 @@ Route::get('/donasi-saya', [DonasiController::class, 'index'])->name('donasisaya
 Route::get('/kategori', [FilterProgramController::class, 'get_program'])->name('program.kategori');
 Route::get('/ganti-kategori', [FilterProgramController::class, 'ganti_kategori'])->name('program.ganti');
 Route::get('/search-program', [FilterProgramController::class, 'search_program'])->name('program.search');
+Route::get('/sort-program', [FilterProgramController::class, 'sort_program'])->name('program.sorting');
+Route::get('/sort-program-by', [FilterProgramController::class, 'sort_program_by'])->name('program.sort_by');

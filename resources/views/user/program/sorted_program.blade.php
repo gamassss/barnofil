@@ -29,7 +29,7 @@
                 <img src="{{ asset('img/icons/navigation/left-arrow-white.svg') }}" alt="">
             </a>
             <div class="container h-full lg:max-w-lg flex items-center">
-                <h4 class="text-white font-semibold text-base">Kategori {{ $title }}</h4>
+                <h4 class="text-white font-semibold text-base">Diurutkan {{ $title }}</h4>
             </div>
         </div>
     </section>
