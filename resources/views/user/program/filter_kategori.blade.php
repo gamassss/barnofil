@@ -29,7 +29,7 @@
                 <img src="{{ asset('img/icons/navigation/left-arrow-white.svg') }}" alt="">
             </a>
             <div class="container h-full lg:max-w-lg flex items-center">
-                <h4 class="text-white font-semibold text-base">Kategori Bencana Alam</h4>
+                <h4 class="text-white font-semibold text-base">Kategori {{ $title }}</h4>
             </div>
         </div>
     </section>
@@ -37,14 +37,14 @@
     <section class="pt-16 mb-4">
         <div class="container border-b pb-2">
             <div class="mt-4 flex w-full text-sm">
-                <button class="w-1/2">
+                <a href="{{ route('program.ganti') }}" class="w-1/2">
                     <div class="flex flex-col items-center">
                         <div class="flex mb-[6px]">
                             <img src="{{ asset('img/icons/kategori-icon.svg') }}" alt="" class="w-5 h-5">
                             <span class="text-sm font-semibold text-[#4A4A4A] ml-2">Kategori</span>
                         </div>
                     </div>
-                </button>
+                </a>
                 <button class="w-1/2">
                     <div class="flex flex-col items-center border-l">
                         <div class="flex mb-[6px]">
@@ -58,9 +58,9 @@
     </section>
 
     <section>
-        <div class="container scrolling-pagination">
+        <div class="scrolling-pagination">
             @foreach ($programs as $program)
-                <a href="/detail/{{ $program->id }}" class="inline-block my-4 program-item">
+                <a href="/detail/{{ $program->id }}" class="inline-block my-4 program-item px-4">
                     <div class="flex w-full">
                         <div class="flex-1 mr-4 h-full">
                             <img src="{{ asset($program->banner_img) }}" alt="" class="rounded-lg">

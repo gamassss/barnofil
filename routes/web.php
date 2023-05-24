@@ -122,5 +122,5 @@ Route::get('/donasi-saya', [DonasiController::class, 'index'])->name('donasisaya
 
 // explore program by kategori
 Route::get('/kategori/bencana', [FilterProgramController::class, 'get_program_bencana'])->name('program.bencana');
-Route::get('/get-more-programs', [FilterProgramController::class, 'get_more_program_bencana'])->name('get_more_program');
-// Route::get('/get-more-programs-bencana', [FilterProgramController::class, 'get_more_program_bencana'])->name('get_more_program_bencana');
+Route::get('/ganti-kategori', [FilterProgramController::class, 'ganti_kategori'])->name('program.ganti');
+Route::get('/search-program', [FilterProgramController::class, 'search_program'])->name('program.search');

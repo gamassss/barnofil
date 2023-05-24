@@ -32,17 +32,15 @@
                 </div>
 
                 <!-- Search bar -->
-                <div class="bg-secondary h-full text-white w-full rounded-full">
-                    <div class="flex justify-between items-center h-full px-4">
-                        <!-- Placeholder search bar -->
-                        <p class=" font-normal text-xs">Bantu sesama, cari 'pengobatan'</p>
-
+                <form action="{{ route('program.search') }}" method="get" class="bg-secondary h-full text-white w-full rounded-full">
+                    <label class="flex justify-between items-center h-full px-4">
+                        <input type="text" placeholder="Bantu sesama, cari 'pengobatan'" name="q" class="bg-transparent w-full border-none placeholder:text-xs placeholder:font-normal placeholder:text-white focus:border-none focus:ring-0 focus:outline-none text-xs" autocomplete="off">
                         <!-- icon search -->
-                        <div class="grid place-items-center">
+                        <button class="grid place-items-center">
                             <i class="fa fa-thin fa-magnifying-glass"></i>
-                        </div>
-                    </div>
-                </div>
+                        </button>
+                    </label>
+                </form>
 
             </div>
         </div>
