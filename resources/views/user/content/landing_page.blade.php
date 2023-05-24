@@ -303,28 +303,29 @@
             <!-- PIlihan Kategori -->
             <div class="flex w-full justify-evenly gap-x-3 mb-4">
                 <!-- Kategori 1 -->
-                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <a href="/kategori/bencana" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-primer overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-bencana.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Bencana Alam</p>
-                </div>
+                </a>
 
                 <!-- Balita -->
-                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <a href="/kategori/pendidika" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-pendidikan.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Pendidikan</p>
-                </div>
+                </a>
 
                 <!-- Medis -->
-                <div class="flex flex-col gap-y-[10px] flex-1 items-center">
+                <a href="/kategori/kemanusiaan" class="flex flex-col gap-y-[10px] flex-1 items-center">
                     <div class="grid place-items-center w-12 border-2 border-slate-300 overflow-hidden rounded-xl">
                         <img src="{{ asset('img/icons/icon-kemanusiaan.png') }}" alt="" class="rounded">
                     </div>
                     <p class="text-xs font-normal text-center">Kemanusiaan</p>
-                </div>
+                </a>
+
             </div>
 
             <!-- Item 1 -->

@@ -1,12 +1,12 @@
 ### To do:
 	hi:
-		13. Pengunjung dapat melakukan pencarian program dengan filter kategori.		
 
 	med:
 		7. Donatur/Pengunjung dapat melihat blog atau news.
 
 
 ### In progress:
+		13. Pengunjung dapat melakukan pencarian program dengan filter kategori.		
 
 ### Done:
 // 1. Terdapat 2 Role, yaitu Admin dan Donatur/Pengunjung

@@ -12,8 +12,6 @@ class DetailProgramController extends Controller
     public function index($id)
 		{
 			$program = Program::find($id);
-			// dd($program->nama);
-			// $user = Auth::user();
 			
 			return view('user.program.detail_program', [
 				'id' => $id,

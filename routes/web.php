@@ -18,6 +18,7 @@ use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Content\LandingPageController;
 use App\Http\Controllers\User\PenggalangDanaController;
 use App\Http\Controllers\Program\DetailProgramController;
+use App\Http\Controllers\Program\FilterProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,3 +119,8 @@ Route::get('/kelola-galangdana', [GalangDanaController::class, 'kelola_galang_da
 Route::get('/pilih-kategori', [GalangDanaController::class, 'pilih_kategori_galang_dana'])->name('galangdana.pilih_kategori');
 
 Route::get('/donasi-saya', [DonasiController::class, 'index'])->name('donasisaya.index');
+
+// explore program by kategori
+Route::get('/kategori/bencana', [FilterProgramController::class, 'get_program_bencana'])->name('program.bencana');
+Route::get('/get-more-programs', [FilterProgramController::class, 'get_more_program_bencana'])->name('get_more_program');
+// Route::get('/get-more-programs-bencana', [FilterProgramController::class, 'get_more_program_bencana'])->name('get_more_program_bencana');
